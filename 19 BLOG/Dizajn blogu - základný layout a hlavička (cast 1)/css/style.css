@@ -1,0 +1,107 @@
+
+body{
+	color: #222;
+	font-size: 18px;
+	line-height: 30px;
+	font-family: Georgia, serif;
+	margin: 0;
+	width: 960px; /*body element bude mať fixnú šírku 960px*/
+	margin: 0 auto /*vďaka fixnej širke nám margin 0 auto vycentruje všetko na stred*/
+}
+a{
+	color: #2455c3;
+	text-decoration: none;
+}
+a:hover,
+a:focus{
+	text-decoration: underline;
+}
+p{
+	margin: 0px 0px 24px 0px;
+}
+.logo a{ /*vyberie a elementy ale len tie ktoré spadajú pod class logo*/
+	background: url('../img/logo.png') left top no-repeat;/*vyberame logo dve bodky značia že vychadzame von z adresara css a idem do img /logo.png chcem aby bol vlavo hore aby sa neopakoval*/
+	display: block;/* aby logo bolo na celu širku elementu*/
+	width: 960px;/*aký široký ma byť obrázok*/
+	height: 469px;/*akú výšku ma obrázok*/
+	text-indent: -9999px;/* text z a elemntu vyleti von zo stránky*/
+}
+.logo{
+	margin: 0;/*samotnému h1 elementu odstranime margin*/
+	position: relative;
+	top: -23px;/*posunie nam o 14 hore logo*/
+	z-index: 2;/*zaručíme to že logo bude nad z-indexom 1 ciže coverom*/
+}
+.post-header{
+	text-align: center; /*v všetko v article header s classom post-header bude text zarovnaný na stred*/
+}
+.post-title{
+	font-size: 48px;
+	line-height: 56px;
+	font-family:'Open-sans', sans-serif ;/*externé pridane fonty sa pišu do apostrofou*/
+	font-weight: 800;
+	margin: 0px 0px 5px;
+	letter-spacing: -2px;
+
+}
+.cover{
+	background: #fff url('../img/bg.jpg') 50% 0px no-repeat;/*pozadie sme dali bielej farby pridali sme obrazok dali sme ho dalej o 50% z lavej strany čiže na stred a o 0px z vrchu čiže bude začínať uúlne od vrchu stranky*/
+	height: 469px;
+	margin-top:-470px ;/*minusova hodnota spravi to že neposune element o 470px nižšie zvrch ale posunie ho  vyššie o 470px */
+	position: relative;/*keďže cheme posunuť odznak relatívne ku cover elementu musi mať cover position:relative; a badge position:absolute;*/
+	z-index: 1;/*zaručime to že cover bude pod logom*/
+
+}
+/*v html dokumente v dive cover  pridam link s classom badge*/
+/*vytvoríme odznak čislo 404*/
+.badge{
+	background: #bb3825; /*fallback pre staré prehliadače*/
+	background: rgba(187, 56, 37, 0.9);
+	display: block; /*pretože sa tento element je link a cheme mu nastaviť width a height*/
+	width: 120px;
+	height: 120px;
+	border-radius:50%;/*50% spravi kruh  širka60 +60=120 vyška 60+60=120*/
+	color: #fff;
+	font-size: 54px;
+	line-height: 40px;
+	font-weight: 800;
+	font-family:'Open-sans',sans-serif ;
+	letter-spacing: -2px;
+	text-align: center;
+	text-decoration: none;
+	position: absolute;
+	bottom:20px;
+	right: -20px;
+
+}
+.badge:hover,
+.badge:focus{
+	text-decoration: none;
+}
+.badge small{
+	font-size: 16px;
+	line-height: 16px;
+	font-family: Georgia, serif;
+	font-style: italic;
+	font-weight: normal;
+	letter-spacing:0; /*kvoli tomu davame defautne hodnoty pre somll lebo keby ich nedáme tak element small zdedí hodnoty od elementu badge*/
+	display: block;/*chcem aby small element sa zobrazil na samostatnom riadku*/
+	padding-top: 20px;
+}
+.meta-data{
+	font-style: italic;
+
+}
+.author{
+	font-family: 'Open-sans',sans-serif;
+	font-style: normal;
+	font-weight: 800;
+	text-transform: uppercase;
+	margin: 0px 3px;
+}
+/*vytvorenie dalšieho pseudo elementu  (bodky) pmocou pseudo elementov ktoru dam vedľa alebo pred time element*/
+.meta-data time:before{
+	content: " . ";
+	font-style: normal;
+
+}
