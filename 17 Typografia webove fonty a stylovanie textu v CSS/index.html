@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>17: Typografia, webové fonty a štýlovanie textu v CSS</title>
+	 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1>ako pridať externy font napríklad </h1>
+	 <a href="https://fonts.google.com/">googlewebfonts</a>
+	 <p> a tento link nakopirujeme do head našeho html dokumentu asi ešte pred linkovany style.css</p>
+	 <p>
+	 < link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	 </p>
+<section>
+	<h2>čo sa ešte dá robiť z textom na stránkach</h2>
+	<h3>font-weight</h3>
+	<p> font-weight je hrubka textu. <br>Najčastejšie hodnoty sú normal a bold su zakladne dve hodnoty <br>
+	<b>font-weight</b> sa môže zadávať aj čiselne od 100 po 900 <br>
+	s tým že 400 je normal a 700 je bold
+	</p>
+	<h3>text transform:uppercase/lowercase;</h3>
+	<p class="t-transform">
+		<b>text-transform</b>:uppercase;<br>
+		teraz všetok text v tomto odstavci bude veľkými pismenami opak toho je <b>text-transform:</b>lowercase; <br>
+		všetky pismena by boli male
+	</p>
+<h3>text-transform:capitalize</h3>
+<p class="capitalize">tento css zapis spravi každe prve pismeno v slove velke.</p>
+<h3>dalši atribut ktory môžeme menit je font-variant:small-caps;</h3>
+<p>
+	toto bude dobre vidno na strong elemente použiť
+	<br> <b>font-variant:</b>small-caps; <br> nižšie vidíme že každe pismeno je veľkým kapitalkou a však tieto pismena majú vyšku maleho písma <br>
+<strong class="f-variant"> ahoj ako sa maš</strong>
+a toto je pokračovanie bez strong elementu
+</p>
+<h3>text-indent:400px;</h3>
+<p class="t-indent">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente quas quae nesciunt exercitationem, debitis blanditiis saepe itaque temporibus, expedita quisquam facilis corporis soluta aliquid, voluptas modi. Debitis dignissimos inventore, impedit.
+</p>
+<p>vidíme že o odstavec vyššie vznikol 400px dlhy ako keby tabulator v prvom riadku </p>
+<h3> môžeme kontrolovať odstup písmen od seba letter-spacing:5px;</h3>
+<p class="l-spacing">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non reprehenderit delectus saepe magni corporis, quasi a mollitia placeat quae eaque, tempora ipsa animi laudantium, atque amet officia enim sunt quos!
+</p>
+<h3>word-spacing:30px;</h3>
+<p class="w-spacing">
+	každe slovo v tomto dostavci je od seba 30px
+</p>
+
+</section>
+<section>
+	<h2>text-shadow</h2>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo vel ipsam dolore quam illo ut expedita quibusdam et optio. <strong class="t-shadow">Culpa accusantium </strong> sleduj strong element
+		takto je zapis aj s vysvetlením
+		.t-shadow{ <br>
+	text-shadow: 2px 2px 0px #000; /*odsadenie z lava o 2px z vrchu o 2px nechame ho byť tvrdy(0px rozmazanie) #farba*/ <br>
+}
+	</p>
+	<h3>text-align:justify; zarovna text do bloku</h3>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, ipsa eos. Quia, dicta! Laudantium libero unde accusantium ratione repudiandae quia adipisci illo, dolores eum fugiat sit mollitia accusamus saepe, eius.
+	</p>
+	<a href="http://hellohappy.org/beautiful-web-type/">dobra stranka reprezentacia google web font vybral najlepšie fonty pre web</a>
+</section>
+
+</body>
+</html>

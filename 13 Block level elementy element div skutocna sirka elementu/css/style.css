@@ -1,0 +1,52 @@
+html,
+body{
+	margin: 0; /*zruši nam pripadný margin pre body element takto vynulujeme vnútorne nastavenia prehliadača*/
+}
+
+body{
+	color: #fff;
+	background: #fe3747; /* farba pozadia celej stránky*/
+	font-size: 16px; /*veľkosť pisma defaultna je 16px*/
+	text-align: center;
+	padding: 25px 0; /*aby nebol text tak natlačení tak sme dali 25px z vrchu aj zo spodu*/
+	font-family: "Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
+}
+h1{
+	font-size: 100px;
+	font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+}
+h2{
+	display: none; /*skryje nam h2 element*/
+}
+.main{
+	width: 50%;
+	margin: 50px auto; /*zvrchu a zospodu bude mať margin 50px a pravu a lavu stranu automatický dopočíta */
+}
+p{
+	line-height: 22px;
+
+
+}
+.special{
+	width: 300px;
+	margin: 50px auto;
+	color:#333;
+	background: #75c6c5;
+	padding: 20px;
+	border: 14px solid #fff;
+}
+
+a{
+	color: #fe3747;
+	background: #fff;
+	text-decoration: none;/*zruši podčiarknutie*/
+	padding:2px 6px 3px 6px;/*2px z vrchu 6px z prava 3px z dola 6px z lava v smere hodinových ručičiek*/
+	border-radius: 3px;
+	font-weight: bold;/*aby text bol tučným písmom*/
+}
+a:hover{/*hover je css pseudo class pseudo classy špecifikujeme pomocou dvojbodky
+		tvrdi že vyber všetk a elementy na stranke ale iba pokial su v stave hover
+		čiže sme nad nimi myšou*/
+		background: #75c6c5;
+
+}

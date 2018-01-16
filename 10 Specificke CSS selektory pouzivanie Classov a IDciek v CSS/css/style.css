@@ -1,0 +1,56 @@
+body{ /*body nazývame selektor*/
+	/*medzi  zloženými zatvorkami píšeme vlastnosti a ich hodnotu všetko vo vnútri zatvoriek sa volá deklarácia*/
+	width:600px ; /*atribut width je širka 600px*/
+	padding: 50px; /*odsadenie z vnutra elementu */
+}
+h1,h2{
+	font-family: 'Lucida Grande'; /* zmena pisma*/
+	margin: 0; /*margin je taký priesvitný neviditelný okraj okolo element odtlačenie z vonka z každej strny 0px čiže žiadny volný priestor okolo elementu nebude*/
+}
+.important{
+	color:lightcoral ;
+}
+h1{
+	font-size: 42px;/*veľkosť písma*/
+}
+h2{
+	color: #bada55; /*hexadecimalny zapis farieb*/
+	font-size: 16px;
+	padding-bottom:20px: /*odsadenie z vnutra elementu od spodu*/
+	border-bottom: 1px solid lightgrey; /*oramovanie zo spodu bude 1 px bude solid(cely) alebo môže byť dotted(vybodkovaný) dashed(vypomlckovaný)double(dvojte ormovanie) bude bledošedej farby */
+}
+p{/*zapis znamená vyber každy jeden p element na stranke*/
+	color: dimgray;
+	font-size: 16px;
+	font-family: sans-serif;
+	line-height:26px;/*výška riadku 26px*/
+}
+strong{
+	color:red;
+}
+#main-guy{
+	color: #bada55;
+}
+.controls{
+	text-align: center; /*hodi nam text v elemente s classom controls na stred alebo left do lava right do prava*/
+}
+/*teraz si môžeme naše buttony štylovať*/
+.btn{
+	background: #ccc;
+	border: 1px solid #bfbfbf;
+	font-size: 16px;
+	padding: 8px 12px; /*prvá hodnota znamená padding z vrchu a zo spodu a druhá hodnota padding z lava a z prava */
+	border-radius: 4px; /*zaobli border jeho rohy strany*/
+	cursor: pointer; /*ked prideme kurzorom na button zmeni sa kurzor na klikajúci prsť*/
+	text-decoration: none; /*zruši podčiarknutie u a elemntov s týmto classom*/
+}
+a.btn-success{ /*tento zápis znamená že tieto css vlastnosti budú patríť iba buttonom ktore majú  class btn-success*/
+	color: #fff;
+	background: #5cbb5c;
+	border: 1px soldi #4cae4c;
+}
+.btn-danger{
+	color: #fff;
+	background: #d9534f;
+	border: 1px soldi #d43f3a;
+}

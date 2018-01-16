@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Špecifické CSS selektory, používanie Classov a IDčiek v CSS</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1 class="important">Block level elementy, element DIV a skutočná šírka elementu
+</h1>
+	<h2>všetky p elementy obalíme njekým elementom napr div</h2>
+	<div class="main">
+
+<p>
+	Pie bear claw tootsie roll. Croissant gummies cake <a href="#" class="important">biscuit wafer pie cotton candy chocolate</a> bar. Topping candy canes candy toffee tootsie roll cookie fruitcake.</p>
+<p class="special">
+všetky p elementy obalime nejakým elementom napriklad všetký p elementy dame do elementu div a nasledne div element vycentrujeme na stred.Takže použijeme element div s classom main v style.css pridame zapišeme .main{ <br />
+nastavím mu širku 50% width:50%; <br />
+nastavím mu margin: 50px z vrchu a zo spodu z <br /> prava z lava auto margin:50px auto; <br />
+čo sa teraz stane elementy su vycentrované ale trošku sme stratii ten margin  z vrchu takže si ho musime ešte pridať v css do elementu p{ <br/>
+	margin-top:50%; <br/> aby každy p element bol zvrchu o 50% teraz každy p element nabral 100%
+	širky jeho rodiča ale jeho rodič je v tomto pripade <br/> tento .main element ktory ma nastavení width:50%; <br />
+</p>
+
+<p>
+p elementu s classom  .special sme nastavili širku
+300px  a margin z vrchu a zo spodu 50px <br /> a zlava z prava auto každy element či je to block alebo inline level element zabera iba tu vyšku <br/> ktoru potrebuje. Ale vyšku môžme ja zmenit na <br/> ako chceme pri inline elementoch sa vyška meniť nedá. <br />
+každopadne chceme nejaky padding 20px aby tam text <br/>mohol dychať  a taktiež dajmetomu že border 14px <br/>
+sice sme elementu nastavili širku 300px ale element <br/> ma širku 368 lebo sme tam pridali padding 20px a border 14 px čiže 300+ 20(z vrchu 10 + zospodu 10px) + 20(zlava 10px s prava 10px) +bordr 14px (7px zvrchu 7px zo spodu) +14px (7px zlava 7px z prava)= 368px <br/>
+block level elementy môžeme meniť veľkosť inline level elementy nemôžeme meniť veľkosť
+
+</p>
+<p class="special">
+	<strong>overflow sa použiva na to že keď sa nam text nezmesti do vyšky odstava tak ten čo sa nezmesti tak ho odsekneme použijeme overflow: hidden; alebo odstavcu dame scrollbar overflow:scroll; a bude tam celý text </strong>
+</p>
+
+<p>
+Sweet macaroon oat cake fruitcake lollipop pie candy <strong class="important">jelly beans gingerbread. Bonbon sweet roll</strong> chocolate cake dragée cotton candy gummies. Donut sweet sweet marshmallow danish. Powder sesame snaps sugar plum gummies croissant pudding.
+</p>
+
+<p>
+	<strong>v šimníme si ak nejaky zápis pride v css posledny prepiše tie vrchne hodnoty napríklad u buttonov máme vyššie nastaveni background:#ccc; ale v triede napríklad success sme zmenili farbu backgroundu na zelenu </strong>
+</p>
+<p>
+	font-family nam dovoluje tzv. stack kde môžeme čiarkou oddeliť viacere typy fontov
+	font-family: tahoma,Verdana....; <br />
+	<a href="https://www.cssfontstack.com/">CSS font Stack</a>
+</p>
+<h2>fonty rozdelujeme:</h2>
+<p>
+	<strong>1) Serif</strong> <br />
+	<strong>2) Sans-serif</strong> <br />
+	<strong>3) Monospaced</strong>
+</p>
+<p>
+	1) Serif - fonty majú take zobačiky také háčiky na svojích koncoch <br /> najznamejší font asi Time New Roman fonty sa využívajú v Knihách a časpisoch atď Na webe sa použiva napr na veľke nadpisy  <br />
+	2) sans-serif - su klasicke paličkove pismo bez hačikov využiva sa na text na web strankach <br/>
+	3) Monospace - je  toto písom využívaju programatori monospace je napr kurier new <br /> špecifikum je to že každe pismeno má rovnaku šírku
+
+</p>
+	<h1>baliaci element zarovnať na strd</h1>
+<p>
+	keď chceme nejaký baliaci element v našom prípade p element zarovnať na stred <br />
+	nemôžeme dat text-align:center; lebo to zarovnáva text a nie obalujúci element <br />
+	Musíme použiť taky "trik" margin:100px auto;
+<strong>čítaj aj style.css poznámky</strong>
+</p>
+	</div>
+</body>
+</html>

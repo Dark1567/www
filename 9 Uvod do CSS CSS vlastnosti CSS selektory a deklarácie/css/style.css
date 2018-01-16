@@ -1,0 +1,26 @@
+body{ /*body nazývame selektor*/
+	/*medzi  zloženými zatvorkami píšeme vlastnosti a ich hodnotu všetko vo vnútri zatvoriek sa volá deklarácia*/
+	width:600px ; /*atribut width je širka 600px*/
+	padding: 50px; /*odsadenie z vnutra elementu */
+}
+h1,h2{
+	font-family: 'Lucida Grande'; /* zmena pisma*/
+	margin: 0; /*margin je taký priesvitný neviditelný okraj okolo element odtlačenie z vonka z každej strny 0px čiže žiadny volný priestor okolo elementu nebude*/
+}
+h1{
+	color: lightcoral; /*nastavenie farby textu nadpisu h1*/
+	font-size: 42px;/*veľkosť písma*/
+}
+h2{
+	color: #bada55; /*hexadecimalny zapis farieb*/
+	font-size: 16px;
+	margin: 50px; /*teraz z každej strany bude odtlačený o 50px; */
+	padding-bottom:20px: /*odsadenie z vnutra elementu od spodu*/
+	border-bottom: 1px solid lightgrey; /*oramovanie zo spodu bude 1 px bude solid(cely) alebo môže byť dotted(vybodkovaný) dashed(vypomlckovaný)double(dvojte ormovanie) bude bledošedej farby */
+}
+p{/*zapis znamená vyber každy jeden p element na stranke*/
+	color: dimgray;
+	font-size: 16px;
+	font-family: sans-serif;
+	line-height:26px;/*výška riadku 26px*/
+}

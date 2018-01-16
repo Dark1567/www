@@ -1,0 +1,37 @@
+html,
+body{
+	margin: 0;
+}
+body{
+	color: #333;
+	background: #beeb9f;
+	font-family:sans-serif;
+	padding: 0px 50px;
+}
+strong{
+	color:rgb(255,97,56);
+}
+.t-transform{
+	text-transform: uppercase;
+}
+.capitalize{
+	text-transform: capitalize;
+}
+.f-variant{
+	font-variant: small-caps;
+}
+.t-indent{
+	text-indent:400px;
+}
+.l-spacing{
+	letter-spacing: 5px; /*každe pismen ma od seba odstup 5px*/
+}
+.w-spacing{
+	word-spacing: 30px; /*každe slovo ma od seba odstup 30px*/
+}
+.t-shadow{
+	text-shadow: 2px 2px 0px #000; /*odsadenie z lavaa o 2px z vrchu o 2px nechame ho byť tvrdy(0px rozmazanie) #farba*/
+}
+.t-align{
+	text-align: justify;
+}

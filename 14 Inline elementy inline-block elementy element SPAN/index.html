@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Špecifické CSS selektory, používanie Classov a IDčiek v CSS</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1 class="important"><span class="highlight">In</span>line elementy, inline-block elementy, element SPAN
+</h1>
+	<h2>všetky p elementy obalíme njekým elementom napr div</h2>
+	<div class="main">
+
+<p>
+	Pie bear claw tootsie roll. Croissant gummies cake <a href="#" class="important">biscuit wafer pie cotton candy chocolate</a> bar. Topping candy canes candy toffee tootsie roll cookie fruitcake.</p>
+<p class="special">
+takže inline elementy  u nich sa nedá meniť <br />
+veľkosť presnejšie pomenovanie by bolo že <br /> neakceptujú výšku a šírku  čo sa týka marginov<br/ > akceptujú lavý a pravý margin ale hroný a spodný nie.
+</p>
+
+<p>
+	čo keby a elementu dam margin-left a margin right v pohode to pôjde ale ak dam <br/> margin-bottom:50px; nič to nespraví. <br />
+	Naopak padding funguje po všetkých stranách <br/> 	padding:22px 6px 23px 6px; vidíme že to nromalne až prekrýva text čo je okolo <br/> toto by sa pri blocklevel elementoch nestalo <br> pretože vieme že block elementy si vytvárajú svoj vlastní riadok
+
+</p>
+<p class="special">
+	hovorili sme že div je block level element <br>
+	ktrý nič neznamená takisto aj inline level elemnty maju taky element a to je <b>SPAN </b>element <br /> použivame ho vtedy keď v texte potrebujeme niečo naštýlovať napr keď chcem aby <br> prve dve slova pismena vo vete boli inou farbou. naprikad v nadpis h1 <br>
+</p>
+
+<p>
+elementom môžeme nastavovať ako sa majú zobrazovať <br> pomocou atributu display:hodnota;(none, inline-block, block tieto hodnoty tam môžu byť)
+</p>
+
+<p class="special">
+	v css si pridam class .text-left a dam mu vlastnost text-aligne:left; všetko čo bude v .text-left nebude zarovnane na stred ale do lava. a dam tam njaky text a vdíme že je tam nejaka veta a prednou je v elemente small časovy udaj  text je odentrovaní aby tam boli nejake medzeri chcem ten text v small nastaviť inou farbou a hrubym fontom a použijeme display: block; nam hodi ten citát na samostatny riadok nie je dobry napad nastavovat divom inline rovnako span elementu nie je dobre nastavovat display block span je pre inline  div je pre block elementy <br>
+	ale display:inline-block; je zaujmavy hybrit medzi inline a block display atributmi
+	ak elementu a nastavim display:inline-block;
+	a zroveň nastavím width:200px; a height:60px;
+	a ziskame element ktory jednak stale plava strede svojho textu nie je hodeni na novy riadok ale zroveň dostal schopnosť pobrať
+	width a height
+</p>
+<p class="text-left">
+	<small>5 seconds a go</small>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias eligendi, consequatur, dicta neque sed a sequi enim nostrum, quam corporis perspiciatis soluta reprehenderit magni ducimus doloremque libero quisquam harum."
+	<br/>
+	<br/>
+	<small>1 hours a go</small>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium tenetur incidunt consequuntur rerum nesciunt hic natus unde cum veritatis aperiam illum modi repellat maxime beatae dolore, cumque quis at commodi."
+	<br/>
+	<br/>
+	<small>12 hours a go</small>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, odio quasi nostrum accusamus corrupti id tempore, maiores illo voluptates a velit et obcaecati vel quae natus error eligendi, dolore repellat!"
+</p>
+<p>
+	<strong>v šimníme si ak nejaky zápis pride v css posledny prepiše tie vrchne hodnoty napríklad u buttonov máme vyššie nastaveni background:#ccc; ale v triede napríklad success sme zmenili farbu backgroundu na zelenu </strong>
+</p>
+<p>
+	font-family nam dovoluje tzv. stack kde môžeme čiarkou oddeliť viacere typy fontov
+	font-family: tahoma,Verdana....; <br />
+	<a href="https://www.cssfontstack.com/">CSS font Stack</a>
+</p>
+<h2>fonty rozdelujeme:</h2>
+<p>
+	<strong>1) Serif</strong> <br />
+	<strong>2) Sans-serif</strong> <br />
+	<strong>3) Monospaced</strong>
+</p>
+<p>
+	1) Serif - fonty majú take zobačiky také háčiky na svojích koncoch <br /> najznamejší font asi Time New Roman fonty sa využívajú v Knihách a časpisoch atď Na webe sa použiva napr na veľke nadpisy  <br />
+	2) sans-serif - su klasicke paličkove pismo bez hačikov využiva sa na text na web strankach <br/>
+	3) Monospace - je  toto písom využívaju programatori monospace je napr kurier new <br /> špecifikum je to že každe pismeno má rovnaku šírku
+
+</p>
+	<h1>baliaci element zarovnať na strd</h1>
+<p>
+	keď chceme nejaký baliaci element v našom prípade p element zarovnať na stred <br />
+	nemôžeme dat text-align:center; lebo to zarovnáva text a nie obalujúci element <br />
+	Musíme použiť taky "trik" margin:100px auto;
+<strong>čítaj aj style.css poznámky</strong>
+</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+html,
+body{
+	margin: 0;
+}
+body{
+	color: #333;
+	background: #beeb9f;
+	font-family: "Goudy Old Style",Garamond,"Big Caslon","Times New Roman",serif;
+	padding: 0px 50px;
+}
+p{
+	font-size: 45px;
+	line-height: 60px;
+}
+strong{
+	font-style: italic;
+	color: #FF6138; /*toto je ten isty zapis ako o riadok nižšie len v šestnastkovej sústave(hexadecimalna)*/
+	color:rgb(255,97,56);
+	color: rgba();
+}
+strong:hover{
+	color:#ff896b;
+}
