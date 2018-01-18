@@ -1,0 +1,47 @@
+/*clearfix*/
+.clearfix:before,
+.clearfix:after{
+	content: " ";
+	display: table;
+}
+.clearfix:after{
+	clear: both;
+}
+.clearfix{
+	*zoom: 1;
+}
+#wrapper{
+	width: 700px; /*zmenšli sme širku wrapper elementu*/
+	margin: 0px auto; /*vycentrovali sme obsah vo wrapperi na stred*/
+}
+
+code{
+	color: #fff;
+	background: #9f3fa3;
+	display: block;/*aby bol na celú šírku rodiča*/
+	padding: 25px;
+	font-size: 24px;
+	line-height: 30px;
+	font-family: monospace;
+	border-radius: 6px;
+	text-align: center;
+}
+#wrapper header,
+#wrapper section,
+#wrapper aside,
+#wrapper footer{
+	/*vštkym elementom sapdajucich pod wrapper nastavime tieto hodnoty*/
+	margin:0px 0px 25px 0px ;/*zo spodu 25px*/
+}
+#wrapper section{
+	float: left;
+	width: 425px; /*keď floatujeme element musime mu nastaviť šírku*/
+}
+/*to iste len float right*/
+#wrapper aside{
+	float: right;
+	width: 250px;
+}
+/*#wrapper footer{ /*footer je nasledovny element po section a aside a tomu zrušime flovtovanie /
+	clear: both;
+}*/

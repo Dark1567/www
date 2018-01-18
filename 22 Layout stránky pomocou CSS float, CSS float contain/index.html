@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Layout stránky pomocou CSS float, CSS float contain</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="wrapper" class="clearfix">
+	<header><<code>&lt;Header&gt;</code></header>
+
+	<div class="main clearfix">
+		<section><code>&lt;section&gt;</code></section>
+		<aside><code>&lt;aside&gt;</code></aside>
+	</div>
+
+	<footer><code>&lt;footer&gt;</code></footer>
+</div>
+<pre>
+<p>ak chcem zobrazit specialne znaky ako zobačiky tak musim použiť špecialne zapisy pre tieto znaky <a href="http://www.escapecodes.info/">tu najdeme specialne znaky ako zapisovat zobaciky copyright v html</a></p>
+1) zrušiť floatovanie nasledovnemu elementu čo je footer takto
+#wrapper footer{
+/*footer je nasledovny element po section a aside a tomu zrušime flovtovanie */
+	clear: both;
+}
+<strong>ale druhá možnost lepšia možnos je to spraviť nasledovne</strong>
+- vytvorit si div s classom .main pridať mu ešte class clearfix a do tohoto divu vložiť section a aside
+<h3>takto: vyzerá html zapis </h3>
+< div id="wrapper" class="clearfix">
+	< header>< code> Header < /code>< /header>
+
+	< div class="main clearfix">
+		< section>< code> section < /code>< /section>
+		< aside>< code> aside < /code>< /aside>
+	</div>
+
+	< footer>< code> footer < /code>< /footer>
+< /div>
+a teraz môžem z  css vymazať to čo som použil v kroku 1)
+</pre>
+
+</body>
+</html>

@@ -29,8 +29,21 @@
 			Marzipan croissant tootsie roll pastry candy jelly-o. Bonbon caramels candy croissant. Lemon drops cookie ice cream. Toffee tiramisu biscuit sweet gummies marshmallow. Biscuit chocolate jelly beans sweet roll pudding sweet gingerbread chupa chups muffin. Macaroon apple pie brownie muffin toffee. Cupcake wafer sesame snaps muffin chocolate bar fruitcake tootsie roll. Tiramisu cotton candy cookie soufflé fruitcake. Jujubes powder ice cream carrot cake sesame snaps pie. Biscuit cupcake cheesecake icing chocolate bar carrot cake fruitcake. Lollipop lollipop cotton candy cupcake jujubes. Jelly beans marshmallow powder. Donut soufflé marzipan ice cream tootsie roll liquorice muffin carrot cake.
 			</p>
 
-			<p>
-			Cupcake chocolate cake cake cupcake. Gummi bears jelly-o wafer pastry. Caramels jujubes carrot cake topping liquorice. Dessert oat cake liquorice danish marzipan brownie jelly beans chocolate bar icing. Topping topping brownie biscuit oat cake. Bear claw gummies topping cake brownie topping croissant cake tiramisu. Pudding bonbon biscuit oat cake chocolate cake. Danish candy tart. Pie sugar plum chocolate cake sugar plum tart tart brownie. Bear claw biscuit sweet roll jelly pie bear claw. Ice cream bonbon cotton candy pie jujubes. Chupa chups bonbon lollipop caramels lemon drops candy tart oat cake. Tiramisu sweet wafer sweet roll soufflé wafer jelly dragée jelly. Ice cream liquorice liquorice oat cake chocolate cake jelly beans chocolate cake lemon drops.
+			<p style="background:DarkSalmon ;">
+			1 skopirujem viacej elementov  aside vedla seba a vcss dame aside a p elementom outline 3px solid červene
+			aby sme videli vyznačne oramovanie aside a p elementov.
+			Vidíme že ked sú elementy floatované
+			tak sa kladajú vedla seba a ostaný kontent sa im musí prisôsobovať
+			2) ak pridám ďaľší aside  vidíme že už sa nezmestil veďľa tých dvoch tak sa dal na nový riadok ale text stále obteká okolo neho
+			3 povdzme že chceme dosiahnuť bez zmeni html aby sa naozaj p zobrazil pod nimi musime p elemntu nastaviť clear:both;
+			<strong>clear</strong> css atribut použivame na vypnutie floatovania
+			dosiahneme tým že zrušime floatovanie ktoré je nad ním.
+			<strong>clear</strong> može mať hodnoty left vypne flovtovanie z lava
+			potom môže mať right vypne floatovanie z prava
+			a both; vypne flovtovanie po oboch stranach a bude pokračovať dalši odstavec v normalnom toku dokumentu
+			<strong>je potrebne vedieť že ak dáme elementu float ziska zaroveň display:block; </strong> čiže ak dame elementu napr <strong>a elementu flotovanie tak ziska disply block aj ked element a je defaultne inline element</strong>
+			<strong>dalšia vec floatovanim elementom vždy by sme mali nastaviť rozmery minimalne širku  </strong>
+			<u>toto sa netýka obrazkov lebo tie majú vždy nejakú širku</u>
 			</p>
 			<aside class="pullquote float-left">
 				<q>Ice cream bonbon cotton candy pie jujubes.</q>
@@ -40,10 +53,18 @@
 			Croissant pie jelly beans liquorice dessert gingerbread lollipop carrot cake. Toffee pie gummies cupcake. Apple pie halvah jelly-o tootsie roll cookie. Carrot cake tootsie roll wafer gummi bears. Fruitcake candy canes sweet roll jujubes carrot cake fruitcake. Gummies tootsie roll pie chocolate jujubes. Lollipop bear claw toffee. Jelly dragée dessert candy ice cream muffin. Croissant brownie caramels cookie cake chupa chups dragée. Fruitcake jujubes muffin pie biscuit biscuit halvah. Danish cupcake sesame snaps bonbon sweet. Liquorice cake candy chocolate cake. Dessert oat cake pastry.
 
 			</p>
-				<aside class="pullquote float-right">
+				<aside class="pullquote float-left">
 				<q>Ice cream bonbon cotton candy pie jujubes.</q>
 			</aside>
-			<p>
+
+			<aside class="pullquote float-left">
+				<q>Ice cream bonbon cotton candy pie jujubes.</q>
+			</aside>
+			<aside class="pullquote float-left">
+				<q>Ice cream bonbon cotton candy pie jujubes.</q>
+			</aside>
+
+			<p class="sugar-paragraph">
 			Sugar plum sweet cheesecake sweet candy canes chupa chups chupa chups lemon drops. Carrot cake biscuit lemon drops gingerbread dessert soufflé cookie candy canes chupa chups. Sesame snaps jelly cake liquorice chocolate caramels fruitcake carrot cake. Tiramisu biscuit halvah. Ice cream cookie cake. Sugar plum apple pie marzipan. Fruitcake jujubes marshmallow macaroon gummi bears jelly toffee dessert pie. Donut jelly caramels sesame snaps. Chocolate macaroon ice cream sesame snaps soufflé jelly powder. Caramels carrot cake liquorice tiramisu cookie lemon drops sugar plum. Jelly bear claw bonbon gummi bears cake. Chupa chups danish lemon drops cookie cake sugar plum cotton candy. Cupcake chupa chups chocolate bar pudding pastry sugar plum dragée. Brownie oat cake pudding danish gummi bears.
 			</p>
 

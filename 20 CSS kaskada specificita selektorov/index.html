@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS kaskáda, špecificita selektorov</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header></header>
+<main>
+	<article>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam facilis aliquid sunt dolor cupiditate quaerat, dolores sit autem, quam qui, <a href="#">reprehenderit</a>. Odit id repudiandae ratione facilis itaque officia asperiores ducimus?
+		</p>
+		<pre>
+			a{
+	color: #2455c3;
+	text-decoration: none;
+}
+/*ak napišem a bg fz 18*/
+a{
+	background: #bada55;
+	font-size: 18px;
+}
+/*a niekde neskor podtým v kode napišem*/
+a{
+	background: #000;
+
+	/*čo bude vysledok vysedok bude background #000; a font-size 18px*/
+}
+<strong> vysedok bude background cierny lebo to je posledna zmna pre a element v css a font-size 18px farba textu modra</strong>
+		</pre>
+		<hr>
+		<h2>dalši priklad</h2>
+		<p class="post-meta" id="boss">
+			napisal <a href="#" class="author">Admin Administratívny</a>
+			<time datetime="2014-10-20">Október 20. 2014</time>
+		</p>
+		<pre>
+			#boss{
+			background:#bada55;
+		}
+			.post-meta{
+	background: orange;
+}
+p{
+	background: #white;
+}
+človek by čakal že keď sme všetkym p nastavili bielu že aj p element v post-meta bude mať pozadie biele pretože toto tvrdenie prišlo neskôr a však beackground ostal oranžovy a <strong> to z toho dôvodu že class selector je silnejši ako element(type) selector  </strong> ak pridam meta elementu id boss a v css  #boss nastavim farbu #bada55;
+aj keď je id zapisane v css ako prve vysedok bude tato farba #bada55; pretože id je viac ako class
+kedže sme do css pridali pri post-meta background:orange !important; tak pozadie bude oranžove lebo important ma hodnotu 10 000
+		</pre>
+		<h2>ak by sme si to prehodili do desiatkovej sustav mohli by sme povdať:</h2>
+		<pre>
+			ak id važi 100
+			tak class važi 10
+			potom element(type) važi 1
+			tym padom ked ma elment id aj class tak keď v css id nastavíme farbu červenu a v css classu nastavime farbu fialovu vysledok bude červena lebo id važi viac ako class.
+		</pre>
+		<h2>vaha takého to zapisu  </h2>
+		<pre>
+			<strong>p#boss.post-meta{</strong>
+
+		vysledok tohoto zapisu by bol 111
+			pretože 1 id
+			 		1 class
+			 		1 element
+			}
+			 		=111
+	rovnako ako keby dam tento zapis
+	body pred p
+	<strong>body p#boss.post-meta{</strong>
+	dal som body pred p tento zapis vyberie všetky elementy ktoré su p maju id boss a maju class
+	post-meta spadajú pod body element  v tomto pripade by to bolo 112 pretože
+	máme 1 id
+	1class
+	a 2 element(type) selectory
+
+		</pre>
+		<h1>skutočnosti by ten zapis mal vyzerať takto</h1>
+		<pre>
+			1 idčko ,0 classov ,0 element(type selectrov)
+
+			versus
+			0 idciek , 11 classov ,0 element (type selectrov)
+			jednoduch to čo je viac vľavo vždy vyhrá
+
+		</pre>
+		<h2 id="boss"  style="background: lightblue;" >
+
+		toto nepoužívať ale ukážeme si to</h2>
+		<pre> ak do html pridám style atribut < h2 id="boss" style="background:blue;"> < /h2 >
+			tak nadpis bude modry aj keď naš element ma aj id boss to z toho dôvodu
+			že style selector ma hodnotu kvázi 1000 čiže prebije aj idčka
+		</pre>
+		<h2>keby v css pridáme nejakej hodnote napriklad bacground:#f3f3f3 important;</h2>
+		<pre>
+			.post-meta{
+	background: orange !important;
+}
+tento zápis ma hodnotu 10 000 takže element s classom post-meta bude znovu oranžovy
+		</pre>
+		<h2>rozdieli zapisu v css</h2>
+		<pre>
+
+		<strong>p.post-meta</strong> je iné ako nižšie uvedeni
+		p.post-meta bez medzeri sú to všetky p elementy ktore majú post-meta
+
+		<strong>p (medzera).post-meta{}</strong>
+		 toto je tak zavaný descendent selektor
+		kde berieme iba post meta elementy ktore spadajú pod p
+		</pre>
+	<h2>dalši zapis</h2>
+	<pre>
+	<strong>
+		.post-footer >h3
+	</strong>
+	on zachyti h3 elementy ktore su priamy potomok .post-footer v zmysle nič nemôže byť
+	medzi nimi čiže h3 element nemôže byť obalení
+	v dalšom div elemente to by nebolo zachytene lebo nie je priamy potomok
+	<strong style="background:#888; color:#fff;">
+	tak isto funguje aj psudo selektory post-content p:first-child{} vyberie iba ak su zaroveň prvym potomkom post-content
+	</strong>
+</pre>
+<pre>užitočný odkaz <a href="https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048">The 30 CSS Selectors You Must Remember</a></pre>
+	</article>
+</main>
+<footer></footer>
+</body>
+</html>

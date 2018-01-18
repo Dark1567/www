@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Pozícia elementov pomocou CSS position: relative a position: absolute</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul class="menu">
+				<li><a href="#">Link 01</a></li>
+				<li><a href="#">Link 02</a></li>
+				<li><a href="#">Link 03</a></li>
+				<li><a href="#">Link 04</a></li>
+				<li><a href="#">Link 05</a></li>
+			</ul>
+		</nav>
+	</header>
+	<h1>Pozícia elementov pomocou CSS position: relative a position: absolute</h1>
+<h1>1) position relative aside a section</h1>
+<div id="wrapper" class="clearfix">
+	<header><<code>&lt;Header&gt;</code></header>
+
+	<div class="main clearfix">
+		<section><code>&lt;section&gt;</code></section>
+		<aside><code>&lt;aside&gt;</code></aside>
+	</div>
+
+	<footer><code>&lt;footer&gt;</code></footer>
+</div>
+<pre>
+	position dovoluje manipulovať s elementom cez tzv. offset hodnoty
+	position:static;/relative;/absolute; /*za normalných okolnosti ma každy element static defaultne dalšie moznosti su vyššie vypísane*/
+		top 10px ; /*offset z hora*/
+		left:;/offset zlava/
+		right:;/*offset z prava*/
+		bottom:;/*offset zo spodu*/
+		<h3>position:relative;</h3>
+		<p>position relative nevytrhne element z toku dokumentu, <br> ale dáva mu možnosť posunuť sa na ine miesto </p>
+		mohli by sme si mysliet že ak vytlačime section a aside preč tak header spadne dole
+		nepadá dole pretože elementy <strong>section a aside</strong> nie su vytrhnute z toku dokumentu tym pádom oni vlastne su stále na svojom mieste čo sa týka dokumentu  čo sa tyka samotného prehliadača len visualne sa posunuli
+		keby nap aside element posunieme dole na nejaky text tak prekryje ten text a vobec ho to nezaujma position:relative proste elementy dáva iba visualne niekde inde čiže ich nevytrháva z toku dokumentu
+
+</pre>
+<hr>
+<h1>position absolute; funguje trochu inak</h1>
+<div id="obal" class="clearfix">
+	<header><<code>&lt;Header2&gt;</code></header>
+
+	<div class="main clearfix">
+		<section><code>&lt;section2&gt;</code></section>
+		<aside><code>&lt;aside2&gt;</code></aside>
+	</div>
+
+	<footer><code>&lt;footer2&gt;</code></footer>
+</div>
+<pre>
+	elementy  pozicované pomocou position:absolute;
+	su <strong>vytrhavane z toku dokumentu </strong>
+	ked #obal section nastavim position:absolute;
+	<strong>left:</strong> nastavim na hodnotu 0; a <strong>top:</strong> nastavim tiež 0;
+	element zmizol a však ak vyscrollujem hore nachadza sa v lavo hore uplne
+	ak to iste spravime s elementom aside len dame right:0; <b>tak si všimnime že header padol na footer</b>
+	pretože elementy aside2 a section2 su mimo zo svojích miest sú vytrhnute z toku dokumentu
+</pre>
+<h1>Display:none; vs visibility:hidden;</h1>
+<p><em>Display:none;</em>vytrhne element z toku dokumentu</p>
+<p><em>visibility:hidden; nechá element v tam kde je iba spôsoby že je neviditelný </em></p>
+<hr>
+<h1>ak rodičovsky element ma position relative; a dieta rodičovského elementu bude mať position absolute;</h1>
+<pre style="background:coral; font-size: 24px;">ak rodičovskému(wrapper) elementu nastavíme <br>position:relativ a a dalšiemu elementu section <br> nastavim position absolut tak ho budem absolutne <br>posuvať ale po elemente wrapper čiže ak dam  <br>aside position absolute; top:0; tak on sa da na <br>vrch rodiča(wrapper)elementu nie celej stranky pretože wrapper ma position relative;</pre>
+<pre style=" font-size: 19px;">
+	<h2>position fixed a absolute(absolute len okrajovo)</h2>
+	<strong>position:fixed;</strong> sme použili na menu a robi to to že ked budeme
+	scrollovať nižšie po stranke tak to menu sa bude posuvať spoločne s nami
+	<b>pri position fixed aj absolut musime nastaviť width:100%; aby bol veľkosti celeho rodiča</b>
+	keby nenastavíme elementu width tak by bol iba taky široky aky je veľký jeho obsah
+</pre>
+</body>
+</html>

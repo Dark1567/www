@@ -1,0 +1,96 @@
+/*clearfix*/
+.clearfix:before,
+.clearfix:after{
+	content: " ";
+	display: table;
+}
+.clearfix:after{
+	clear: both;
+}
+.clearfix{
+	*zoom: 1;
+}
+#wrapper,
+#obal{
+	width: 700px; /*zmenšli sme širku wrapper elementu*/
+	margin: 0px auto; /*vycentrovali sme obsah vo wrapperi na stred*/
+}
+
+code{
+	color: #fff;
+	background: #9f3fa3;
+	display: block;/*aby bol na celú šírku rodiča*/
+	padding: 25px;
+	font-size: 24px;
+	line-height: 30px;
+	font-family: monospace;
+	border-radius: 6px;
+	text-align: center;
+}
+#wrapper header,
+#obal header,
+#wrapper section,
+#obal section,
+#wrapper aside,
+#obal aside,
+#obal footer,
+#wrapper footer{
+	/*vštkym elementom sapdajucich pod wrapper nastavime tieto hodnoty*/
+	margin:0px 0px 25px 0px ;/*zo spodu 25px*/
+}
+#wrapper section,
+#obal section{
+	float: left;
+	width: 425px; /*keď floatujeme element musime mu nastaviť šírku*/
+}
+/*to iste len float right*/
+#wrapper aside,
+#obal aside{
+	float: right;
+	width: 250px;
+}
+#wrapper footer,
+#obal footer{ /*footer je nasledovny element po section a aside a tomu zrušime flovtovanie */
+	clear: both;
+}
+
+/*position:relative na elementy section a aside*/
+#wrapper section{
+	position: relative;
+	left: -500px; /*odsunieme ho o -500px do lava*/
+}
+/*UROBIME TO iste len  aside odsuneme do prava */
+#wrapper aside{
+	position: relative;
+	right: -500px;
+}
+#obal section{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#obal aside{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+/*vysvetlenie position:fixed na menu*/
+.menu{
+	position: fixed; /*keď nastavujeme position fixed na element musíme elementu nastaviť aj širku !! */
+	background: #f00;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	list-style: none;
+
+}
+.menu li,
+.menu a{
+	display: inline-block;
+	text-decoration: none;
+
+}
+.menu a{
+	padding: 20px;
+}

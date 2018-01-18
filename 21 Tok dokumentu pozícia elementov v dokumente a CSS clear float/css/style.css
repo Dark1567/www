@@ -1,4 +1,7 @@
-
+/**/
+aside,p{
+	outline: 3px solid red;
+}
 body{
 	color: #222;
 	font-size: 18px;
@@ -268,4 +271,9 @@ float: right;
 	color: #000;/*farba textu pri oznacený bude čierna*/
 	text-shadow: none;/*vypneme odtiene textu pri označeni textu mysou*/
 
+}
+/*tymto docielime aby p element s class sugar-paragraph neobtekal okolo flovtovaný aside elemntov ale aby sa zobrazil pod ními*/
+.sugar-paragraph{
+	clear: both;
+	background: #bada55;
 }
