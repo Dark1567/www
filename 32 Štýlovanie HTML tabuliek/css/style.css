@@ -1,0 +1,42 @@
+/*importovanie google fontu do stranky v css takto:*/
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+
+body {
+  color: #444;
+  font-family: 'Montserrat'; /*kedže mame na inportovaný font z googla musíme ho do font-famili napisať do uvodzoviek*/
+  background: #eee; /*pozadie celej stranky*/
+  padding: 0 20px 20px 20px; /*margin z vrchu 0px po stranach 20px*/
+}
+
+h1 {
+  margin-bottom: 20px; /*margin zo spodu pre h1 element 20px*/
+}
+
+table {
+  color: #fff; /*farba textu v tabulke*/
+  background: #34495E;/*farba pozadia tabulky*/
+  border-collapse: collapse; /*border-colapss ma defaultne hodnotu separate to znamená že všetky dva bordery ktoré sa stretavajú budu oddelené od seba tym pádom sa vytvoria dvojité keď nastavíme border-collapse na hodnotu collapse tak boder bude zlúčený do jednoho a nebude dvojitý */
+  border-radius: 8px;
+}
+
+th, td {
+  /*elementom th a td pridam padding a border od spodu aby to vyzeralo tabulkovejšie*/
+  padding: 16px 18px;
+  border-bottom: 1px solid #46627f;
+  /*každý jeden th a td ma svoj boder od spodu*/
+}
+
+th, tfoot td {
+  color: #dd5;
+  text-align: left;
+  font-weight: bold;
+}
+
+tfoot td {
+  text-align: right; /*zarovná nam td v päte na pravú stranu*/
+}
+
+tr:last-child td { /*tento zapis znamena že v poslednom riadku*/
+  border: none; /*zruši border pre td ktoré spadajú do posledného potomka tabulky typu tr*/
+}
+

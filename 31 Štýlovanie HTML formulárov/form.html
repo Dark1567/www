@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Štýlovanie HTML formulárov</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<section class="section-1">
+			<h1 class="container">Formulár</h1>
+			<!-- v tejto sekcií môžeme použiť container iba na h1 element a nemusime h1 element
+			obalovať do divu s classom container pretože v tejto sekcií bude iba h1 element
+			-->
+		</section>
+
+	<section class="section-2">
+		<div class="container">
+			<form action="cesta kám sa udaje odošlu funguje rovnako ako src alebo href" method="get"><!-- method je buď get alebo post-->
+				<input type="text" name="meno" placeholder="Meno"><!-- name je nejaký key words ktory slúži pre programátrov na spracovanie v php ... value nám predvyplni pole atribut placeholder tam dame napriklad meno v inpute bude svietiť meno ale ked na input klineme môžme ho prepisať -->
+				<input type="email" name="email" placeholder="email@email.com"> <!-- dalši type input je na e-mail a je to type="email" -->
+				<input type="password" name="heslo"> <!-- dalši type input je na heslo a je to type="password" urbi hviezdičkovy input pole  -->
+
+				 <input type="date" name="datum" placeholder="date" required> <!-- atribut required nam kontoroluje či sme daní input vyplnili ked ho nevyplnime a ma require tak nas na to upozorni-->
+
+				 <select name="serial" > <!-- toto name je doloežite aby programator vedel aku hodnotu zo zoznamu človek vybral pre name serial napr Breaking bad ma hodnotu 1-->
+				 	<option value="1">Breaking Bad</option> <!--to čo sa nachadza medi option tagmy je nazov pre človeka ktory vidí na stránke ale to čo je v atribute value tak ta hodnota sa odošle tu hodnotu bude programátor nejakým spôsobom spracovávať ked nejakemu option dame atribut selected nam ho predoznači vyberie  -->
+				 	<option value="2">Black Mirror</option>
+				 	<option value="3" selected>Rick &amp; Morty</option>
+				 </select>
+				 <textarea name="sprava"  rows="6"></textarea><!--toto je element pre formular pre vyše textu name dame sprava rows je na koľko riadkou bude aká veľka -->
+
+
+				<label for="pamataj">
+					<input type="checkbox" name="remember" id="pamataj">
+					zapamätaj si ma
+				</label> <!-- form musi obsahovať taky isty nazov aky ma naš input id aby to priradilo ten label k tomu inputu druhá možnosť je vložiť input do label a nemusime použiť ani for ani id lable bude obalovaci element pre naš checkbox a funguje aj klikanim na text-->
+
+
+				 <!--<input type="submit" value="mi to pošli však"><!-- submit na spravi tlačitko na odoslanie value aky text bude mat tlačitko toto tlačitko sa však neda štylovat v css druha možnosť je element button-->
+
+
+				 <label><input type="radio" name="day" value="Friday" checked >Friday</label>
+				 <label><input type="radio" name="day" value="Saturday">Saturday</label>
+				<label><input type="radio" name="day" value="Sunday">Sunday</label>
+				<!-- všetky tri radio inputy zdielajú jeden name atribut s nazvom day
+					to z toho dôvodu že pointa radio buttonov je že vždy môže byť selecnuty iba jeden
+				 keby mali rozlišne name atribut tak by sa ich dalo označiť viac čo nechceme
+				 tie nazvy friday saturday su tu len pre nas čo sa relane odosiela je value hodnota
+				 atribut checked nam predoznači radio button-->
+
+				<input type="file"> <!-- môžeme si pridať nejaky subor na stranku-->
+				 <button>Mi to pošli však</button> <!-- tento button môžeme v css naštylovať-->
+			</form>
+		</div>
+	</section>
+
+	<section class="section-3">
+		<div class="container">
+		<h2>čítaj form.html a style.css komentáre!!!</h2>
+		<a href="https://www.youtube.com/watch?v=-4kGCdsqzpo&t=1049s">dalšie dlhšie video na štýlovanie formuláru</a>
+		</div>
+	</section>
+
+</body>
+</html>

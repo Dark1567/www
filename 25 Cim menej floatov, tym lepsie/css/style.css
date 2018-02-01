@@ -1,0 +1,49 @@
+html,
+body{
+	margin: 0;
+}
+.clearfix:before,
+.clearfix:after{
+	content: " ";
+	display: table;
+}
+.clearfix:after{
+	clear: both;
+}
+
+body{
+	color: #fff;
+	background: #f7f6d3;
+	padding: 0 20px;
+	font-weight: bold;
+}
+.clearfix{
+	margin: 30px auto;
+	max-width: 800px;
+}
+pre{
+	color: #000;
+}
+p{
+	padding: 0 33px;
+}
+article, .box{
+	border-radius: 8px;
+}
+article{
+	background: #3b9ae1;
+	margin-right: 20px;
+	width: 530px;
+	height: 300px;
+	float: left;
+}
+.box{
+	background: #e64134;
+	margin-bottom: 20px;
+	height: 200px;
+}
+.sidebar{
+	float: right;
+	width: 250px;
+
+}

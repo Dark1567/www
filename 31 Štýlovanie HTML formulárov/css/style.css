@@ -1,0 +1,62 @@
+body{
+	color: #333;
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: normal;
+	font-family: sans-serif;
+}
+.container{
+	width: 760px;
+	margin: 0 auto;
+} /*class container použijeme do každej section aby v každej sekcii bolo všetok obsah na stred a tak nam ostane pozadie po celej stránke*/
+section{
+	padding: 50px 0px;
+	text-align: center;
+}
+.section-1{
+	background: #f25f5c;
+	color: #fdeaea;
+
+}
+.section-2{
+	background: #f2ecbd;
+
+}
+
+.section-3{
+	background: #8abeb2;
+
+}
+/*stylovanie elementov vo formulari*/
+input:not([type="checkbox"]):not([type="radio"]):not([type="file"]), /*teraz všetky naše inputy okrém checkboxou, radio, buttonov a file budu naštilované*/
+button,
+textarea{
+	background: #fff;
+	border:none;/*toto je absolútny základ pri štylovani input elementov vynulovať background a zrušiť border*/
+	width: 300px;
+	padding: 15px 20px; /*aby text nebol natlačený na rohy týchto elementov*/
+	margin: 15px;/*aby boli torška odsadene odseba*/
+	border-radius: 4px;/*jemne zaoblíme*/
+	box-shadow:  0 0 3px rgba(0,0,0,0.12);
+}
+textarea{
+	width: 675px;
+}
+button{
+	background: #f25f5c;
+	color: #fdeaea;
+
+}
+label{
+	display: block;
+	cursor: pointer;/* aby bolo jasne že sa na to da kliknuť*/
+	margin-left: 15px;
+}
+label[for="pamataj"]{ /*tzn všetký label ktorých atribut for ma hodnotu pamataj */
+	margin-bottom: 25px;/*iba ten elemnt ktory ma for pmataj bude  mať 25px od spodu*/
+
+}
+input:focus,
+textarea{
+	outline:2px solid #8abeb2;
+}/*ak do nejakeho elementu input alebo textarea prejdeme kliknutim  alebo tabulátorom tak nam oramovanie zmeni farbu*/

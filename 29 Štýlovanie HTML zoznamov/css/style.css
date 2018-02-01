@@ -1,0 +1,44 @@
+body{
+	width: 960px;
+	font-size:100%;
+	font-family: sans-serif;
+	background: #f7f7f7;
+	color: #000;
+}
+.group:before,
+.group:after{
+	display: table;
+	content: " ";
+}
+.group:after{
+	clear: both;
+}
+p, ol,ul,blockquote, h1,h2,h3{
+	margin:0px 130px 24px 130px;
+}
+.ordered li{
+	color: #222;
+	font-weight: normal;/*defaltne budú mat li elementy font-weight normal*/
+}
+/*a však tie li elementy ktore su priamym potomkom ordered budú mať f-w:blod*/
+.ordered > li{
+font-weight: bold;/*budú mať font-weight-bold*/
+color: orange;
+}
+/*ul*/
+.list{
+	margin-left: 25px;
+}
+.list li{
+	list-style: none; /*aby sa mi nezobrazoval dfaultny stvorec*/
+	padding-left: 0;
+	padding-bottom: 16px;
+	text-indent: -25px;
+}
+.list li:before{
+	content: "☭";
+	color: orange;
+	margin-right: 10px; /*aby nebol naš symbol tak natlačení na texte*/
+	position: relative;
+	top: 1px;
+}

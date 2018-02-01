@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Štýlovanie HTML Tabuliek</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1>Edgar Wright</h1>
+
+	<table>
+	  <thead> <!-- otváraci tag pre hlavičku tabuľky-->
+	    <tr> <!--table row = riadok tabulky-->
+	      <th>Title</th><!-- Table head = hlavička tabulky-->
+	      <th>Genre</th>
+	      <th>Year</th>
+	      <th>Gross</th>
+	    </tr>
+	  </thead> <!-- uzatvaraci tag hlavicky tabuľky-->
+	  <tbody> <!--otváraci tag tela tabuľky-->
+	    <tr> <!--riadok tabuľky-->
+	      <td>The World's End</td><!--table data =data v riadku tabulky -->
+	      <td>Sci-fi</td>
+	      <td>2013</td>
+	      <td>$26,004,851</td>
+	    </tr>
+	    <tr>
+	      <td>Scott Pilgrim vs. the World</td>
+	      <td>Sadness</td>
+	      <td>2010</td>
+	      <td>$31,524,275</td>
+	    </tr>
+	    <tr>
+	      <td>Hot Fuzz</td>
+	      <td>Buddy cop</td>
+	      <td>2007</td>
+	      <td>$23,637,265</td>
+	    </tr>
+	    <tr>
+	      <td>Shaun of the Dead</td>
+	      <td>Zombie</td>
+	      <td>2004</td>
+	      <td>$13,542,874</td>
+	    </tr>
+	  </tbody>
+	  <tfoot> <!-- otváraci tag päty zabuľky-->
+	    <tr> <!-- na riadky funguje niečo podobne a je to attribut rowspan="2" teraz rozťagzhhe cez dva riadky  -->
+	      <td colspan="4"> <!-- atribut colspan určuje cez koľko td bude to jedno td roztiahnuté alebo naťahuje bunku cez viacej stĺpcov  --> $94,709,265</td>
+	    </tr>
+	  </tfoot>
+	</table>
+</body>
+</html>

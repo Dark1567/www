@@ -1,0 +1,17 @@
+body {
+	color: #5D5D5D;
+	font-size: 17px;
+	line-height: 30px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	background: #f7f7f7;
+}
+
+.group:before,
+.group:after {
+    content: " ";
+    display: table;
+}
+.group:after {
+	clear: both;
+}

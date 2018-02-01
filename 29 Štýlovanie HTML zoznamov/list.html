@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>štylovanie zoznamov</title>
+	<script type="text/javascript" src="[JS library]"></script>
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="selectivizr.js"></script>
+  <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+<![endif]-->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1>Štylovanie zoznamov css</h1>
+
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+<h2>ak ordered listu pridam atribut start 5 vidime že začne od 5,6,7...</h2>
+<p> <strong>ak mu pridám aj attribut reversed tak sa prvý li bude 0 druhy 1...</strong></p>
+
+<ol start="5" reversed>
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li> ak z nejakeho dôvodu chceme aby sme skočili po druhom li na 999 nastavime tretiemu li atribut value="999"</li>
+   <li value="999">a pokračovali dalšie li od nej tak to tak bude lebo value</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+
+</ol>
+<h3>Zoznamy môžu obsahovať dalšie blocklevel elementy</h3>
+<p><strong>medzi ne patria</strong>:aj dalšie zoznami napr ul</p>
+<p>toto je dobre miesto kde môžme použiť v ccs zobačikovy selketor vrchnemu ol dame class ordered</p>
+<ol class="ordered">
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+   <li>
+   		<ul>
+   			<li>ha-ha</li>
+   			<li>
+   				<ol reversed>
+   					<li>raz</li>
+   					<li>dva</li>
+   					<li value="1000">tisíc</li>
+   				</ol>
+   			</li>
+   		</ul>
+   </li>
+   <li>Vestibulum auctor dapibus neque.</li>
+</ol>
+<hr>
+
+
+<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+
+<h3>Podme na ul Zoznam </h3>
+<p> dám mu class list aj jedna základná vec čo majú tie ul zoznamy sú tie označovače tie bodky ktoré označujú item	</p>
+
+<ul class="list">
+     <li>defaultne je list-style-type nastaveni na hodnotu disc my to môžme zmeniť na <strong>squer(stvorec),circle(kruh alebo prazdna bodka)</strong></li>
+   <li>pomocou before a after pseudo elementov si môžme pridať pred li hociaky obrazok / znak sleduj css</li>
+   <li>dobra stranka na taketo symboly je <a href="https://www.copypastecharacter.com/symbols">copy paste character</a></li>
+   <li>a teraz do psudo triedy .list li:after pridame content s obrazkom sleduj css a zmenime farbu na orange</li>
+   <li>ako zarovnať druhy riadok z prvym riadkom v ul takto .list li zozname ukažeme si v css použijem text-indent do minusu tak odsadi prvý riadok opačním smerom až narazíme na čislo kedy sa nam zdá že možno je to zarovnané ale našemu .list musíme nastaviť margin left kladnej hodnoty idelane takej velkkosťi ako ma text-indent li ciže -25px bude text-indent a 25px bude margin-left </li>
+
+</ul>
+
+<h3>pozor pseudo elementy nepodporuje napriklad IE 7 tak na to musime použiť taky "hack"</h3>
+<p>ked si hdoíme takyto script na stranku vola sa selectivizr <a href="http://selectivizr.com/">selectivizr</a> ktorý keby si stiahneme a hodime do našej stranky(postup je napisani na stranke pozri hlavičku) tak zarzu sa IE 7 naučí mnohé čo predtým nevedel </p>
+</body>
+</html>

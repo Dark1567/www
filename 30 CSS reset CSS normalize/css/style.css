@@ -1,0 +1,4 @@
+body{
+	margin: 0; /* Z Resetuje marginy ktore prehliadače dávajú automatický
+	miesto thoto sa používa tzv css reset*/
+}

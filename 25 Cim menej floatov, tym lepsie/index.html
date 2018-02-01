@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>čím menej floatov, tým lepšie</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<h1 style="color:#000;">úkažka 1)</h1>
+	<img src="img/ukazka_01.png" alt="">
+	<pre>
+	<h1>nejake vysvetlivky na úvod</h1>
+nikto nehovorí že aside musia byť floatované ide o to že po obsahovej stranke <strong>aside</strong> obsahuje obsah ktorý je menej dôležitý
+alebo taký dopĺňajúci. To že su vedľajšie neznamená nutne že musia
+ byť na ľavo alebo na pravo
+<h3>ukažka 1</h3>
+v css sme si nastavili nejake hodnoty pre aside cervenu farbu nejaky margin padding a aside sme floatovali do prava
+
+2) pre article sme spravili to iste len z inymi hodnotami
+a float sme dali do lava
+
+3) teraz ked si pridam ďaľšie aside pod prvý aside elementy
+prvy pridani aside je v pohode
+ale druhy pridani aside sa zobrazi čo najvšie čiže nebude zarovno s tými dvoma aside elementmy ale bude pod article
+
+4) lebo element sa snaži isť tak vysoko ako mu len dovolia okolite elementy čiže ten treti aside ide do prava floatovani,
+ ale v skutočnosti ide najviššie ako sa len da
+ keby som pokračoval elementy by sa skladali vedla
+ seba až pokym sa zmestia
+</pre>
+	<hr>
+	<h1 style="color:#000;">ukažka 2 čim menef floatov tym lepšie</h1>
+	<div class="clearfix">
+		<article>
+			<p>article</p>
+		</article>
+		<aside class="sidebar">
+			<div class="box">
+				box
+			</div>
+			<div class="box">
+				box
+			</div>
+			<div class="box">
+				box
+			</div>
+		</aside>
+
+
+	</div>
+<pre>
+<h3 style="color:#000;">ukažka 2</h3>
+čim menej floatov tym lepšie
+čiže v html  vytvoríme jeden aside element ktorému dame class sidebar.
+
+2) do vnutra .sidebar vytvorime div s classom .box ktory bude mať v sebe text box
+3) v css zrušime aside elementu float right a prepišeme aside v css na .box
+4) classu .sidebar nastavíme  float:right; a width:250px;
+5) teraz na pravej strane mam
+len jeden flatovany element
+teraz elementy v nom sa budu tlačit čo najvišie čiže nehrozy že by sa dostal mimo ako v ukažke 1
+<h1>niečo k triede .clearfix</h1>
+floatované elementy musia byť
+obalené nejakým ďaľšim elementom  a tento obalovač musi mať class .clearfix ten class si môžem nazvať ako len chcem
+</pre>
+</body>
+</html>

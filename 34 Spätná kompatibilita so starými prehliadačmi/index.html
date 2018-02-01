@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Spätná kompatibilita so starými prehliadačmi</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<![endif] -->
+</head>
+<body>
+	<pre>
+		keď chceme mať kompatibilitu pre internet explorer
+		 musime do head našej stránky pridať nasledovní script
+		 volá sa html5shiv pripadne html5shim
+		 <h3>postup </h3>
+		 1) bud si ho stiahneme rozbalíme a pridáme nižšie uvedeni script s tým že src nasmerujeme
+		 tam kam sme si ten stiahnutý súbor uložili vid script ukažka
+		 2) druha možnost je použiť cdnjs.com kde si vyhladáme html5shiv
+		 skopirujeme adresu
+		 https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js
+		 a vložíme do src atributu vid hlavička head html
+		 <h3>prečo je v src iba //cdnks....</h3>
+		 pretože niektore stranky maju http:// a niektore https://
+		 a tento zapis zaručí  nech je to čokoľvek vyberie si to správne
+
+		 <h4>script</h4>
+
+	< !--[if lt IE 9]>/*zapis znamena ak prehliadač je nižšej verzie ako ie9*/
+
+	< script src="html5shiv-master/src/html5shiv.js">< /script>
+< ![endif] -- >
+		<strong>tento skript je potrebny pre stare prehliadače
+		aby začali rozumiet html5 elemntom 	ako  je section header atd....</strong>
+		<b>čiže je potreba použiť aj normalize alebo cssreset kvoli css aby prehliadč vedel</b>
+		alebo do našeho style.css vypisať všetky html5 elemnty a nastaviť im <strong>display:block;</strong>
+
+	</pre>
+</body>
+</html>
