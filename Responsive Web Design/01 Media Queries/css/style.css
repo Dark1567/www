@@ -1,0 +1,277 @@
+
+body{
+	color: #222;
+	font-size: 18px;
+	line-height: 30px;
+	font-family: Georgia, serif;
+	margin: 0;
+	width: 960px; /*body element bude mať fixnú šírku 960px*/
+	margin: 0 auto; /*vďaka fixnej širke nám margin 0 auto vycentruje všetko na stred*/
+	padding:0px 20px; /*kedže body wrappuje(obaluje) naš obsah stranky a nechcem aby ked zmenšime prehliadač bol text natlačeni na kraji dame po bokoch padding 20px*/
+}
+h1,h2,h3,h4{
+	font-family: 'Open-sans',sans-serif;
+	font-weight: 800;
+}
+a{
+	color: #2455c3;
+	text-decoration: none;
+}
+a:hover,
+a:focus{
+	text-decoration: underline;
+}
+p{
+	margin: 0px 0px 24px 0px;
+}
+.logo a{ /*vyberie a elementy ale len tie ktoré spadajú pod class logo*/
+	background: url('../img/logo.png') left top no-repeat;/*vyberame logo dve bodky značia že vychadzame von z adresara css a idem do img /logo.png chcem aby bol vlavo hore aby sa neopakoval*/
+	display: block;/* aby logo bolo na celu širku elementu*/
+	width: 960px;/*aký široký ma byť obrázok*/
+	height: 469px;/*akú výšku ma obrázok*/
+	text-indent: -9999px;/* text z a elemntu vyleti von zo stránky*/
+}
+.logo{
+	margin: 0;/*samotnému h1 elementu odstranime margin*/
+	position: relative;
+	top: -23px;/*posunie nam o 14 hore logo*/
+	z-index: 2;/*zaručíme to že logo bude nad z-indexom 1 ciže coverom*/
+}
+.post-header{
+	text-align: center; /*v všetko v article header s classom post-header bude text zarovnaný na stred*/
+}
+.post-title{
+	font-size: 48px;
+	line-height: 56px;
+	font-family:'Open-sans', sans-serif ;/*externé pridane fonty sa pišu do apostrofou*/
+	font-weight: 800;
+	margin: 0px 0px 5px;
+	letter-spacing: -2px;
+
+}
+.cover{
+	background: #fff url('../img/bg.jpg') 50% 0px no-repeat;/*pozadie sme dali bielej farby pridali sme obrazok dali sme ho dalej o 50% z lavej strany čiže na stred a o 0px z vrchu čiže bude začínať uúlne od vrchu stranky*/
+	height: 469px;
+	margin-top:-470px ;/*minusova hodnota spravi to že neposune element o 470px nižšie zvrch ale posunie ho  vyššie o 470px */
+	position: relative;/*keďže cheme posunuť odznak relatívne ku cover elementu musi mať cover position:relative; a badge position:absolute;*/
+	z-index: 1;/*zaručime to že cover bude pod logom*/
+
+}
+/*v html dokumente v dive cover  pridam link s classom badge*/
+/*vytvoríme odznak čislo 404*/
+.badge{
+	background: #bb3825; /*fallback pre staré prehliadače*/
+	background: rgba(187, 56, 37, 0.9);
+	display: block; /*pretože sa tento element je link a cheme mu nastaviť width a height*/
+	width: 120px;
+	height: 120px;
+	border-radius:50%;/*50% spravi kruh  širka60 +60=120 vyška 60+60=120*/
+	color: #fff;
+	font-size: 54px;
+	line-height: 40px;
+	font-weight: 800;
+	font-family:'Open-sans',sans-serif ;
+	letter-spacing: -2px;
+	text-align: center;
+	text-decoration: none;
+	position: absolute;
+	bottom:20px;
+	right: -20px;
+
+}
+.badge:hover,
+.badge:focus{
+	text-decoration: none;
+}
+.badge small{
+	font-size: 16px;
+	line-height: 16px;
+	font-family: Georgia, serif;
+	font-style: italic;
+	font-weight: normal;
+	letter-spacing:0; /*kvoli tomu davame defautne hodnoty pre somll lebo keby ich nedáme tak element small zdedí hodnoty od elementu badge*/
+	display: block;/*chcem aby small element sa zobrazil na samostatnom riadku*/
+	padding-top: 20px;
+}
+.meta-data{
+	font-style: italic;
+
+}
+.author{
+	font-family: 'Open-sans',sans-serif;
+	font-style: normal;
+	font-weight: 800;
+	text-transform: uppercase;
+	margin: 0px 3px;
+}
+/*vytvorenie dalšieho pseudo elementu  (bodky) pmocou pseudo elementov ktoru dam vedľa alebo pred time element*/
+.meta-data time:before{
+	content: " . ";
+	font-style: normal;
+}
+.post-content h2{
+	color: #ba3925;
+	font-size: 28px;
+	line-height: 30px;
+	margin-top: 36px;
+	margin-bottom: 12px;
+}
+.post-content h3{
+	font-size: 18px;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+.post-content p,
+.post-content h2,
+.post-content h3{
+	margin-left: 130px;/*všetky p elementy budu mať okraj široky 130px*/
+	margin-right: 130px; /*to isté aj z prava*/
+}
+.post-content p:first-child{
+	font-size: 24px;
+	line-height: 26px;
+	margin-left: 0; /*prvý odstavec v post-content nebude mať tak široke okraje*/
+	margin-right: 0;
+}
+/*pridávanie flovtovaných cítátov na stránku*/
+.float-left{
+	float: left;
+}
+.float-right{
+float: right;
+}
+.pullquote{
+	color: #787878;
+	max-width: 300px; /*limitoval sme mu širku na 300px môže mať menej ak 300px ale nie vyše ako 300px to robi max-width*/
+
+}
+/*v pripade že class float-left pridame na nejaky element s classom pullqoute pridáme mu marginy*/
+.pullquote.float-left{
+	margin: 24px 34px 24px 0px
+	/*kedže element floatujeme do lava tak lavy margin vynulujeme*/
+}
+.pullquote.float-right{
+	margin: 24px 0px 24px 34px
+}
+/*stylovani elementu q v rámci pullquote*/
+.pullquote q{
+	font-size: 24px;
+	line-height: 36px;
+	font-style: italic;
+}
+/*štylovanie zoznamu linkov*/
+.pullquote ol,/*v pripade že sa v pullquote nachadza zoznam ol alebo ul*/
+.pullquote ul{
+		list-style: none;
+		padding-left: 0;
+}
+.pullquote li{
+	border-bottom: 1px dotted #aaa;
+	padding:2px 10px;
+
+}
+.pullquote li:last-child{ /*vybere posledny li element*/
+	border: none; /*posledný element li nebude mat spodny border*/
+}
+/*post-footer / blogu*/
+.post-footer{
+	width: 700px;
+	margin: 60px auto;
+}
+.post-footer h3{
+	font-size: 18px;
+}
+.post-footer > h3{ /*tento zapis vyberie iba tie h3 elementy ktoré sú priamim potomkom elementu .post-footer*/
+	text-align: center;
+}
+.foto{
+	float: left;
+}
+.foto img{
+	border-radius: 50%;
+	border: 10px solid #eee;
+	margin-top:30px ;/*odsadi obrazok od vrchu*/
+}
+.byline h3,
+.byline p{
+	font-size: 14px;
+	line-height: 24px;
+	margin-left: 160px; /*aby text nebol pod obrazkom tak dame odsadenie 160px lebo 120 je širka obrazku + 2 x 10px border lebo z každej strany 10px a dalši 20px aby nebol text nalepený na obrazku */
+}
+.byline h3 a{
+	color: #222;
+}
+
+/*pre-footer bude von z article elementu*/
+.pre-footer{
+	border-top: 1px solid #ddd; /*na vrchu pre-footer bude čiara vrchny border*/
+	border-bottom: 1px solid #ddd; /*to iste len zo spodu pre-footer bude čiara*/
+}
+.reviews{
+	list-style: none; /*zruši bodky na li*/
+	padding-left: 0;
+	overflow: hidden;
+}
+.reviews li{
+	font-size: 14px; /*veľkost pisma pre li elemnty v reviews*/
+	line-height: 24px; /*veľkosť riadka*/
+	float: left;/*elementy li budu floatovane do lava keď floatujeme treba nastaviť width*/
+	width: 220px;/*širka li*/
+	margin-left: 10px;/*širka laveho okrajú*/
+	margin-right:10px;/* okraj pravý*/
+	position: relative;
+
+}
+/*vytvorenie uvodzovky pre každy li element v .reviews*/
+.reviews li:before{
+	content: ' " ';
+	color: #bb3b25;
+	font-size: 60px;
+	font-style: italic;
+	position: absolute;
+				top:20px;
+				left: 0px;
+
+}
+.reviews blockquote{
+	font-style: italic;
+
+}
+.review-byline{
+	font-weight: bold;
+	padding-left: 30px;
+	margin-bottom: 8px;
+}
+/*vytvorenie pomlčky v css pre .review-byline pomcou pseudo triedy*/
+.review-byline:before{
+	content: '-';
+	color: #bb3b25;
+}
+/*podme si spraviť samotny global footer*/
+.global-footer{
+	color: #787878;
+	font-size: 14px;
+	text-align: right;
+	padding: 15px 10px;
+
+}
+/*ked mysov označime niečo na stranke tak ten vybrani element ma nejaku farbu (modru) a tu možme zmeniť pomcou netradičných selectorov v css*/
+::selection{
+	background: #ddd;/*označnie bude sede*/
+	color: #000;/*farba textu pri oznacený bude čierna*/
+	text-shadow: none;/*vypneme odtiene textu pri označeni textu mysou*/
+
+}
+/*aby to fungovalo aj na mozile*/
+::-moz-selection{
+	background: #ddd;/*označnie bude sede*/
+	color: #000;/*farba textu pri oznacený bude čierna*/
+	text-shadow: none;/*vypneme odtiene textu pri označeni textu mysou*/
+
+}
+/*adaptive / Media Queries*/
+@media screen and (max-width: 1000px){ /*ak ma obrazovka maximalne širku čiže  100px a menej aplikuje sa toto */
+body{
+	background: #bada55; /*jej bg bude zelený*/
+ }
+} /*medzi tieto zložené zátvorky môžem písať css selektory*/
