@@ -1,0 +1,24 @@
+body{
+	color: #dd5;
+	background: #34495e;
+	font-size: 100%;/*100% jw zvyčajne 16px zaleži ako ma uživatel nastaveni prehliadač ale zvyčajne je to 16px čiže zraučíme že font stranky bude taký veľký ako je prednastvení v prehliadači*/
+	font-family: sans-serif;
+	font-weight: bold;
+	padding: 0 20px;
+	text-shadow: 1px 1px 0 #333;
+	width: 30em;/*ked nastavíme rodičovskému elemntu širku 30em tak vieme že do riadku zemsti 30 krát pismeno M*/
+}
+p{
+	font-size: 1em;
+}
+p span{
+	color: #e64134;
+	font-size: 0.8em;
+}
+/* jednotka em sa dá využit pri mediaqueris ak je stranka menšia môžme zmenit font-size rodičovi a to sa odzrkadli na celej stránke*/
+
+@media( max-width:700px ){/*ak je stranka 700px a menšia tak font size bude 75% ak je vačšia font-size bude 100%*/
+	body{
+	font-size: 75%;
+	}
+}

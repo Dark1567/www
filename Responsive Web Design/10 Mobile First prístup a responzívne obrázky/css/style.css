@@ -1,0 +1,84 @@
+/*clearfix*/
+.group:before,
+.group:after{
+	display: table;
+	content: " ";
+}
+.group:after{
+	clear: both;
+}
+html{
+	box-sizing: border-box;
+}
+*,*:before,*:after{
+	box-sizing: inherit;
+}
+img{
+	max-width: 100%;/*obrazok sa môže zmenšiť ale maximálne bude 100% široky*/
+	height: auto;
+}
+body{
+	color: #2f2f2f;
+	font-family: sans-serif;
+	font-size: 0.9em;
+	line-height: 1.35em;
+	padding: 1.4em;
+}
+
+p{
+	margin: 0;
+}
+/*layout*/
+
+
+
+/*MEDIAQUERIES*/
+@media(max-width:599px ){
+	article{
+	text-align: center;
+	padding: 2em 0;/*pridali sme nejaky padding z vrchu a zo spodu*/
+	border-bottom: 1px solid #ccc; /*každemu articlu dame border od spodu jeden pixel*/
+}
+article:last-child{
+	border: none;
+}/*poslednému article zrušíme border*/
+}
+@media(min-width: 600px){
+	article{
+		padding: 1em 0;
+	}
+
+}
+@media(min-width: 600px) and (max-width: 1024px){
+	.image,
+	.text{
+		float: left;
+	}
+	.image{
+		width: 40%;
+	}
+	.text{
+		width: 60%;
+		padding-left: 2em;
+	}
+
+}
+@media(min-width: 800px)and (max-width: 1023px){
+	.image{
+		width: 300px; /*ked nastavime pre obrazok fixnú širku zruší nam z medzeru na pravej strane obrazka*/
+	}
+}
+@media(min-width: 1024px){
+	.container{
+		width: 960px;
+		margin: 0 auto;
+	}
+	article{/*kedže chceme dostať tri article elementy vedla sbeba tak širka jedneho bude 300px 300 krat 3 =900 čiže keď container ma 960 ešte nam 60px ostalo na marginy z lava a sprava čiže 10px zlava aj z prava pre každy article*/
+		width: 300px;
+		float: left;
+		margin: 0 10px;
+	}
+	.image{
+		text-align: center;
+	}
+}

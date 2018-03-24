@@ -1,0 +1,32 @@
+body {
+  color: #dd5;
+  background: #34495E;
+  font-size: 100%;
+  font-family: 'Gill Sans';
+  font-weight: bold;
+  padding: 0 20px;
+  text-shadow: 1px 1px 0 #333;
+}
+
+p {
+  font-size: 1em; /* 16px */
+  padding: 0.75em; /* 12/16 */
+  border-radius: 0.5625em; /* 9/16 */
+  background: #222;
+}
+
+p span {
+  color: #e64134;
+  font-size: 0.75em; /*tento font size sa neodvyja od fon-tsize body elementu ale od font-szie p element*/
+}
+li{
+	font-size: 1.5em;
+}
+@media ( max-width: 50% ) {
+
+  body {
+    background: red;
+  }
+
+
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Responsive</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<h1>revolučný vzorec na prepočet px na %-tá</h1>
+	<div class="group">
+		<article>
+			<h3>vzorec</h3>
+			<p>
+				target/content =result <br>
+				<b>target</b>= v našom pripade je širka elementu article 530px <br>
+				<b>context</b>= je zvyčajé rodič elementu article v tomto prípade. <br>
+				a viem že v našom prípade je rodič elementu article element <b>group</b> <br>
+				a jeho šírka je width je 800px čiže <br>
+				vypočet bude takto : target = 530px deleno context =800px a vysledkom získame <br>
+				pomer v percentach akej širky by element mal byť  530 /800 = <b>0.6625</b> na to <br>
+				aby sme to mali naozaj v percentách to musime vynasobiť krat 100 <br>
+				čiže <b>530 / 800 * 100 =66.25%</b> <br>
+
+				<strong>je dobrým zvykom si do css komentárov zapisať ako sme sa z pixelov k <br>percentám dopracovali</strong>
+			</p>
+		</article>
+
+		<aside>
+			<p>keď ideme upravovať padingy pre p elementy v aside tak context vo vzorcí bude <br>padding <b>33px</b> deleno širka rodiča p elementu rodič je  aside jeho šírka <b>250px <br></b> x 100 =<b>13.2%</b> </p>
+		</aside>
+	</div>
+
+	<div class="group">
+		<article>
+			<p>dizajneri casto fungujú tak že navrhnu zaklade farby pisma elementy vo photosope <br>
+			ale potom na miesto toho aby na dizajnovali  na pixel presne vyzerajúcu stránku <br>
+		spravia taký veľmi priblížný náster často vo forme tzv moqupov <br>
+		nastroj napriklad <a href="https://moqups.com/">https://moqups.com/</a> <br>
+	moqups vyzerajú take rukou načrtnuté stránky <br>
+ďalšia dobra stranka <a href="https://balsamiq.com/">https://balsamiq.com/</a> ALEBO <a href="https://mediaqueri.es/">https://mediaqueri.es/</a> kde môžeme vidieť ak rôzni ludia pristupujú k rôzním návrhom</p>
+		</article>
+
+		<aside>
+			<p>aside</p>
+		</aside>
+	</div>
+
+	<div class="group">
+		<article>
+			<p>article</p>
+		</article>
+
+		<aside>
+			<p>aside</p>
+		</aside>
+	</div>
+	<footer>
+			<pre>
+
+			<h1>tri zakladne pravidlá responzívneho layoutu responsive layout sa skalda z:</h1>
+			1) FLEXIBILNÉHO LAYOUTU /* toto čo sme teraz my vytvorili je flexibilny layout pretože je pekne v percentách a upravuje sa tak ako potrebujeme*/
+
+			2) FLEXIBILNÝCH OBRÁZKOV
+			3) MEDIA QUERIES
+			</pre>
+	</footer>
+</body>
+</html>

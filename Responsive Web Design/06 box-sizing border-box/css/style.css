@@ -1,0 +1,59 @@
+/*GENERAL AND CLEARFIX*/
+html{
+	box-sizing: border-box;/* ked nastavime box-sizing border-box
+	tak do samotnej širky elementu sa bude počítať všetko po boarder to znamená
+	že to bude width + padding + border  toto sa započítvá do širky
+	ALE margin sa NEZAPOČÍTAVÁ*/
+}
+*, *:before,*:after{/*bude mať */
+box-sizing: inherit;/*ineherit znamna že potomkovia zdedia akukolvek hodnotu ma ich rodič
+v tomto prípade rodič je html element*/
+}
+.group:before,
+.group:after{
+	content: " ";
+	display: table;
+}
+.group:after{
+	clear: both;
+}
+
+body{
+	padding: 25px;/*nastavíme 25px padding po kazdej strane*/
+	background: #f7f6d3;/*pozadie stánky*/
+}
+.wrapper{
+	/*box-sizing:content-box;/ toto je defaultna hodnota pre box-sizin ktory sme použili pri calc funkci/*/
+	max-width:1024px ; /*kedže chceme všetko vo wrapperi na stret tak mu musime nastaviť širku a max-width zaruči to že bude mat maximalne px ale može mať aj menej čiže sa bude uprvovať automaticky k oknu*/
+	margin: 0 auto;/*zarovna na stred všetko vo wrapperi*/
+
+
+	/*box-sizing: content-box;/*v tomto pripade keby tomuto elementu nastavime box-sizing content-box tak sa do širky elementu započitava len samotna širka čiže v tomto pripade by to znamnalo že každy section element by zdedil hodnotu content-box lebo wrapper je obalovac section*/
+
+}
+section{
+	color: #fff;
+	font-size: 16px;
+	line-height: 27px;
+	font-family: Rockwell, "Courier Bold",courier, serif;
+	background: #9f3fa3;
+	border-radius:9px;
+	margin-bottom: 25px;/*aby boli odsadené od seba*/
+	min-height: 300px;/*bude minimalne vysoky 300px*/
+
+	/*kedže chcem 5elemntov vedla seba širka stranky je 100% deleno 5 lebo chcem 5 vedla seba širka elementu bude 20% +-*/
+	float: left;/* aby sa dali vedla seba*/
+	width: 19.2%;
+	/*width: calc(20% - 40px);*/
+	padding: 20px;/*aby text nebol tak narazený na kraj sction a vieme že
+	section su blocklevel elementy a do block level elemntov sa pripočítva aj padding a preto sa to nezmestilo do jedneho riadku*/
+	margin-right: 1%;/*aby neboli sectiony natlacene tak nasebe*/
+}
+
+
+/*teraz každemu section zmenime bacground pomocou section:nth-child(1,2,3...)*/
+section:nth-child(1){background: #3b9ae1;}
+section:nth-child(2){background: #f6be00;}
+section:nth-child(3){background: #e64134;}
+section:nth-child(4){background: #eb70b1;}
+section:nth-child(5){background: #0f1a5f; margin-right: 0;}

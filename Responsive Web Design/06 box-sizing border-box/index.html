@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>box-sizing border-box</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<h1>box-sizing border box... čitaj style.css komentare</h1>
+	<div class="wrapper group">
+		<section>
+			<h4>clac()funkcia</h4>
+			druhá možnosť ako sa zbaviť tých paddingov by bolo odpočítať ich od šírky elementu
+			zmenime napru wrapper na box-sizing:content-box;
+			v section v css vo width použijeme funkciu calc(20%-40px);
+			problem je v tom že tu funkciu calc nepodprujú všetky prehliadače
+			a navyše keby teraz meni sectionu padding na väčši alebo menši tak ho musim
+			vždy zmeniť aj v tej calc()funkcíi
+
+		</section>
+		<section>
+			sectionom sme pridali margin-right:1%; a teraz sa nezmestia vedla seba a
+			to z toho dôvodu že margin sa nezaratva do širky elementu čiže musíme
+			zmenšiť širku elemtu section 1% deleno 4 lebo styri elementy maju margin-right
+			a to sa rovná =0.2 je 1/5 1percenta čie width bude mať 19.2% a teraz sa vetko zmesti vedľa seba
+
+		</section>
+		<section>
+			Donate: If you use this site regularly and would like to help keep the site on the Internet, please consider.
+		</section>
+		<section>
+			Donate: If you use this site regularly and would like to help keep the site on the Internet, please consider.
+		</section>
+		<section>
+			Donate: If you use this site regularly and would like to help keep the site on the Internet, please consider.
+		</section>
+	</div>
+</body>
+</html>
