@@ -1,0 +1,364 @@
+html{
+	box-sizing: border-box;
+}
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+body{
+	background: #eeefed;
+	color: #323232;
+	font-size: 100%;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+.container:before,
+.group:before,
+.menu:before,
+.container:after,
+.group:after,
+.menu:after{
+	content: " ";
+	display: table;
+}
+.container:after,
+.group:after,
+.menu:after{
+	clear: both;
+}
+a{
+	text-decoration: none;
+}
+
+storng{
+	font-weight: 600;
+}
+.menu{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.menu li{
+	float: left;
+}
+.container{
+	max-width: 1170px;
+	margin: 0px auto;
+	padding: 0 1.25em; /*20px / 16 =1.25em*/
+}
+.gallery .container{
+	padding: 0;
+}
+.fab,
+.fas{
+	vertical-align: middle;
+}
+/*contact*/
+.contact-bar,
+.personal a{
+	color: #ffffff;
+
+}
+
+.contact-bar{
+	background: #39a3d4;
+	/*height: 84px;*/
+	font-size: 0.875em; /* 14/16 */
+}
+.personal{
+	margin: 2em 0; /* 29/14 */
+	float: left;
+	width: 60%;/*kdže sme potrebovali vypočitať margin-right pre first-child li tak musime dať rodičový nejaku širku aby sme mohli dať margin do percent odoká sme dali 60% čiže v dve-tools sme si pozreli ul a v computed jeho širku je 672px*/
+}
+.social{
+	margin: 1.2857142857142858em 0; /* 18/14 */
+	float: right;
+}
+.personal li:first-child{
+	margin-right:10.416666666666668%; /* 70/14 */ /*aby elementy neboli nalepene na seba */
+	/*70px(margin v px) deleno 672px(širka rodiča čiže .personal) krat 100 =10.416666666666668%*/
+}
+
+.personal .fas{
+	font-size: 2em/14; /* 28/14 */
+	margin-right: 0.35714285714285715em; /*aby neboli narazene na pravu stranu */ /* 5/14 */
+}
+.social .fab{
+	font-size:1.2142857142857142em/14;  /* 17/14 */
+}
+.social-icon{
+	display: block;
+	width: 3.4285714285714284em; /* 48/14  prečo 14? pretože rodičom je social-bar a ten ma velkost fontu nastaveni 14px*/
+	height: 3.4285714285714284em; /* 48/14 */
+	line-height: 3.2857142857142856em; /*ked nastavíme rovnaky line height ako je jeho hodnota height tak sa vycebtruje element vertikalne na stred*/ /* 46/14 */
+	color: #989898;
+	background: #eeefed;
+	text-align: center;
+	border-radius: 0.14285714285714285em/14; /* 2/14 */
+	margin-left: 0.14285714285714285em/14; /* 2/14 */
+
+}
+.social-icon:hover,
+.social-icon:focus{
+	color: #ffffff;
+	background: #5bd0ec;
+
+}
+/*nav-bar*/
+.nav-bar{
+	background: #f2f2f2;
+}
+.logo{
+	float: left;
+	margin: 1.25em 0;
+}
+.logo a{
+	display: block;
+	color: #de5728;
+	letter-spacing: -0.035em;
+}
+
+.logo strong{
+	color: #323232;
+}
+.logo .fab{
+	position: relative;
+	top: -0.06em;
+}
+.navigation{
+	float: right;
+}
+
+.navigation .fas{
+	display: block;
+	padding-bottom: 10px;
+}
+.navigation a{
+	color: #a6a6a6;
+	display: block;
+	width: 8.5em ;/* 136/16 */
+	padding: 1.85em 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+.selected a,
+.navigation a:hover,
+.navigation a:focus{
+	color: #de5728;
+}
+.navigation li{
+	border-left:1px solid #cecece;
+}
+.navigation li:last-child{
+	border-right: 1px solid #cecece;
+}
+
+/*post-header & CONTENT*/
+.text-center{
+	text-align: center;
+}
+.post-header{
+	background: url("../img/cover.jpg");
+	background-position: center -200px;
+	background-repeat: no-repeat;
+}
+.post-title{
+	background: #de5728;
+	color: #fff;
+	font-size: 2.8125em; /* 45/16 */
+	font-weight: 600;
+	padding: 0.4em 1.0222222222222221em; /* 18/45 */ /* 46/45 */
+	border-radius: 0.15555555555555556em; /* 7/45  pretože font bol 45px*/
+	margin: 0.8em 0; /* 36/45 */
+	text-transform: uppercase;
+	display: inline-block;
+}
+/*ideme z responsivniet post content našej stránky */
+.post-content{
+	padding:4em 0 8em;/*padding z vrchu 4em po stranach 0 a dole padding 8em*/
+}
+.post-content h2{
+	color: #323232;
+	font-size: 1.875em; /* 30/16 */
+	font-weight: 400;
+	line-height: 1.4em/; /* 42/30  30px pretože post content h2 mal font-size 30px*/
+	margin-top: 0;/*h2 v post content zme zrušili margin z vrchu*/
+
+}
+.controls{
+	width: 642px;
+	margin: 3.125em auto; /* 50/16 */
+	text-align: center;
+}
+.controls li{
+	float: none;/* zrušime floatovanie pre controls*/
+	display: inline-block;/*nastavíme display inline-block miesto float */
+}
+.controls a{
+	color: #39a3d4;
+	font-size: 1.375em; /* 22/16 */
+	font-weight: 300;
+	padding: 0em 1.1363636363636365em; /* 0/22 */ /* 25/22 */
+	line-height: 2.1818181818181817em;/*tym vlastne forsnem nejky padding z vrchu aj od spodu*/ /* 48/22 */
+	text-transform: uppercase;
+	display: block;
+
+}
+.controls a:hover,
+.controls a:focus,
+.controls .selected a{
+	color: #fff;
+	background: #39a3d4;
+	border-radius: 0.18181818181818182em; /* 4/22 */
+
+
+}
+/*post-content gallery*/
+.gallery{
+	font-size: 0em;/*zruši nam medzeri medzi obrazkami*/ /* 0/16 */
+	height: auto;
+}
+.gallery img{
+	width: 33.33333333333333%;/*gallery sa bude uprvovať podla wievportu čiže máme tri obrazky vedla seba čiže 100% deleno 3 =33.33333333333333*/
+}
+/*pre-footer & footer*/
+.pre-footer{
+	color: #fff;
+	background: #323232;
+	text-align: center;
+}
+.pre-footer .container{
+	padding: 2em 0em 2.7em 0em; /* 40/16 */ /* 0/16 */ /* 60/16 */ /* 0/16  trocha som ich upravil od oka zmenšil*/
+}
+
+.pre-footer p{
+	font-size: 1em;
+	line-height: 26px;
+	text-transform: uppercase;
+}
+.pre-footer strong{
+	font-size: 1.375em; /* 22/16 */
+	font-weight: 600;
+	text-transform: none;
+	display: block;/*čo spôsobi že sa da na samostaní riadok*/
+}
+.pre-footer .personal{
+	width: 100%; /*aby sa adaptoval na širku samotného viewportu*/
+	margin: 1.5em 0 0 0;
+}
+.pre-footer li{
+	float: none;/*vypneme float*/
+	display: inline-block;/*nastavíme display:inline-block aby sa zobrazili vedla seba a kedže jeho rodič ma text-align:center sa to zarovná na stred*/
+}
+/*FOOTER*/
+footer{
+	font-size: 0.875em; /* 14/16 */
+}
+footer .logo{
+	color: #de5728;
+	font-size: 2.2857142857142856em; /* 32/14 */
+	margin: 0.66em;
+	margin-left: 0;
+}
+
+footer p{
+	color: #a6a6a6;
+	float: left;
+
+
+}
+footer p,
+footer .menu{
+	margin: 2.2857142857142856em 0em 2.2857142857142856em 0em; /* 32/14 */ /* 0/14 */ /* 32/14 */ /* 0/14 */
+
+}
+footer p a{
+	color: #e75652;
+	font-weight: 600;
+}
+footer .menu{
+	font-weight: 600;
+	text-transform: uppercase;
+
+	float: right;
+}
+footer .menu a{
+	color: #989897;
+
+}
+footer .menu a:hover,
+footer .menu a:focus{
+	text-decoration: underline;
+
+}
+footer li:after{
+	content:"/";
+	color: #989898;
+	margin: 0em 0.5714285714285714em; /* 0/14 */ /* 8/14 */
+}
+footer li:last-child:after{
+	content: " ";
+}
+
+/*MEDIAQUERIES*/
+@media(max-width: 1172px){
+	.navigation li:last-child{
+	border-right:none;
+}
+.nav-bar .container{
+	padding-right: 0;/*aby nebol od tlačení ale aby bo la hrane */
+}
+}
+@media(max-width: 900px){
+	.gallery img{
+		width: 50%; /*dá nam obrazky v gallery  do dvoch radov*/
+	}
+
+}
+@media(max-width: 590px){
+	.gallery img{
+		width: 100%;
+	}
+}
+@media(max-width: 536px){
+	.contant-bar{
+		/*font-size: 70%; /*tato zmena sa odrazi ne len na všetkych fontov ale aj border radius paddingov marginov*/
+
+	}
+	.personal{
+		width: auto;
+	}
+	.personal li{
+		float: none;/*vypneme floatovanie ale budeme chcieť nejaky margin lebo su nalepení na speba*/
+	}
+	.personal li:first-child{
+		margin-bottom: 0.5em;/*aby neboli tak ikonky nalepené na sebe */
+	}
+	.social{
+		font-size: 1.35em;/*zvačšili sme ikonky z 1em na 1.35em*/
+	}
+}
+@media(max-width: 536px){
+	.personal,
+	.social{/*každému aj personal aj social dame vlastní riadok*/
+		width: 100%;
+		text-align: center;
+	}
+	.personal li{
+		display: inline-block;/*nevratíme im float ale dame im inline-block*/
+	}
+	.personal{
+		margin: 1.5em 0 0;/* margin top 1.5 a všetky ostatne 0*/
+	}
+	.social li{
+	width: 24%;/*aby sme nasledne a elementom mohli nastavit 100% respektive .social-icon*/
+	margin: 0 0.4%/*margin od oka*/
+	}
+	.social .social-icon{
+		width: 100%;
+		height: auto;
+		line-height: 2.3em;
+	}
+	.social{
+		margin-top: 0.8em;
+		font-size: 1em;/*vratíme naspať velkost z 1.35em na 1em*/
+	}
+}
