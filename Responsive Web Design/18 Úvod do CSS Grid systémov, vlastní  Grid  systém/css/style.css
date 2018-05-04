@@ -1,0 +1,75 @@
+body{
+	max-width: 960px;
+	margin: 0 auto;
+}
+section{
+	font-size: 1.25em;
+	line-height: 1.35em;
+	font-family: courier, sans-serif;
+	color: #fff;
+	font-weight: bold;
+	background: #9f3fa3;
+	border-radius: 0.35em;
+	margin: 0.5em 0;
+	padding: 0.75em;
+
+}
+section:nth-child(1){ background: #3b9ae1; }
+section:nth-child(2){ background: #e64134; }
+section:nth-child(3){ background: #f6be00; }
+section:nth-child(4){ background: #eb70b1; }
+section:nth-child(5){ background: #0f1a5f; }
+
+/*vlastní grid system*/
+.gule-1,
+.gule-2,
+.gule-3,
+.gule-4,
+.gule-5,
+.gule-6,
+.gule-7,
+.gule-8,
+.gule-9{
+	float: left; /*všetky z týchto odstavcov /guli budú floatovne v lavo */
+}
+
+/*každému z týchto columnov musim vypočitať širky ako na to  veľmi jednoducho gule-9 =100% sirky */
+.gule-9{
+	width: 100%;
+}
+.gule-8{
+	width:88.88888888888888%;/*8 deleno 9 rovná sa 0.8888888888888888 krat 100 =88.88888888888888%*/
+}
+.gule-7{
+	width: 77.77777777777778%;/*7 deleno 9 =0.7777777777777778 x 100 = 77.77777777777778% */
+}
+.gule-6{
+	width:66.66666666666666%;/* 6 deleno 9 =0.6666666666666666 x 100 = 66.66666666666666% */
+}
+.gule-5{
+	width:55.55555555555556%;/*5 deleno 9 = 0.5555555555555556 x 100 =55.55555555555556% */
+}
+.gule-4{
+	width: 44.44444444444444%;/*4 deleno 9 =44.44444444444444 x 100 = 44.44444444444444% */
+}
+.gule-3{
+	width:33.33333333333333%;/*3 deleno 9 = 0.3333333333333333 x 100 = 33.33333333333333%*/
+}
+.gule-2{
+	width:22.22222222222222% ;/*2 deleno 9 =0.2222222222222222 x 100 =22.22222222222222%*/
+}
+.gule-1{
+	width: ;/*1 deleno 9 =0.1111111111111111 x 100 = 11.11111111111111% */
+}
+
+/*teraz vytvoríme .triedu pre row riadok nazveme ju penis všimnime si že penis funguje ako clearfix ako ked sme robili triedu group*/
+
+.penis:before,
+.penis:after{
+	content: " ";
+	display: table;
+}
+/*samotný penis:after spravi clear both*/
+.penis:after{
+	clear: both;
+}

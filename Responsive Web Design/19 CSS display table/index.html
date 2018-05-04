@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Responsive</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<div class="group">
+		<h1>pomocou display table css a display:table-cell;</h1>
+		<article>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, doloremque doloribus maxime, accusamus nam velit consectetur, ratione nesciunt beatae veritatis numquam aut! Asperiores, nostrum reiciendis quia, quaerat natus nesciunt nam.</p>
+		</article>
+
+		<aside>
+			<img src="https://baptistcourier.com/wp-content/uploads/2013/05/IAB-300x250.jpg" alt="">
+		</aside>
+	</div>
+	<table>
+		<tr>
+			<td>
+		<h1>pomcou klasickej html tabukly table tr td</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem amet sunt ipsum, iusto eum ad tempora velit, earum illo neque officia voluptate aliquid sint et, laboriosam iste necessitatibus. Voluptas, voluptatibus.</p></td>
+			<td><img src="https://baptistcourier.com/wp-content/uploads/2013/05/IAB-300x250.jpg" alt=""></td>
+		</tr>
+	</table>
+<footer>
+	<pre>block-level elementy si nevedia dopočítať širku elementu na základe širky elementov ktoré sú okolo ních, v html však od nepamäti existoval systém ktory vie zobraziť stlpce vedľa seba a tie musi vypočítať ich obsah
+			ak pridam tabulku a v nej budu table row tr do table row dam table data td a <strong>jeden td bude obsahovať lorem ipsum</strong> a <strong>druhy bude obsahovať obrazok</strong> tak môžeme si všimnut že elementy budu stale ved+a seba a budu sa aj pri zmenšovani prehliadača upravovať </p>
+			<hr>
+			<p>ale mi v css vieme spraviť že zoberieme niektoré schopnosti tabuliek a aplikujeme ich na block-level elementy spravime to takto</p>
+
+				1) element ktory obaluje naše floatované elementy(.group)
+				2) nastavíme mu display:table;
+				3) teraz article a aside zruším floaty
+				4) a article aj aside dame display: table-cell aby sa spravali ako bunky v tabulke
+				5) zvykne byť dobry napad nastaviť elementu ktory sa sprava ako tabulka v našom pripade group obaluje naše bunky v tabulke nastavíme width:100%;
+		</pre>
+</footer>
+</body>
+</html>

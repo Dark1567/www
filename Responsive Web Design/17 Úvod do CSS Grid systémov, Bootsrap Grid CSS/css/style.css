@@ -1,0 +1,21 @@
+body{
+	max-width: 960px;
+	margin: 0 auto;
+}
+section{
+	font-size: 1.25em;
+	line-height: 1.35em;
+	font-family: courier, sans-serif;
+	color: #fff;
+	font-weight: bold;
+	background: #9f3fa3;
+	border-radius: 0.35em;
+	margin: 0.5em 0;
+	padding: 0.75em;
+
+}
+section:nth-child(1){ background: #3b9ae1; }
+section:nth-child(2){ background: #e64134; }
+section:nth-child(3){ background: #f6be00; }
+section:nth-child(4){ background: #eb70b1; }
+section:nth-child(5){ background: #0f1a5f; }

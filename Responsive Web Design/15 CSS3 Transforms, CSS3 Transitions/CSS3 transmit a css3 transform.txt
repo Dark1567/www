@@ -1,0 +1,15 @@
+transmit sme použili pri triede .controls a
+transform scale sme použili pri triede gallery img:hover ,focus
+a do triedy gallery img:hover,focus pridame aj transition
+scale je miera zadava  keď dame 0.7 tak obrázok sa zmenší keď dame 8 obrazok sa rapidne zväčší
+TUTO MôžEME VIDEť čO ROBIA MATEMATICKA FUNKCIA EASE
+
+https://matthewlein.com/tools/ceaser
+dalšie krivky najdeme tu:
+https://www.easings.net
+
+na mozilla developer tools si môžeme prečitať članky ako sa použivaju transitions a transofrms
+
+dalšie dobre stránky:
+http://thecodeplayer.com/walkthrough/simple-yet-amazing-css3-border-transition-effects
+https://daneden.github.io/animate.css/

@@ -1,0 +1,58 @@
+/* general */
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+/* clearfix */
+.group:before,
+.group:after {
+	content: " ";
+	display: table;
+}
+
+.group:after {
+	clear: both;
+}
+
+body {
+	color: #fff;
+	font: 20px Rockwell, "Courier Bold", Georgia, serif;
+	font-weight: bold;
+	background: #f7f6d3;
+	padding: 0 20px;
+}
+
+
+/* layout */
+p{
+	margin: 0;
+	padding: 1em;
+}
+.group {
+	max-width: 1120px;
+	display: table;/*obalovaciemu elementu sme povedali aby sa spraval ako tabuľka*/
+	width: 100%;
+}
+
+article, aside {
+	height: 400px;
+	border-radius: 8px;
+	float: none;
+	display: table-cell;/*elementom vo vnútri oblovacieho elementu sme povdali aby sa spravali ako bunky v tabuľke*/
+	vertical-align: top;
+}
+
+article {
+	background: #3b9ae1;
+}
+
+aside {
+	background: #e64134;
+}
+footer{
+	background: purple;
+}
