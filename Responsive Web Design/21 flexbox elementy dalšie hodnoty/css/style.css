@@ -1,0 +1,43 @@
+/* general */
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html , body{
+	height: 100%;
+}
+body {
+	color: #fff;
+	font: 20px Rockwell, "Courier Bold", Georgia, serif;
+	font-weight: bold;
+	background: #f7f6d3;
+	padding:1em;
+/*vštky tieto atributy nižšie su flexbox atributy nemali by sme ich použivať na ne flexbox containeroch */
+
+	display: flex;
+
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction:row;
+
+	flex-wrap: wrap;
+	align-content: flex-start;
+}
+
+
+article{
+	padding: 1.2em;
+	background: #3b9ae1;
+	border-radius: 0.5em;
+	margin: 0.25em;
+}
+
+article:nth-child(1){background: #3b9ae1;flex-grow: 1;} /*css vlastnosť order:3; elementov  prvy article element bude treti*/
+article:nth-child(2){background: #f6be00;flex-grow: 6;}/*flex-grow je defaultne jedna ale tomuto druhemu elementu sme dovolili byť dva krat tak väčši ako ostane elementy s flex-grow čiže bude 6x-krat vačši ako ten najmenši element*/
+article:nth-child(3){background: #e64134;flex-shrink:6; } /*flex-shrink je opak flex-grow čiže lementu sa dovolime 6-nasobné zmenšiť*/
+article:nth-child(4){background: #eb70b1; flex-basis:300px;}/*flex-basis nastavuje elemento width širku keď budeme zmenšovať okno prehliadača a  narazime na 300px a menje tak stranka preusporiada elementy tak aby si moj article 4 udržal širku 300px pokiaľ nožno*/
+article:nth-child(5){background: #0f1a5f; align-self: flex-start;}/*z tohto elemntu sme spravili specialni element ktory sme dali na flex-start da nam to na vrch riadku kedže sme flex-direction dali na row*/

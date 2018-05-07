@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Responsive</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<header>header</header>
+<main>
+	<article> Nikto nehovori že display flex musia mať všetky elementy na stranke napríklad header a footer sa meniť nebudú tak oni display:flex; nepotrebuju a tak všetky ostatne element ktore chcem flexovať sa nachdzajú main elemente ktorému sme pridali class .flex-content. Podme teda k nav ktorý chceme aby bol na lavej strane tak mu v css musime nastaviť order:1; Article chcem aby bol v strede nastavíme mu order:2; a aside na pravo nastavíme order:3;
+	dalej nastaviem elementam flax grow a flex basis
+	</article>
+	<nav>
+		<ul>
+			<li><a href="#">home</a></li>
+			<li><a href="#">about</a></li>
+			<li><a href="#">clients</a></li>
+			<li><a href="#">contact</a></li>
+		</ul>
+	</nav>
+	<aside>aside</aside>
+</main>
+
+<footer>footer</footer>
+
+</body>
+</html>

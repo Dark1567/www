@@ -1,0 +1,58 @@
+/* general */
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html , body{
+	height: 100%;
+}
+body {
+	color: #fff;
+	font: 20px Rockwell, "Courier Bold", Georgia, serif;
+	font-weight: bold;
+	background: #f7f6d3;
+	padding:1em;
+/*vštky tieto atributy nižšie su flexbox atributy nemali by sme ich použivať na ne flexbox containeroch */
+
+	display: flex;/*body element je baliaci element pre article a ak mu pridame display:flex; všetci jeho potomkovia sa stanu flex elementom v tomto pripade body je flex-container a article je flex-item
+	2) display flex zariadi to že element zaberie len takú širku ako potrebuje a toľko výšky koľko mu flex container dovoluje
+	3) vďaka display flex mame stlpce rovnakej širky a ich širka sa upravuje na zaklad viewportu*/
+
+	align-items: center;/*rodičový body elementu prídám align-items nam zarovná elementy verticalné na stred*
+	align item zdiela podobne hodnoty ako justify-content
+	align-items: flex-start;/zarovná všetky elementy na začiatok flexu čiže na začiatok  osy y/
+	align-items:flex-end ;/ ich hodi na koniec flexovania osy y/
+	align-items: baseline;/ baseline zarovnáva k riadku text je v jednom riadku bez ohladu na to ake veľke su elementy/
+	align-items: stretch ;/ toto je defaultna hodnota /
+	*/
+	justify-content: flex-start;/*keď na obalovaci element použijeme justify-content center tak nam elementy zarovna horizontalne na stred bez margin auto...
+	justify-content ma hodnoty okrem center ,aj flex-start ktory ked mame flex-direction nastavený na column zarovna articles do hora na začiatok stranky keby flex-direction prepneme na row flex-start symbolizuje left a flex-end opačne prava strana a spodok stranky pri column
+	justify-content: space-between; /rozdeli elementy tak že rozpočíta zvyšok volneho priestru stranky a hodi ho medzi elementy pri row vyplmia celu širku stranky pri column celú dlžku vyšku/
+	justify-content: space-around;/je niečo veľmi podobne ako space-between len pribude volní priestor aj na lavej aj pravej strane /
+	*/
+
+	/*flexovanie sa môže diať buť po hlavnej osi horizontalnej alebo priečnej verticalnej */
+	flex-direction:row;/*znamená smer ktorým flexujeme je bud row to je defaultne elementy usporiada vedla seba alebo druha možnosť column elementy zarovna podsebou */
+/*stlpce a riadky column a row môžem prevratiť ich poriadie pomocou flex-direction:row-reverse; tak isto aj column-reverse elementy sa uspriadaju od zadu posledny bude prvy */
+
+flex-wrap: wrap; /*elementy sa  defaultne/zvýčajne snažia v mesti do jednoho riadku ale kde im však pridáme oblaovaciemu elementu flex-wrap: wrap; tak keď sa element ne vmesti do riadku tak  sa sam od seba hodi na riadok ďalší */
+align-content: flex-start;/*align content nam zarovna cely obsah na začiatok osy y*/
+}
+
+
+article{
+	padding: 1.2em;
+	background: #3b9ae1;
+	border-radius: 0.5em;
+	margin: 0.25em;
+}
+
+article:nth-child(1){background: #3b9ae1;}
+article:nth-child(2){background: #f6be00;}
+article:nth-child(3){background: #e64134;}
+article:nth-child(4){background: #eb70b1;}
+article:nth-child(5){background: #0f1a5f;}

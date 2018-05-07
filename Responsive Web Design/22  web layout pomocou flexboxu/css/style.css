@@ -1,0 +1,83 @@
+/* general */
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html , body{
+	height: 100%;
+}
+body {
+	color: #fff;
+	font: 20px Rockwell, "Courier Bold", Georgia, serif;
+	font-weight: bold;
+	background: #f7f6d3;
+	padding:1em;
+
+}
+body , a{
+	color: #fff;
+}
+ul{
+	list-style: none;
+	padding-left: 0;
+}
+
+header, nav, article, aside ,footer{
+	padding: 1.2em;
+	background: #3b9ae1;
+	border-radius: 0.5em;
+	margin: 0.25em;
+}
+
+header{background: #3b9ae1;}
+nav{background: #f6be00;}
+article{background: #e64134; }
+aside {background: #eb70b1; }
+footer{background: #0f1a5f;}
+
+main{
+	display: flex;
+	flex-flow: row wrap;/*tymto sme umožnili elementom vrapovať(skočiť na dalši riadok) čiže ak sa nezmesti element do pri menšiom rozlišení do jedneho riadku da sa na nový riadok*/
+}
+/*všetkym flex elementom môžeme nastaviť rovnaku štartovaciu poziciu*/
+main > *{
+	flex: 1;/*tzn flex-grow na default to su pomeri šírok*/
+
+}
+nav{
+	order: 1;
+}
+article{
+	order: 2;
+	flex-grow: 3;/*flex grow nam robi to že okolo bude element vačši oproti ostatním flexovaním elemento dali sme o troj nasobok*/
+	flex-shrink:0;/*toto je opak flex grow o kolko bude menši 0 je dfaultna hodnota*/
+}
+aside{
+	order: 3;
+}
+/*MEDIAQUERIES*/
+@media(max-width: 800px){
+	article{
+		order: 1;
+		flex-grow: 1;/*aby bol v jdenom riadku aby mal 100%-nt širky */
+		flex-basis: 100%;/*element bude zaberať 100%širku a to ho hodi na vlastni riadok*/
+	}
+	nav{
+		order: 2;
+	}
+	aside{
+		order: 3;
+	}
+
+}
+@media(max-width: 600px){
+	nav, aside{ /*tu sme nastavili aby bol a side nav flex-grow 1 čiže aby boli flexovane elementy rovnakej veľkosti širky a flex basis 100% nam hodi nav aj aside každy na vlastni riadok pri 600px a nižšie*/
+			flex-grow: 1;/*aby bol v jdenom riadku aby mal 100%-nt širky */
+		flex-basis: 100%;/*element bude zaberať 100%širku a to ho hodi na vlastni riadok*/
+	}
+
+}
