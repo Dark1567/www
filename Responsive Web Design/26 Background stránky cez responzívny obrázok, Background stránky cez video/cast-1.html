@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<h1> css Background-size budeme davať čiselne hodnoty</h1>
+	<p><strong>background-size:200px;</strong>obrazok sa zobrazi   iba 200px napriek tomu že obrazok je vačši na širku aj výšku  </p>
+	<p><b>background-size 50% 600px;</b> background-size môže mať dve hodnoty čiže nide mať 50% na širku respektive zaberať 50% širky elementu a 600px na výšku</p>
+
+	<section class="bg-size-numeric"></section>
+	<h1>css background-size:cover;</h1>
+	<p><strong>background-size:cover;</strong> cover spravi to že keď začnem meniť veľkosť viewportu obrazok sa upravuje a stale je pekný a stále zaplňa celý rodičovský element, ale nenarušujú sa pomeri medzi jeho stranami  obrazok sa bude posúvať  vždy tak aby cely element bol pkryty bez ohladu na to či z obrazka časť bude odseknutá alebo nie</p>
+	<section class="bg-size-cover"></section>
+	<h1>background-size:contain;</h1>
+	<p><strong>background-size:contain;</strong> contain je podobny v tom že <b>nikdy</b> nezmení pomery toho obrazka,ale rozdielný je v tom že nedovoli aby ani časť toho obrazku bola odseknutá </p>
+	<p>čiže on sa snaži pokryť celý element ale to aby celý obrazok ostal viditelný ma vyššiu prioritu</p>
+	<section class="bg-size-contain"></section>
+	<hr>
+	<h1>Background-attachment:fixed;</h1>
+	<p>toto pripne background ku stranke a on tam ostane aj keď budem scrollovať čiže content sa akokeby pri scrolluje a prekrije môj background</p>
+	<section class="bg-attachment-fixed"></section>
+</body>
+</html>

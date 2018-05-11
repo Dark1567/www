@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> responsive vido bacground</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<pre>
+		video elementu(tagu) môžem pridavať nejake atributy
+		-autoplay =aby sa video spustilo same od seba
+		-loop = aby sa opakovalo
+		-muted =ak ma video nejake zvuky aby boli vypnute
+	</pre>
+	<h1>css štylovanie tagu video a vytvorenie overlay</h1>
+	<pre>
+
+	</pre>
+<video autoplay loop muted>
+	<source src="vids/oceans.mp4"></source>
+	<source src="vids/oceans.webm"></source>
+</video>
+<pre> v elemente video sa nachadzajú elementy source v ktorych sa nachadza src
+ a v jednom je format mp4 v drzhom .webm pretože nie každy prehliadač
+ podporuje format mp4
+<h3>doležite stranky nastroje aby html 5 element vido podporoval každy prehliadač</h3>
+<a href="http://videojs.com/">1) videojs.com</a>
+1) proste typický js plugin ktory vložíme do našej stránky
+<a href="https://www.mediaelementjs.com/"> možnosť 2) mediaelementjs</a>
+2) ktorý pridáva html 5 video a audio  ktoremu kolvek brrowseru v akom koľvek formáte napr aj z flash playerom
+</pre>
+<hr>
+<h1>univerzalne riešenie pre responsivny web pre videa bez ohladu na to aký prehliadač použiváme</h1>
+<pre>
+	dobry nastroj je použiť<a href="http://fitvidsjs.com/">http://fitvidsjs.com/</a>
+	znova stiahneme a vložime js súbor do stránky podľa navodu
+</pre>
+
+</body>
+</html>

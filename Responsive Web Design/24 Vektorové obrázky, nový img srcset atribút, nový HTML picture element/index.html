@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>29 Vektorové obrázky, nový img srcset atribút, nový HTML picture element</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<pre>
+		<h1>vektorový formát obrazku (SVG)</h1>
+	<img src="img/cc.svg" alt="svg" width="500">
+	<h3>poznámka</h3>
+	-vektorové obrazky sa skladajú z kriviek čiže obrazok môže byť ako koľvek veľky nikdy nestrati na kvalite a nikdy nebude rozmazaný.
+
+	- toto je fajn prístup pre jednoduchšie obrazky, ktoré sa dajú nakresliť krivkami nie je to fajn pre konplikované obrazky s milionom farieb a prechodov
+	</pre>
+	<h1>Nový atribut srcset pre tag img</h1>
+	 <pre>
+	- kde ja môžem zadať viacej ciest k viacerím obrazkom a tiež definovať koľko násobok px má mať zariadenie.
+	 <img srcset="img/tree_800px.png 2x, img/tree_600px.png 1.5x"
+	 src="img/tree_400px.png" alt="" width="400">
+	(img srcset="img/tree_800px.png 2ximg/tree_600px.png 1.5x"
+	 src="img/tree_400px.png" alt="">/*tento src img/tree-400px sa použije za normalnej okolnosti*/
+	 pri dvojnasobnej px dansity sa použije srcset tree_800px.png ktorému sme nastavili že sa ma vybrať pri dvojnasobnej px density 2x keď dame za 2x čiarku a pridame tree_600px.png 1.5x tak ten <strong>600px obrazok</strong> sa aplikuje pri 150% px dansity
+	 <b>toto je taký jednoduchy zapis z ktoreho si prehliadač dokaže určit ktory element použije</b>
+		toto je v pohde ale čo ak k tomu pridame responsive design
+	 </pre>
+
+
+	<h1>čo ak k tomu pridame rezponzivní dizajn</h1>
+	<h3>ten istý obrazok v rôzných veľkostiach </h3>
+	<pre>
+		obrazok nebudeme vyberať iba podla px density ale navyše aj podla rozmerov rzlišenia našeho zriadenia.
+		užitočný článok prečitaj si !
+		<a href="https://dev.opera.com/articles/native-responsive-images/">native responsive images</a>
+
+		img sizes="(max-width: 30em) 100vw, /* <strong>sizes= atribut nam dovouje ešte viacej spresniť situáciu prehliadača čiže ak viewport je široky 30 em tak obrazok bude široky na 100% čiže bude pokrývať celú strnku čast stranky</strong>*/
+			(max-width: 50em) 50vw,/*<strong>ak je rozlišenie o niečo vyššie napr 50em čo je cca 640px tak zrejme chceme tie obrazky zobraziť 50%tnej velkosti čiže ked budu dva obrazky dajú sa vedľa seba </strong>*/
+			calc(33vw - 100px)"
+	srcset="swing-200.jpg 200w, /*srcset je výber obrázkov ktore prehliadač môže použiť*/
+			swing-400.jpg 400w, /*jednotka w symbolizuje širku </strong>na to aby prehliadač nemusel sťahovať všetky štyri obrazky tak mu pomocou jednotky w napišeme koľko ma daní obrzok širku a teraz prehliadaš na zaklade veľkosti viewportu px density viberie ktory obrazok sa použije <strong>*/
+			swing-800.jpg 800w,
+			swing-1600.jpg 1600w"
+	src="swing-400.jpg" alt="Kettlebell Swing">
+	<strong>dôležita vec z tohoto je že tento srcset atribut v img element sa používa ak mam ten istý identický obrazok iba v rôzných veľkostiach rozlišeniach hovori sa tomu resolution switching !!! </strong>
+	</pre>
+	<hr>
+	<h1>do html pribudol novy tag Picture</h1>
+	<pre>
+		jeho úloha je  podobná umožňuje pridať do stránky rôzne obrazky podľa rozlišenia a px density, ale picture služi na to ak potrebujeme na zaklade rozných veľkosti obrazoviek viewportu pridávať iné obrazky a nie tie isté len inej veľkosti ale ine obrazky tento systém kde použivame na ine rozlišenia ine obrazky sa nazýva <strong> art direction</strong>
+		<h3>zápis pre tag picture </h3>
+		<picture>
+		source media="(min-width:45em)" srcset="img/tree_800px.png">< /source> /*od 45em 720px a vyššie sa použije obrazok stromu*/ lebo v našom source sme nastavili mediaqueries
+		source media="(min-width:30em)" srcset="img/hipster.png">< /source>/*tento obrazok sa použije pri 480px 30em a vyššie viewportu až po 720px viewportu pretože dalej sme od 45em zmenili obrazok*/
+			img src="img/cc.svg" alt=""> /*tento obrazok sa použije po 480px wiewportu*/
+	picture>
+	</pre>
+	<picture>
+		<source media="(min-width:45em)" srcset="img/tree_800px.png"></source>
+		<source media="(min-width:30em)" srcset="img/hipster.png"></source>
+			<img src="img/cc.svg" alt="">
+	</picture>
+	<h1>1) img srcset a 2 )picture source srcset sa použivaju na rozdielne učely</h1>
+		<pre>
+			1)srcset v img elemente sa použiva keď máme rovnaký obrazok v inych veľkostiach
+			2) picture source srcset sa použiva keď chcem robiť art direction keď máš rozdielné obrázky
+			<h2>ak to chceme použivať dnes musíme použiť polifily picturefill </h2>
+			<a href="http://scottjehl.github.io/picturefill/">picturefill</a>
+			je to tradičn js súbor ktorý musíme vložiť do stránky
+		</pre>
+</body>
+</html>

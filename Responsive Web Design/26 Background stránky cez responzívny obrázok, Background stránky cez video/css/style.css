@@ -1,0 +1,60 @@
+/* general */
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+/* clearfix */
+.group:before,
+.group:after { content: " "; display: table; }
+.group:after { clear: both; }
+
+
+body {
+	color: #222;
+	font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+	font-weight: bold;
+	height: 5000px;
+}
+html,body{
+	height: 100%;
+}
+
+
+/* layout */
+.bg-size-numeric{
+	width: 70%;
+	height: 24em;
+	margin: 3em auto;
+	border-radius: 0.5em;
+	background: #bada55 url("../img/truba.jpg") center center;/* center top obrazk zarovnaná hore a na stred pripadne uplne na stred center center*/
+	background-repeat: no-repeat;
+	background-size: 50% 600px; /*obrazok bude zaberať na  50% širky elementu a na vyšku bude mať 600px */
+}
+.bg-size-cover{
+	width: 70%;
+	height: 24em;
+	margin: 3em auto;
+	border-radius: 0.5em;
+	background: #bada55 url("../img/truba.jpg") center center;/* center top obrazk zarovnaná hore a na stred pripadne uplne na stred center center*/
+	background-repeat: no-repeat;
+	background-size: cover;/* da obrazok po celom elemente a nikdy nenaruši pomery strán obrazku*/
+}
+
+.bg-size-contain{
+	width: 70%;
+	height: 24em;
+	margin: 3em auto;
+	border-radius: 0.5em;
+	background: #bada55 url("../img/truba.jpg") center center;/* center top obrazk zarovnaná hore a na stred pripadne uplne na stred center center*/
+	background-repeat: no-repeat;
+	background-size: contain;/**/
+}
+.bg-attachment-fixed{
+	width: 70%;
+	height: 24em;
+	margin: 3em auto;
+	border-radius: 0.5em;
+	background: #bada55 url("../img/truba.jpg") center center;/* center top obrazk zarovnaná hore a na stred pripadne uplne na stred center center*/
+	background-repeat: no-repeat;
+	background-size: cover;/**/
+	background-attachment: fixed;/**/
+}

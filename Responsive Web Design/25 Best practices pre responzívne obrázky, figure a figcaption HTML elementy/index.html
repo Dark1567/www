@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>30 Best practices pre responzívne obrázky, figure a figcaption HTML elementy</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<main class="group">
+		<figure>
+			<img src="img/adventure/image-1.jpg" alt="">
+			<figcaption>jake the dog</figcaption>
+		</figure>
+
+		<figure>
+			<img src="img/adventure/image-2.jpg" alt="">
+			<figcaption>the gang</figcaption>
+		</figure>
+
+		<figure>
+			<img src="img/adventure/image-3.jpg" alt="">
+			<figcaption>dudes &amp; ladies</figcaption>
+		</figure>
+
+		<figure>
+			<img src="img/adventure/image-4.jpg" alt="">
+			<figcaption>fin the human</figcaption>
+		</figure>
+
+		<figure>
+			<img src="img/adventure/image-5.jpg" alt="">
+			<figcaption>beachin'</figcaption>
+		</figure>
+
+		<figure>
+			<img src="img/adventure/image-6.jpg" alt="">
+			<figcaption>candy kingdom</figcaption>
+		</figure>
+
+		<figure>
+			<img src="img/adventure/image-7.jpg" alt="">
+			<figcaption>high 5</figcaption>
+		</figure>
+
+		<figure>
+			<img src="img/adventure/image-8.jpg" alt="">
+			<figcaption>hair the mighty</figcaption>
+		</figure>
+	</main>
+	<pre>
+		dobrý nápad pri obrazkov pri responsive designe je  vždy do css pridať niekde hore tento zapis
+	img{
+	max-width: 100%;
+	height: auto;
+}
+-čiže teraz obrázok sa môže zmenšovať 	ale pri zväčšivani nikdý nepresiahne tu jeho veľkosť ktorú reálne ma.
+<h3>dalšia vec pri responsive design </h3>
+širku obrazku by sme mali zadávať v <strong>percentách</strong> a nie v <b>px</b>
+<h3>ako odstraniť medzeri medzi obrazkami </h3>
+-veľmi jednoduch v css nastavime elementu (main)<strong>font-size:0;</strong> poväčšine toto vymaže vertikálne  horizontalne  tam ostanu pretože obrazky sa zarovnávajú ku riadku textu
+<h3>fix pre zarovnanie zrušenie medzier u obrazkov font-size:0; a vertical-align:middle;</h3>
+<h4>zapis</h3>
+	img{
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+} /*<strong>toto je ceľkom solidny zaklad ktory sa nachadza v každom css responsive design-e</strong>*/
+<h3>main img nastavime 33.333333333%;</h3>
+<hr>
+<h1>element fiugre sa často použiva pri obrazkoch a do figure figcaption</h1>
+-do elementu figure vložime element img a pod neho do figure vložime <b>figcaption</b>
+	<strong>figcaption</strong> pridáva obrazku popis
+	-dalej v css potrebujem <strong>figure</strong> nastaviť font-size: aby sme niečo videli pretože rodičovskemu elementu sme dali font-size 0; a nejaku čiernu farbu textu jeho position: bude relative; <b>pretože</b> figcaption k nemu napozicujeme a jemu dame position absolute; left:1em; bottom:1em; bude dole na lavej strane v obrazku
+	<h1>keďže sme elementy Img obalili do figure</h1>
+	<strong>tak musíme to width:33.333333333% použiť na figure a nie na main img aby boli v troch stlpcoch</strong>
+	</pre>
+</body>
+</html>

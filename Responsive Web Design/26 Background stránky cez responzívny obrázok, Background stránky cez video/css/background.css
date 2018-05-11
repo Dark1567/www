@@ -1,0 +1,38 @@
+/* general */
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+/* clearfix */
+.group:before,
+.group:after { content: " "; display: table; }
+.group:after { clear: both; }
+
+
+html,body{
+	height: 100%;/*aby sme dosiahli body element vždy vyšky viewportu*/
+}
+body {
+	color: #f00;
+	font-size: 40px;
+	font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 0 10px 0 #ccc;/*10px z vrch nerozmazaný šedy*/
+
+	/*priadnie background pre body*/
+	overflow: hidden;/*aby stranka bola vždy iba taka veľka ako obrazovka všetko ostatne sa odreže*/
+	background:url("../img/city.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+
+/* MEDIAQUERIES */
+@media(max-width: 600px){
+	body{
+		font-size: 40px;
+		background-image: url("../img/city600.jpg");
+	}
+}

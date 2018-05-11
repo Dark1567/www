@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Responsive 28 Obrázky v dobe responzíveho dizajnu a Retiny</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<pre>
+
+	<a href="https://www.copypastecharacter.com/all-characters">tu najdeme všeliake znaky symboly ktoré môžeme použiť na stránke copypastecharacter</a>
+	dôvod prečo využivať fonty miesto obrazkov je ten že či už zmenšime alebo zvačšime font nestratíme kvalitu ako keby sme zväčšovali obrázok
+	<h1>problém sú veľke obrazky v gallery alebo na pozadí </h1>
+	ak obrázok natiahneme za veľkosť jeho rozmerov prehliadač ma dve možnosti
+	1)bud pridá pixely a obrazok sa nam zobrazi rozkockatení
+	2)alebo ponaťahuje pixely a zobrazi ho rozmazaní
+	<h2>Retina Display alebo display z veľkým počtom bodov </h2>
+	<strong>Retina(alebo hight-density display)</strong> sú diplaye že do jednoho css px sa vmestia 4 klasicke obrazove px
+	čiže ak vytvoríme div 200px širky tak na normalnej obrazovke bude mať 200px ale ak si ten div zobrazíme na retina display tak skútočnosti bude raz taky čiže bude mať 400px obrazok nebude vačši iba pixely budu menšie a tak sa ich tam mesti preto dvojnásobok
+	<h2>na stránke:</h2>
+	<a href="http://screensiz.es/">http://screensiz.es/</a>
+	môžeme vidieť rozpis rôznych mobilov a mobilných zariadení
+	kde vidiíme že skoro všetky telefony dnes maju 150% display density
+	pripadne 200% 300% px density
+	pri 200% to znamná <strong>že display ma dvojnásobok px na vyšku a dvoj násobok px lna širku</strong> čo ak sa bavíme o obrazkoch znamna že ak máme na stranke obrazok veľkosti
+	width:200px; x height:100px; <b>retina display</b> ho najskôr natiahne na 400 x 200px čiže dvojnásbok po každej osy a tento obrazok zobrazí
+
+	<h2>bittmapove obrazky majú limitovaný fixny počet pixelov</h2>
+	čiže ak dam 200px obrazok na retine sa bude bud museť obrazok natiahnuť
+	aby skútočné zaplnil 400px obrazok sa zobrazi rozkockatene alebo rozmazane
+	<h1>ako teda vyriešit problem z Retina displayom na našom webe</h1>
+	<img src="img/images.jpg" alt="" width="400">
+	1) mi vytvoríme obrazok dvojnasobnej veľkosti ako budeme potrebovať reálne
+	2) čiže potrebujeme obrazok 800x800px ale potrebujeme reálne na normalnom display použiť obrazok 400x400px
+	3) ten 800px obrazok vložime do img tagu ale nastavíme mu širku na polovicu
+	4) to znamena že retina displaye použijú všetkých 800px a obrazok bude pekne čistý
+	a ne-retinea displaye zmenšia obrazok na 400px lebo sme nastavili width 400px
+	5) problém je vtom že aj neretina použivatelia musia sťahovať tento 800px obrazok aj keď si jeho kvalitu nevychutnajú čiže čim väčši obrazok tým viac musi použivatel stiahnuť MB čo nie je dobre
+
+	</pre>
+</body>
+</html>

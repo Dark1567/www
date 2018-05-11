@@ -1,0 +1,53 @@
+/* general */
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+/* clearfix */
+.group:before,
+.group:after { content: " "; display: table; }
+.group:after { clear: both; }
+
+
+html,body{
+	height: 100%;/*aby sme dosiahli body element vždy vyšky viewportu*/
+}
+body {
+	color: #f00;
+	font-size: 40px;
+	font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 0 10px 0 #ccc;/*10px z vrch nerozmazaný šedy*/
+
+	/*priadnie background pre body*/
+	overflow: hidden;/*aby stranka bola vždy iba taka veľka ako obrazovka všetko ostatne sa odreže*/
+	background:url("../img/city.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}/*kedže na pozadi mame video a text by nebol dobre vidieť vytvorime overllay pomocou before psudo elementu na body čize bude mať tie iste hodnoty v css ako video element akurat že before*/
+body:before{
+	content:" ";/*before element obsahuje naviac toto oproti video elementu */
+	display: block;/*ešte aj toto*/
+	background: rgba(0, 0,0,0.4); /*a toto inak všetko ma rovnako nastavene ako video element*/
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-height: 100%;/*že budu zaberať vždy 100% elementu na vyšku*/
+	min-width: 100%;/* to iste aj na širku*/
+	width: auto;/*toto by malo spôsobiť že sa aplikuje ta min-width*/
+	height: auto;/*toto zase že sa aplikuje min-height*/
+	z-index:-1;/*preto aby bolo všetko v body element vyššie ako video elemente*/
+}
+
+video{
+	position: fixed;/*aby stale bolo*/
+	top: 0;
+	left: 0;
+	min-height: 100%;/*že budu zaberať vždy 100% elementu na vyšku*/
+	min-width: 100%;/* to iste aj na širku*/
+	width: auto;/*toto by malo spôsobiť že sa aplikuje ta min-width*/
+	height: auto;/*toto zase že sa aplikuje min-height*/
+	z-index:-2;/*aby bolo video dole pod hlavným obsahom*/
+}

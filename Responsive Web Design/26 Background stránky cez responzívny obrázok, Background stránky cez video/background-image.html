@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> responsive bg image vdaka background-size</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/background.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<h1>čitaj css background.css</h1>
+	<p>problem s <b>background-size </b>je že ho nepodporuje IE8 a nižšie da sa tomu však pomôcť napr java scriptom <a href="https://www.youtube.com/watch?v=-xCiyxnO-3I">odkaz</a></p>
+	<hr>
+	<h1> background pre mobilne zariadenia</h1>
+	<p>pre mobilne zariadenia je blbosť sťahovať tak veľký obrazok na pozadie tak je lepšie pomocou media queries pri určitej veľkosti viewportu použiť menši obrazok ktroy bude zaberať menej Mb</p>
+	<pre>
+		@media(max-width: 600px){
+	body{
+		font-size: 40px;
+		background-image: url("../img/city600.jpg");
+	}
+}
+	</pre>
+
+</body>
+</html>
