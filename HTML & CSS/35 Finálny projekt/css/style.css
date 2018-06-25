@@ -24,14 +24,7 @@ a{
 storng{
 	font-weight: 600;
 }
-.menu{
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-.menu li{
-	float: left;
-}
+
 .container{
 	width: 1170px;
 	margin: 0px auto;
@@ -102,6 +95,51 @@ storng{
 	height: 31px;
 	text-indent: -9999px;/*pošle naš text uplnemimo stranku*/
 	margin-top: 24px;
+}
+.menu{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.menu li{
+	float: left;
+}
+
+.navigation li{
+	display: inline-block;
+	position: relative;
+	padding: 1.8em 1em;
+	background: #363636;
+
+
+}
+.navigation a{
+	padding: 1.8em 1em;
+	color: #fff;
+}
+.navigation li:hover{
+	background: #505050;
+	color: #fff;
+}
+
+.navigation li .sub-menu {
+padding: 0;
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+display: none;
+}
+.navigation li .sub-menu li{
+	background: #363636;
+	display: block;
+}
+.navigation li .sub-menu li:hover{
+	display: block;
+	background: #505050;
+}
+.navigation li:hover .sub-menu{
+display: block;
 }
 .navigation{
 	float: right;
