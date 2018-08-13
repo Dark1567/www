@@ -1,0 +1,74 @@
+#####################
+ JSQ Polia A OBJEKTY
+#####################
+polia alebo array je spôsob ako uložiť do jednej premenej viacej hodnôt
+pole sa označuje hrantymi zatvorkami [] do zatvoriek pišeme stringy a čiarkov ich oddelime
+čiže napríklad vytvoríme premenu z názvom rad kde uložime nejake mena hodnoty...
+takto si vytvoríme premenu rad ktora bude mat v sebe pole hodnôt:
+
+var rad =["Štefan","Timotej",meno, 4, "želmíra"];
+/*vidíme že do pola môžme pridavať aj ine nami vytvorene premene ako napriklad premenu  meno ktora ma v sebe uložený string Gulevator ,alebo aj čisla*/
+
+ked si necham pomocou konzole vypisať
+rad;
+tak mi to vypíše toto pole/array:
+["Štefan", "Timotej", "Gulevator", 4, "želmíra"]
+/*jednotlive tieto veci odelene čiarkou sú jednotlíve hodnoty toho pola*/
+########
+DOLEŽITÉ
+########
+/* každe pole ma definovanú svojú poziciu tzv index */
+###############################################################################
+ak chceme vytiahnuť napriklad tretiu hodnotu pola tam musime dať takyto zápis
+rad[2]; /*pretože v programovani sa začina od nuli čiže na nule je štefan jedna je timotej....*/
+čiže:
+rad[2];
+console vypiše
+"Gulevator" pretože je na tretej pozici v poli ale ma index 2
+#####################################################################################
+premenu v z ktorej mam pole a vnej je nejaka matematicka hodnota respektive čislo dalej môžeme využivať v matematike :
+napišeme do console:
+rad[3] *11;
+console vypiše
+44
+
+################
+OBJEKTY(OBJECTS)
+################
+
+objekty narozdiel od poli definujeme zlženými zátvorkami {}
+pole je kolekcia hodnôt
+OBJEKTY sú kolekcia párov kluč -> hodnota
+napríklad vytvorime si premenu pes v ktorej vytvoríme objekt
+ pristupujem k hodnotam tzv bodkovou notaciou
+zapis:
+var pes={
+typ:"labrador",
+};
+undefined
+var pes={
+typ: "labrador",
+stav: "ojazdený",
+vek: 4,
+hmotnost:"privela"
+  }; /*teraz som si definoval object pes*/
+  nechame si ho vypisať
+  pes;
+  vypis:
+  {typ: "labrador", stav: "ojazdený", vek: 4, hmotnost: "privela"}
+  /*tak zistím že je to object a sklada sa z konbinaci kluč(typ) hodnota("labrador")*/
+
+  ###############################
+  pristupovanie k hodnotam objectu - pri objektoch pristupujeme k hodnotam tzv bodkovou
+  ################################
+  notaciou
+  napriklad v konzole
+  pes.vek;
+  vypiše:
+  4
+  ....
+ pes.typ;
+ vypiše
+ "labrador"
+ keby do console napišem že
+ hmotnost; tak nam nič nevypiše lebo existuje len pes.hmotnost;

@@ -1,0 +1,116 @@
+dalšie metody na effect animacie môžem najsť v jquery dokumentacií
+########################################
+http://api.jquery.com/category/effects/
+########################################
+dalšie metody si môžme vyskúšat slideUp a slideDown
+###############
+priklady zapisy
+################
+$('.post-title').slideUp(2000);
+//na post title sme zavolali jquery metodu slideUp a post title sa odanimoval z dola na hor a zmizol zo stránky
+########################################################
+$('post-title').slideDown();
+// je to veľmi podobne akurat naopak zmiznuty element sa vrati na stranku vyroluje roztahuje sa z vrchu na dol
+########################################################
+tieto animačne metody maju často takzvanu toggle variantu
+########################################################
+toggle je prepinač napr slideTogle vykoná buď zasunutie ak je to prave vysunute alebo naopak vysunutie ak je to
+práve zasunute
+##########
+fadeToogle
+##########
+ tak isto on ho bud necha zmiznuť alebo ho necha objaviť podla toho či je na stranke zobrazeni alebo nie
+################################################################################################################
+
+#############################
+vytvaranie vlastných animácií
+##############################
+ideme animovat pomocou metody animate(); a do tej metody pošleme nejaky pobjekt a v tom objekte nastavím ktoru css vlastnost chcem animovať
+############
+tento zapis
+############
+
+$('.post-title').animate({width:1000}); // všimnime si že čiselne hodnoty sa nedávajú do uvodzoviek apostrofou
+animačne roztiahne naš post-title na 1000px
+
+###############
+a dalši zápis
+###############
+
+$('.post-title').animate({width:1000},5000); //
+
+všimnime si že čiselne hodnoty sa nedávajú do uvodzoviek apostrofou
+//za koniec objekt ked dame čiarku môžeme poslať druhý argument čo je rýchlosť animacie ako dlho sa bude animovať čiže vačšovať širka na 1000px
+########################################################
+ZAUJIMAVOSŤ
+########################################################
+$('.social-icon').animate({top:1000},2000);
+
+//V TOMTO ZAPISE SA NIč NEDEJE PRETOžE atributy top left right bottom zindex funguju iba vtedy ked element ma nastavený position absolute alebo relativ nie static
+#######################################################
+čiže to nastavime v pomocou jquery cez metodu css
+########################################################
+$('.social-icon').css({
+	position:'relative',
+	background:'yellow',
+	zIndex:10 //css hodnoty properties sa pišu v js jquery v tzv camlcake čiže každe dalšie slovo začina veľký písmenom
+});
+
+$('.social-icon').animate({top:1000},2000);
+
+//teraz tato animacia bude fungovať lebo sme hore vyššie na social-icon zavolali jquery metodu css kde sme v nastavili position relative a ine hodnioty
+#######################################################
+DALšI PROBLEM JE žE SOCIAL-ICON VYHLADVAME NAšOM SCRIPTE DVA KRáT čO NIE JE DOBRE čIžE BY SME SA NEOPAKOVALI TAK SI UPRAVIME NAš ZAPIS TAKTO:
+########################################################
+1) Vytvoríme premenu napríklad icons
+var icons = $('.social-icon');
+2) a teraz môžem iba pristupovať k tejto premennej kde mam uložene .social-icon
+takže zápis sa zmeni takto
+#########################################
+
+var icons =$('.social-icon');
+
+$('.social-icon').css({
+	position:'relative',
+	background:'yellow',
+	zIndex:10 //css hodnoty properties sa pišu v js jquery v tzv camlcake čiže každe dalšie slovo začina veľký písmenom
+});
+icons.animate({top:1000},2000); //JEDINÁ ZMENA J V TOTO RIADKU žE SME POUžILI PREMENNU
+#######################################################
+ZAPIS SA DA EšTE VIAC ZJEDNODUšIť
+####################################
+var icons =$('.social-icon'),
+	styles = {
+	position:'relative',
+	background:'yellow',
+	zIndex:10
+};
+
+icons.css(styles)
+.animate({top:1000},2000);####################
+// čiže zapis sme skratili tak že sme si vytvorili dalšiu premenu ako objekt nazvali ju styles do ktorej sme si hodili vlastnosti a hodnoty a do metody css sme napisali len nazvo premenej
+########################################################
+A EšTE VIAC SA TO DA UčESAť
+########################################################
+1) PREMENU MôžEME VYTVORIť BUD
+var raz =;
+var dva =; //toto jedna možnost na vytvaranie premenných
+druha možnost je jedno slovičok var a viac premenných
+priklad
+var raz,
+	dva,
+	....
+##############
+ZAPIS
+##############
+var icons =$('.social-icon'),
+	styles = {
+	position:'relative',
+	background:'yellow',
+	zIndex:10
+},
+settings={ top:1000},
+speed=2000;
+
+icons.css(styles).animate(settings,speed);
+/JEDNA SA O TENTO  POSLEDNÝ RIADOK JE UPLNE čISTY VDAKA VYUZITIU PREMENNýCH

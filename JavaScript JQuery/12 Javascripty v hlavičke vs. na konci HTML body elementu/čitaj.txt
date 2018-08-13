@@ -1,0 +1,68 @@
+#######
+ZAPIS
+#######
+var socialIcon =$('.social-icon'),
+
+	siteHeight =$('body').css('background');
+
+	// človek si povie že ked  na body použijem metodu css konkretne vytiahnem informacie pomcou getter pre  height tak mi to hodi vyšku stranky
+ console.log(siteHeight);
+
+// čLOVEK BY si myslel že ked si to console logne tak mu to hodi vyšku stranky čo vlastne to aj spravi ale na konci tej vyšký budu hodnota px čo v JS nie je dobre
+######################################################
+naštastie existuje metoda height ktorá nam tuto informaciu vytiahne bez jednotky px em atd
+###############
+METÓDA HEIGHT
+###############
+ZAPIS
+############
+var socialIcon =$('.social-icon'),
+	siteHeight =$('body').height();
+
+console.log(siteHeight);
+
+// TERAZ KED SI CONSOLE.LOGNEME NAšU PREMENU siteHeight tak v console budeme mať vypísanu vyšku stranky bez px 1679.81
+########################################################
+čiže teraz našu animaciu na social-icon nebudeme animovať na 1000px ale na to to čo sme si uložili do premennej siteHeight kde sme použili metodu height();
+##########
+zapis
+##########
+var socialIcon =$('.social-icon'),
+	siteHeight =$('body').height();// človek si povie že ked  na body použijem metodu css konkretne vytiahnem informacie pomcou getter pre  height tak mi to hodi vyšku stranky
+socialIcon.css({
+	position:'relative',
+	color:'black',
+	background:'yellow',
+	zIndex: 10
+});
+socialIcon.on('mouseenter',function(){
+	$(this).animate({top:siteHeight},2000).fadeOut();
+});
+
+// posledna metoda fadeOut(); zariadi to že ked social-icon padnu na spodok stranky tak zmiznú zo stranky
+
+########################################################
+pripojenie javascript suborov na stranku rozdiel medzi tým ked su v hlavičke html dokumentu alebo na konci pred uzatvaracím tagom body
+########################################################
+1)dame ich do medzi tagy head html dokumentu
+
+- ked mam tieto súbory nalinkovane v head tk ked consol lognem všetký img na stranke
+
+-console vrati nejky drist ale ked si v konzole rozklikneme tak vidime že length tak tam je 0
+
+-čiže našiel nula obrazkov na stranke a pritom ich tam je osem prečo je to tak?
+
+- pretože ked prehliadač začne pozerať naš html kod on ide z vrchu pozera ake link elementy má ake css sa linkuje atd narazi neskôr dole na tie obrazky začne ich stahovať postupne
+
+- čiže ked to je v hlavičke html tak js ma stiahnuty len ten usek stranky a dojde k linkovaniu js zisti že sme chceli dačo konzol lognut tak to vypíše ale js sa nedostal až dole preto "nenašiel" na stránke žiadne obrazky pretože skončil pri scriptoch
+
+2) js na pred uzatváracim body elementom
+
+- tak on už vie o tých obrazkoch lebo na scripty narazi až na konci body a tým padom length  bude mať napr hodnotu 8
+
+- čiže až naspodku mu povieme že najdy všetky img na stranke ale on už prebehol cely ten kod tak vie že ich tam je 8
+- na konci stranky je to lepšie aj z toho dôvodu že všetky obrazky videa atd ked sa načitáva stranka  sa najsôr stiahnu až potom narazi na js a vtedy sa všetko stahovanie zastavi a vykona sa js
+
+-čiže keby je v hlavičke tak sa začne dačo stahovat
+potom narazi na js a všetko ostatne čo sa stahovalo sa stopne a až po stiahnuti js sa stiahnu
+#######################################################

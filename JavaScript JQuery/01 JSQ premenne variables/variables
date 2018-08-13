@@ -1,0 +1,55 @@
+3 + 4
+7
+/*Pomocou operátra plus (+)som spustil operaciu sčítania čisla 3 a 4 a výsledok 3 + 4 je 7 každy príkaz v javascripte by mal končiť bodko čiarkou čiže 3+4;*/
+
+var  množstvo = 5; /*slovičko var znamena variables premenna nazov premenej je = hodnota v premenej čiže premena s nazvom mnozstvo = hodnota bude 5 čiže  program si teraz pamata že k slovu množstvo je priradena hodnota 5 */
+keď do konzoli napišem : mnozstvo;
+konzola vypiše ake čislo je v premenej uložene ciže 5ň
+
+= (rovnása )je tzv znak priradenia  čiže premenej mnozstvo možme priradiť hodnotu sedem
+mnozstvo =7;
+teraz ked necham vypísať mnozstvo;
+vypše : 7
+
+ja môžem tu premennu používať dalej v mojom programe
+mnozstvo * 22 ;vysledok bude 154
+ZNAKY:
+znak (hviezdička) sa použiva v programovani často napr v javascripte na násobenie
+znak (lomeno) sa v programovaní použiva na delenie
+znak (rovná sa ) nie je také typické matematické rovná sa ale je to priradenie
+
+čiže ja keď napíšem nožstvo = 13 ; znamená to že teraz množstvo bude trinasť
+
+vytvoríme si dalšiu premenu var cena = 23;
+ teraz keby spravím nozstvo * cena; vysledok je 299 eur
+
+ ###############
+ konzola vypis #
+ ###############
+ 3+4
+7
+3+4;
+7
+var  kolobeziek = 5;
+undefined
+var mnozstvo = 5;
+undefined
+mnozstvo;
+5
+mnozstvo =7;
+7
+mnozstvo;
+7
+mnozstvo *22
+154
+mnozstvo = 13;
+13
+mnozstvo;
+13
+var cena =23;
+undefined
+mnozstvo * cena;
+299
+
+
+

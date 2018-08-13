@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSQ -koncept premených a funkcií bonus vysvetlenie</title>
+</head>
+<body>
+	<pre>
+		funkcia<b>alert</b> je vyskakovacie okto v korom je text
+		funkcia <b>confirm</b> je niečo podobné z tým že táto funkcia má dve možnosti <b>ok</b> a <b>cancle</b><b>ture</b> a <b>false</b> z tým že ten výsledok to čo použivatel stlačil si viem odchytiť do premennej
+		1) vytvoríme premenu fakt a  do nej priradím výsledok tohto confirmnu
+		<b>zapis</b>
+		var fakt =	confirm("Naozaj?");
+		2) hneď potom si neham consolelognuť vypisať aka hodonta sa mi skrýva v premenej fakt čiže ked kliknem na ok v premenej bude uložene true ak kliknem na cancel fo fakt sa uloži false
+		<b>	zápis</b>
+		console.log(fakt);
+		3) môžem hodnoty v premených kontrolovať na základe napríklad <b>	podmienky </b> if
+		<u>	<b>	príklad</b></u>
+		alert('ahooj');
+var fakt =	confirm("Naozaj?");
+  		if (fakt){
+		----- čiže tento kus kodu sa spusti iba v tedy ak je podmienka pravdivá čiže ked tam je uložena hodnota true ked klikol ok
+  		}
+console.log(fakt);
+ak fakt ma pravdívu hodnotu v sebe klikol okej ak fakt nema pravdivú hodnotu <b>	klikol cancel</b>
+
+	</pre>
+<h2> dalšia jsquey hodnota  funkcia je prompt();</h2>
+<pre>
+ čiže prompt nam vyhodi vyskakovacie okno kde môžeme zadať hodnotu napríklad také vyskakovacie okno ako sa volaš? a daš tam napr Mário a to tuto jsq funkciu môžme nechať uložiť do premennej a nechať consolelognuť
+ vytvorím dalšiu premenu nazvem ju  že cash do nej dam funkciu prompt z otazkov kolko maš penazi
+ a necham si console lognut jednak to meno jednak počet penazi.
+ čiže volaš sa... a maš... penazi
+ <b>príklad / zápis</b>
+
+ var meno = prompt('Ako sa voláš?');
+var cash = prompt('kolko maš penazi?');
+console.log("Volaš sa " +meno + " a máš " + cash + " penazi");
+<h2>console.log()</h2>
+je pomôcka pre programatora dokaže vypísť hodnoty iba prehliadač
+take testovacia vec či program funguje tie riadky console.log(), popripade console.dir() musia v finalnej verzi stranky zmiznúť <b>su to kontrolné vypisi pre programatora</b>
+</pre>
+<h1>"hra"</h1>
+<h3>zapis</h3>
+<pre>
+var meno = prompt('Ako sa voláš?');
+var cash = prompt('kolko maš penazi?');
+console.log("Volaš sa " +meno + " a máš " + cash + " penazi");
+cash = 1*cash + 100;
+console.log("Volaš sa " +meno + " a máš " + cash + " penazi");
+číže zadam meno kolko mám penazi ale automaticky mi môj počet prenazi pripočita +100 penazi lebo tm mam v programe taky prikaz že do premenej cash = ulož 1*cash(čo som zadal v okne) + pridaj k tomu 100 čiže na konci programu ked nechame vylogovať meno aj cash tak nam vypiše meno ktore zadame napr Mário a peniaze ktore zadame + sto napr zadame 4 tak nam vypiše 104
+</pre>
+
+<script>
+/*	alert('ahooj');
+var fakt =	confirm("Naozaj?");
+  		if (fakt){
+  			console.log('klikol ok');
+  		}
+  		else{
+  			console.log('klikol cancel')
+  		}
+console.log(fakt);*/
+/*
+var meno = prompt('Ako sa voláš?');
+var cash = prompt('kolko maš penazi?');
+console.log("Volaš sa " +meno + " a máš " + cash + " penazi");
+*/
+/*"hra"*/
+var meno = prompt('Ako sa voláš?');
+var cash = prompt('kolko maš penazi?');
+console.log("Volaš sa " +meno + " a máš " + cash + " penazi");
+cash = 1*cash + 100;
+console.log("Volaš sa " +meno + " a máš " + cash + " penazi");
+
+</script>
+</body>
+</html>

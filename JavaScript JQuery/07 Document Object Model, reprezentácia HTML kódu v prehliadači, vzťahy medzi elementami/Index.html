@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSQ -08 Document Object Model, reprezentácia HTML kódu v prehliadači, vzťahy medzi elementami</title>
+</head>
+<body>
+<pre>
+	v podstate prhliadač používa niečo čo nazýva <b>DOM</b>- <b>Document Object Model</b> je to reprezentacia jazyka v stromovej štruktúre
+	<h3>vysvetlenie štruktúry</h3>
+	<b>html</b> je rodič elementu <b>head a body</b>
+	a element <b>body</b> je rodič elementu <b>h1 a p </b>elementu čiže  element<b> h1 a p</b> sú  surodenci a zároveň su to potomkovia rodiča <b>body</b>
+	<h3>ešte by sa dalo pvedať</h3>
+	že <b>body </b> je <b>priamy</b> rodič h1 a p elementu ale taktiež element html sa nazýva <b>rodič</b> elementov h1, p Aj keď už nie je <b>priamy</b>
+	<h1>javascriptovy objekt z nazvom document</h1>
+	tento object ma vytvorený <b>každa</b> stránka
+	tento document object nám dáva prístup v javascripte k metódam 	ale taktiež nám dáva pristup k tomu <b>stromu</b> tých elementov (<b>k štruktúre</b>)
+<hr>
+<h1>window</h1>
+	je niečo veľmi podobné akurát že window je ešte nadradené  nad samotným <b>(DOM)</b>
+	<b>window</b> je to iste + všetko čo vieme vyčítať z prehliadača
+	<h3>príklad</h3>
+	1) otvorime console a dame príkaz
+	window.location.href
+	výsledok
+	file:///E:/www/projekty/ju-jitsu%20tren%C4%8Din/index.html
+
+
+</pre>
+</body>
+</html>

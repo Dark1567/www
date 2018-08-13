@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>09 jQuery, pridanie knižnice do stránky lokálne alebo cez CDN</title>
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+<pre>
+	<h1>jquery</h1>
+	je nadstavba jazyka Javascript všetko čo sa da spraviť v javascripte sa da spraviť aj v jquery pretože je to strašna kopa rôzných funkcíi ktoré su vyrobené za nás  a my ich len použivame 	<b>narozdiel od javascriptu sa jquery sprava vo všetkých prehliadačov rovnako</b>
+	<b>jquery </b> je plne podmienok
+	jquery je velikánsky súbor plný <b>JS</b>funkcíi.
+	<h1>vloženie jQuery do stránky</h1>
+	sú dve rôzne verzie
+	1) compressed - tato je bez medzier tabulatorov ma menej (MB) ma nazov takyto ten subor jquery-3.3.1.min.js
+	// akože minifikovana verzia
+
+	druha je
+
+	2)uncompressed tato je z mederami z tabulatormi čiže má vyše (MB) nazov ma jquery-3.3.1.js
+
+3) linkovanie javascriptu do stranky v hlavičke (head)
+dame že
+< script src="js/jquery-3.3.1.js"> < /script>
+4)tak tiež nalinkujeme aj súbor v ktorom budeme mat svoj javascriptový kod
+< script src="js/script.js" > < /script >
+<h2>druhy prístu pridania jsquery do stranky je cez cdn</h2>
+tuto stranku vložime do tagu script src
+//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js
+ale pozor tento zapis odkazu funguje iba ked je stranka uložena na servery  a ten si pred lomitka doplni bud <b>http alebo https</b>
+ked mam tu stranku na disku musim si to doplniť sám.
+
+tieto javascriptove subory sa nemusia davať do hlavičky(head) stranky ale môžu sa dať pred ukončovaci <b>body tag</b>
+</pre>
+</body>
+</html>

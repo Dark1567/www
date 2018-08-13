@@ -1,0 +1,88 @@
+#################
+Funkcie a Metody
+#################
+
+otvorime browser consolu a napišeme príkaz do console
+alert("AhoJ!!"); /*po stlačeni enter nam v browseri vyskoči okno Ahoj!!*/
+
+takto vytvoríme vlastnu funkciu napríklad povedzAhoj
+
+function povedzAhoj()/*univerzalny symbol pre funkcie su obyč zatvorky*/
+{ /*do zložených zatvoriek pišeme telo funkcie*/
+ alert("Ahoj");
+
+}
+
+funkciu povedzAhoj zavolame takto
+povedzAhoj();
+po stlačeni tlačitka enter nam vyskoči vyskakovacie okno v browseri ahoj!!
+
+
+#####################
+ako zavolať funkciu z   argumentom
+#####################
+
+function povedzahoj(meno)/*čiže argument sa piše do zatvoriek meno je v tomto pripade argument*/{
+  alert("ahoj" + meno);/*čiže čo chceme pomocou funkcie vypisať napr ahoj + argumetnt meno */
+}
+
+potom zavoláme funkciu v console
+povedzahoj("Mário");/*ako argument dame Mário*/
+#####################
+vyskočí nam alert ahoj Mário
+taktiež do funkcie ako argument môžeme poslať aj premenne
+vytvoríme premenu meno
+var meno= " Gulevator";
+a zavolame funkciu povedzahoj a do argumentu vložíme premenu
+povedzahoj(meno);
+vypiše
+ahoj Gulevator
+
+############################
+vytvorime funkciu scitaj
+############################
+
+function scitaj(a, b){/*teraz funkcia scitaj zoberie dva argumenty*/
+ return a + b; /*return nam vrati hodnotu vysledok a+b */
+
+}
+###########################
+zavolame funkciu scitaj
+scitaj(1,2);
+console vypiše
+3 /ale kedže ja mam vo funcií return tak vysledok sa vrati /
+a ja môžem vytvorit novu premenu vysledok
+var vysledok;
+a do nej pridať funckiu sčitaj
+vysledok = scitaj(133,7);
+tak  v premennej vysledok bude uložena hodnota ktorá sa mi vrátila
+do console nechame vypisať  premennu vysledok
+
+vysledok;
+consola vypiše
+140
+########################################################
+ funkciam ktoré su v tele nejakého objektu hovoríme Metody!!!!
+########################################################
+vytvoríme objekt pes do ktorej dame funkciu vratVek
+
+var pes={
+typ: "labrador",
+stav: "ojazdený",
+vek: 4,
+hmotnost:"privela",
+vratVek: function(){return "Mam " + pes.vek + " roky. Hav"}
+  };
+  teraz ked zavolam v console pes.vratVek();
+
+consola vypíše
+"Mam 4 roky. Hav"
+/*funkciam ktoré sú v tele nejakého objektu hovoríme metody*/
+tento zápis znamena :
+$("h2").text();
+
+/*zavola jquery na h2 elementy na stranke zavolam na h2 metodu text();
+- tak jQuery vrati text h2*/
+###############################
+čiže voláme metody na objekty
+###############################

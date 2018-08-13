@@ -53,6 +53,9 @@ p:last-child {
 a {
 	text-decoration: none;
 }
+.fl-right{
+	float: right;
+}
 .fl-left{
 	float: left;
 }
@@ -307,7 +310,36 @@ display: block;
 
 .content{
 	padding: 1.5em;
+}
+.text p,
+.text h2,
+.text h3{
+	margin-left: 8em;
+	margin-right: 8em;
+}
+.text h2{
+	text-align: center;
+	text-shadow: 1px 3px 6px rgba(0, 0, 0, .12),
+				 1px 5px 6px rgba(0, 0, 0, .16);
 
+}
+.center-image{
+	text-align: center;
+}
+.center-image img,
+.pull-image img{
+	max-width: 100%;
+}
+.center-image img,
+.pull-image{
+	max-width: 415px;
+}
+.pull-image.fl-left{
+	margin: 24px 34px 24px 0px;
+	/*kedže element floatujeme do lava tak lavy margin vynulujeme*/
+}
+.pull-image.fl-right{
+	margin: 24px 0px 24px 34px;
 }
 /*form*/
 form{
@@ -397,7 +429,7 @@ textarea:focus{
 	text-align: center;
 }
 
-.text .group{
+.pre-footer .group{
 	max-width: 28em;
 	margin: 0 auto;
 	padding: 3.5em 0.5em 0em 0.5em;
@@ -528,7 +560,15 @@ form{
 
 
 }
+@media(max-width: 727px){
+	.pull-image.fl-left{
+		float: none;
+	}
+	.pull-image.fl-right{
+		float: none;
+	}
 
+}
 @media(max-width: 596px){
 	.logo{
 		float: none;
@@ -580,6 +620,14 @@ form{
   .sub-menu li:first-child{
   	border-bottom: 1px solid #fff;
   }
+}
+@media(max-width: 566px){
+	.text p,
+.text h2,
+.text h3{
+	margin-left: 0;
+	margin-right: 0;
+}
 }
 @media(max-width: 539px){
 		.pre-footer .social li{

@@ -1,0 +1,40 @@
+veľmi často sa js scripty v kladajú na koniec stranky pred ukončovaci body tag a nie medzi tagy head neskôr si vysvetlíme prečo
+2) teraz si ukažeme ako sa použiva jquery viac v script.js
+3) $ (dollar) je skratený zapis pre zavolanie jQuery
+#################
+DOLEŽITE
+#################
+JE ZAPAMATAT SI ZE EXISTUJE MNOHO ROZNYCH KNIZNIC JAVASCRIPTOVýCH NEXISTUJE LEN JQUERY !!!
+keby náhodou vložime niekoľko rôzných knižnic do stránky
+a niektorý z nich by taktiež používali dollar ($) tak by to bol veľký problém pretože by sa to celé bilo a
+########################################################
+ZAPIS A VYSVETLENIE KU KAŹDÉMU ZÁPISU
+########################################################
+$('.post-title').hide(); // tento zapis znamena že na triedu class post-title sme zavolali jquery metodu hide čiže post title zmizne zo stránky post-title sa skryl ako keby sme mu dali v ccs display:none; len sme to spravili cej jquery
+$(.'post-title').show(); //metoda show nám zase naspať zobrazi pos-title na stranke
+
+// cely zapis jquery by vypadal takto
+jQuery('.post-title').hide();// $dolar bol aleb je skratený zapis pre zvolanie jquery toto je cely zapis a post-title skryje znova
+$('.navigation a').hide();// všetky a elementy v navigáci sa skryjú
+########################################################
+METÓDY KTORE VOLAME NA JQUERY OBJET DOKAŽU AKCEPTOVAŤ ARGUMENTY.
+########################################################
+Metody ktoré volám na jquery objekt môžu taktiež akceptovať argumenty
+######################################################
+zapis
+#######################################################
+
+$('.post-title').hide(5000);// post title zmzne zo stranky ale s argumentom  500ms čiže bude miznuúť 5 sekund tzn že vznikne tzv animácia 5 sekundová
+
+DALšIE jquery metody:
+1)$(.post-title).fadeOut(3000); bude miznuť zo stranky 3 sekundy
+// take miznutie blednutie v css je tato hodnota opacity
+2) $('.post-title').fadeIn(3000); //je opak metody fadeOut čiže nam zobrazi postupne element na stránke ktorý sme pred tým skryli
+########################################################
+tomuto sa hovorý tzv metod chaining /reťazenie metod/
+########################################################
+$('.post-title')
+.hide()
+.fadeIn(5000);/*zapis môže byt aj viacriadkový ale bodkočiarka musi byť až na konci lebo to ukoncuje zapis /akcui */
+
+// čiže pmocou metody hide naskôr skryjeme post-title a potom pomocou metody fadIn postupný vysvetlením  vratime elment na stranku

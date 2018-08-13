@@ -1,0 +1,23 @@
+###################
+RETAZCE A ČÍSLA
+###################
+Reťazce = string = sa v jquery zapisujú do úvodzoviek.
+toto napišeš do console
+"toto je string alebo reťazec ako chceš";
+consola vypíše toto:
+"toto je string alebo reťazec ako chceš"
+dalši príklad vytvoríme si premenu meno do ktorej pridame meno gulevator
+var meno = "Gulevator"; /*premennej meno som priradil "Gulevator"*/
+a nechame si meno vypisať v stringu  Moje meno je ?
+napíšeme do console
+"Moje meno je" + meno;
+consola vypíše
+"Moje meno je Gulevator"
+do console napíšeme takyto string
+ " 5 plus 2 je" 5+ 2;
+ consola vypiše
+ "5 plus 2 je"52 /*pretože teraz to neberie ako matematicky priklad ale ako normalní string a tak dvojku prilepi k patke ked chceme aby to bralo ako matematicky priklad musime to dať do zatvorky*/
+ TAKTO:
+ "5 plus 2 je" + (5+2);
+ vypiše:
+ "5 plus 2 je 7"
