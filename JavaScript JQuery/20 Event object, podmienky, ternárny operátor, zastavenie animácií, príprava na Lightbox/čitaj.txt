@@ -1,0 +1,204 @@
+1)vytovrime anonymnú funkciu ktorej dame ako argument dollar  vo funkci vytvoríme premennu z nazvom gallery a do nej si vytiahneme pomocou jquery element sekciu s classom .gallery
+
+2) na premenu gallery naviažeme jquery metodu find('.gallery'); a najdeme všetky img elementy v sekci  s classom .gallery
+
+3) na to naviažeme metodu css() a v jquery si pmocou metody css nastavíme opacity na 0.5
+
+4)teraz ich môžem dalej animovať napriklad ked po ných prejdem myšou
+čiže napojíme nato metodu .on('mouseenter', function(){}); z udalostou mouseenter a do funkcie napišem čo sa ma vykonať
+
+5) 	$(this).fadeTo(200, 1);// funkcia ma vykonat na to čo pridem myšou sa ma použit metoda fadeTo() prva hodnota je ako rýchlo ma trvat animacia 200ms a druha hodnota je opacity 1 čiže to bude plne nepriehladné
+
+6)potom si dalej nato napojim dalšiu metodu on('mouseleave',function(){}); a do funkcie napišem čo sa ma vykonať keď myška opusti obrazok
+
+7).on('mouseleave', function(){
+	$(this).fadeTo(200, 0.5);// čiže keď myška opusti obrazok obrazok bude prehladný na 50%
+ });
+######################
+	celý zápis
+######################
+
+(function($){
+var gallery =$('.gallery');
+
+gallery.find('img').css({opacity:0.5}).on('mouseenter', function(){
+
+	$(this).fadeTo(200, 1);
+
+}).on('mouseleave', function(){
+
+	$(this).fadeTo(200, 0.5);
+});
+})(jQuery);
+/tento zapis sa da skratýt tak že event 'mouseenter' a 'mouseleave' dame do jednej metody .on();
+#####################################################################
+
+###############
+skratený zápis
+################
+1) čiže do metody .on();pridame mouseenter a mouseleave a do funkcie dame argument event a ten si nechame vo funkci console.lognut ale jeho typ čiže takto:
+
+gallery.find('img').css({opacity:0.5}).on('mouseenter mouseleave', function(event){ // všimní si že ked mam dva eventy zasebou je to v jedných uvodovkach a bez čiarky
+
+	console.log(event.type);
+	//$(this).fadeTo(200, 1);
+});
+2) tym padom ja teraz do funkcie môžem napisať programatorsku podmienku  if a zistiť  ktorí event nastal či mouseenter alebo moseleave
+3) čiže if(event.type =='mouseenter') // dve rovna sa v programovani znamena rovna sa jedno rovna sa je pridaj
+{
+	$(this).fadeTo(200, 1);// čiže vykona 100%tnu neriehladnosť
+}
+else{// v opoačnom pripade teda ak je to mouseleave
+
+	$(this).fadeTo(200, 0.5); vykona že obrazok bude prehladny na 50%
+}
+4) a teraz môžeme našu programatorsku pomocku console.log ();
+zakomentovať alebo vymazať
+#####################################################################
+
+################################################
+rozdiel medz == a === v programovani v podmienke
+#################################################
+1) ak provnam čislicu 4 a čislicu '4'v stringu
+console.log( 4=='4');
+//v tomto prípade by to malo  hodiť true
+
+2) a však ak ak ten isty zapis porovnam z tromi rovnasa
+console.log(4 ==='4');
+// hodi to false pretože tri rovna sa provnavajú nie len samotnu hodnotu čo je 4 ale aj  typ či su oby dve čisla stringy alebo čisla
+
+-pri troch rovna sa 4 sa musi rovnať 4ke a obe musia byť bud string alebo len čislo nesmie byť jedno string a druhe len čislo vtedy to hodi false
+#####################################################################
+
+#########################################
+ešte viac skrátený zápis  vďaka premennej
+##########################################
+1) čiže vo fnukci pred našou if podmienkou sme si vytvorili premennu  s názvom opacit; ktorej sme  nepridali žiadnu hodnotu takto
+
+var opacity;
+2) do podmienky if sme napisali našu premenu opacity a pridali jej hodnotu 1
+takto:
+if(event.type ==='mouseenter'){
+	opacity = 1;
+}
+
+3) do elese sme zase  napisali našu premenu opacity a pridali jej hodnotu 0.5;
+else{
+	opacity = 0.5;
+}
+4) A na koniec sme na spodu fnkcie zavolali jquery $(this) a nato metodu fadeTo() do ktroej sme dali prvy argument koko to ma trvať
+a našu premenu opacity ktora sa urči podla toho či je to mouseenter alebo mouseleave
+
+##############
+cely zapis
+###############
+(function($){
+var gallery =$('.gallery');
+
+gallery.find('img')
+		.css({opacity:0.5})
+		.on('mouseenter mouseleave', function(event){
+
+	var opacity;
+
+	if ( event.type =='mouseenter' ){
+		opacity = 1;
+
+	}
+	else{
+		opacity = 0.5;
+	}
+		$(this).fadeTo(200, opacity);
+
+});
+})(jQuery);
+####################################################################
+
+###################
+ternárný operátor
+####################
+1)to znamna že ja do var opacity môžem priradiť hodnotu  na zaklade podmienky čiže celu podmienku čo mam v if  uložim do premenej opacity a za nu dam otazník a za otaznik dam hodnotu 1 : 0.5;
+dvojbotak znači alebo
+
+takto
+var opacity = event.type =='mouseenter'? 1: 0.5;
+2) čiže jak som myšou na obrazku do opacity sa uloži 1
+a ak nie som myšou na obrazk do opacity sa uloži 0.5;
+############
+cely zapis
+#############
+
+(function($){
+var gallery =$('.gallery');
+
+gallery.find('img').css({opacity:0.5}).on('mouseenter mouseleave', function(event){
+
+	var opacity = event.type =='mouseenter'? 1: 0.5; //ternarný operator
+
+$(this).fadeTo(200, opacity);
+
+
+});
+})(jQuery);
+####################################################################
+uprava celeho kodu cez css nastavíme obrazkom opacity a to si uložime do premenej v jquery startingOpacity
+1) a to tak že  do startingOpacity dame našu premennu galery na nu naviažeme metodu find('img') kde najdeme všetky img vramci tej premenej gallery;
+2) a pomocou css metody si nehame najsť v css hodnotu opacity
+#######
+zapis
+#######
+(function($){
+
+var gallery =$('.gallery'),
+
+	startingOpacity = gallery.find('img').css('opacity');
+	 })(jQuery);
+
+	 3) v tomto riadku od tial vymažeme tu metodu css() lebo to už mame nastavene priamo v style.css dokumente
+gallery.find('img').css({opacity:0.5}).on('mouseenter mouseleave', function(event){
+
+
+	 4) a kedže sme si opacity nastavili v style.css tak už nam stači len takyto kus kodu:
+
+	 (function($){
+var gallery =$('.gallery'),
+	startingOpacity = gallery.find('img').css('opacity');
+
+	gallery.find('img').on('mouseenter mouseleave', function(event){
+
+	var opacity = event.type =='mouseenter'? 1: startingOpacity;
+
+$(this).fadeTo(200, opacity);
+
+
+});
+})(jQuery);
+####################################################################
+
+ 1)všimli sme si že  keď viack krat zasebou prejdem mo obrazkoch myšou  a prestanem tak sa obrazky stale animujú je to z toho dôvodu že sa ta funkcia prikaz stackuje na seba a môžme to
+stopnuť  že do prikazu pridame metodu .stop();
+
+######
+zapis
+######
+$(this)stop().fadeTo(200, opacity);
+2) čiže animacia fadetTo() sa stopne a spusti sa len ta posledná
+##############
+cely zapis
+##############
+
+(function($){
+
+var gallery =$('.gallery'),
+
+	startingOpacity = gallery.find('img').css('opacity');
+
+gallery.find('img').on('mouseenter mouseleave', function(event){
+
+	var opacity = event.type =='mouseenter'? 1: 0.5;
+
+$(this)stop().fadeTo(200, opacity);
+
+
+});
+})(jQuery);

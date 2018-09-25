@@ -1,0 +1,99 @@
+#################################################
+klonovanie existujúcich elementov metoda clone();
+#################################################
+1)takto je zapis bez premennej
+################################
+$(this).clone().appendTo( list );
+		$(this).next().clone().appendTo(list);
+
+#####################################################################
+2)takto skratený vdaka premenným
+#####################################################################
+var dt =$(this),
+	dd = dt.next();
+
+	dt.colone().appendTo(list);
+	dd.colone().appendTo(list);
+#####################################################################
+3) ešte viac skrateny zapis vdaka metode add()
+####################################################
+		dt.add(dd).clone().appendTo( list );
+
+		//////////////////////////////////////////
+		//číže na premenu dt použijem metodu add() do ktorej pridam premenu dd takto dt.add(dd)
+		//na to napojim metodu clone() a na clone metodu appendTo() a appendnem to na koniec .list ktry mam odchyteni pomocou jquery v premenej list
+
+
+#####################################################################
+pomocou css metody môžme novo pridaným elementom dat  farbu #bada55; taktiež môžme element najsôr skryť a potom ho znova zobraziť v novej farbe na vrch zoznamu z classom .list ho da
+#############################################################
+#########
+zapis
+#########
+	dt.add(dd)
+	.clone()
+	.hide()
+	.css({backgroundColor:'#bada55'})
+	.fadeIn()
+	.prependTo( list );
+	#################################################################
+
+	ako spraviť to aby aj novo pridane elementy pomcou jquery mali funkčnosť takú istú ako maju tie čo už tam boli
+	###############################################################
+	-všimli sme si že ked klikam na novo-pridaný element  že vôbec sa nič nepridáva a vôbec nič sa nekopiruje do .copy sekcie
+
+	1) je to pretože clone();metoda kopiruje elementy bez ich funkcií ktoré su nan naviazané
+
+	2) keď do clone pošleme true ako argument to tej funkcií povie že chcem skopirovať nie len ten element ale aj jeho funkciu
+	takto:
+dt.add(dd)
+	.clone(true)
+	.hide()
+	.css({backgroundColor:'#bada55'})
+	.fadeIn()
+	.prependTo( list );
+
+	//čiže teraz sa nam tam nakopirujú aj všetky tie event handleri
+##################################################################
+
+##################################
+do ul zoznamu prídam nový element
+pomocou metody append();
+###################################
+zapis
+########
+var ul =$('.list');
+
+ ul.find('li').on('click',function(){
+
+ 	ul.append('<li>JA SOM TU NOVÝ!!!</li>');
+ });
+
+-teraz keď budem klikať na ktorýkoľvek element v ul zozname tak sa mi prida do zoznamu li element z textom JA SOM TU NOVÝ!!!
+########
+avšak
+#########
+keď začnem klikať na jeden z tých novo pridaných elementov
+tak sa ďalši nový nepridá lebo nema naseba naviazanu tu funkciu
+
+-pretože click event mame v našom zapise naviazaný na každy li element ktorý spada pod ul zoznam ale ten li ja som tu novy predtym nexistovali keď sa liseneri rozdvali pretože boli vytvorene pomocou jquery tak preto nema funkciu 'click'
+
+###################################################################
+ako vyriešiť problem dynmacky pridanými elementami aby aj nové elementy mali ten event listener event 'click'
+####################################################################
+- da sa to vyriešit pomocou jquery bublingu a delegácia a vdaka metode on();
+1) na premenu ul naviažeme on(); metodu
+2) do on metody dame event udalost kliknutia ul.on('click',)
+
+3) za udalosť nedam rovno funkciu ale dám tam dalši selektor
+#########
+zapis
+##########
+ul.on('click','li', function()
+{
+ul.append('<li>JA SOM TU NOVÝ!!!</li>');
+});
+
+4) čiže zobral som celý zoznam naň naviažem  event počuvač na klikanie a v momente ked to klikanie nastane metoda on sa pozrie či to bolo priamo na li element ak hej tak zoberieme a do ul pridame dalši li element toto znamená ten zapis
+
+5) čiže teraz ta udalost kliku bude fungovat aj na ten novo pridaný element pomocou jquery a je to z toho dôvodu že event listeners je naviazani na udalost 'click'

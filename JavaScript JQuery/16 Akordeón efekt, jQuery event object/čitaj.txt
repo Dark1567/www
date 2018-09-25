@@ -1,0 +1,61 @@
+########################################################
+pomcou metody siblings() najdeme všetkych surodencov dd
+a na to použijeme metodu slideUp() čo nam raziadi že
+všetky dd okrem jednoho sa zasunu
+#############################################################
+
+surodencov siblings('dd') a na ten čo sme klikli sprav slideDown() na ostatne dd sprav slideUp() čiže vysunuty ostane len jeden
+###################################################################
+ ###############################
+ KED DO FUNCIE dame argument
+ ###############################
+-každa event funkcia posiela tzv event
+object my ho ptom môžeme odchytiť a použiť
+ak chceme
+- do funkcie pridame argument event
+a zrazu mam pristup k informaciam tejto udalosti
+čiže pomocou console log si nechame vypisať informacie o
+evente
+- čiže teraz ked refresh stranku otvorim consolu kliknem na
+nejaky dt tak sa mi v konzole vypiše JS object
+
+ -po rozkliknuti najdeme tam najake metody ktore nam object ponuka
+ ##########
+ priklad
+ ##########
+ (function($){
+list =$('.jokes');
+
+list.find('dd').hide();
+
+ list.find('dt').on('click', function(event){
+	console.log(event);
+	$(this).next().slideDown().siblings('dd').slideUp();
+	});
+})(jQuery);
+#########################################
+VYBUBLAVANIE (BUBLING) metoda stopPropagation() a preventDefault();
+ako zakazať a elementu ktory je v
+ dt defaultnu akciu presmerovat na stranku
+##########################################
+čiže pomocou jquery najdem v jokes a elementy
+na to naviažeme metodu on s argumentom click ciarka
+function(event) z argumentom event
+a vo funkci na event pošleme metodu preventDefault();
+tato metoda nam zamedi defaultnej akci a elementu čiže stranka sa nepresmeruje neotvorí
+###################
+	cely príklad
+###################
+(function($){
+list =$('.jokes');
+
+list.find('dd').hide();
+
+list.find('dt').on('click', function(event){
+	console.log(event);
+	$(this).next().slideDown().siblings('dd').slideUp();
+	});
+list.find('a').on('click', function( event ){
+	event.preventDefault();
+});
+})(jQuery);

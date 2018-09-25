@@ -1,0 +1,85 @@
+#######################################
+udalost kliknutia pomocou metody on();
+#######################################
+1)pomocou jquery vytiahneme $('.post-title');
+2) čiže vyvolame akciu aby sa nam zobrazil alert po kliknuti na post-title vykonaj funkciu
+3)čiže metoda on(); do ktorej pošlem argumenty
+
+4) jeden z nich bude click argument a vykona funkciu
+
+- $('.post-title').on('click', function(){});
+
+5) po kliknuti na post-title vyskoči alert okno  ahoj
+- $('.post-title').on('click', function(){
+	alert('ahoj');
+});
+
+6) alebo si môžeme z post title vytiahnuť text
+
+- $('.post-title').on('click', function(){
+	alert($('.post-title').text());
+});
+########################################################
+
+##########
+celý zápis
+###########
+$('.post-title').on('click',function(){
+			alert($('.post-title').text());
+	});
+	########################################################################################################
+
+	#######################################
+	dalšia možnosť je napísať si tu funkciu
+	########################################
+	1) funkciu si nazveme vyskocOkno();
+	- function vyskocOkno(){}
+	2) a do funkcie vyskoč okno vložit ten predošli alert
+
+	- function vyskocOkno(){
+		alert($('.post-title').text());
+	};
+	3)na post title zavolame jquery na to zavolame metodu on() z argumentom click event/udalosť ciarka a našu funkciu vyskocOkno
+
+	- $('.post-title').on('click', vyskocOkno);
+// vlastne sme zavolali tu našu funkciu vyskocOkno na post-title po kliknuti
+
+################################################################################################################
+
+############
+tento zapis
+#############
+
+icons.on('mouseenter',function(){
+	icons.css(styles).animate(settings, speed);
+});
+
+// hovori to že ked prejdem nad social icon myšou tak sa spusti animacia css sa nastavi farby pozadia a ikonky sa odanimuju na spodok stránky
+########################################################
+###############
+lepšie riešenie
+################
+1) v js si vytiahnem tieto css styles hore z našej funkcie a nastavim im farby už od začiatku
+icons.css(styles);
+
+2) a jedine čo sa spusti pri mouseenter bude animacia
+ -icons.on('mouseenter',function(){
+	icons.animate(settings, speed);
+});
+#######################################################
+
+######################################################
+ako zariadiť aby sa animoval iba ten dani elment zo social-icon po ktorom prejdem myšou a nie všetky naraz
+########################################################
+
+1) ku konkretnému elementu vieme v jquery pristupovať
+pomocou klučového slovička this
+
+2) this obalime do jquery a na this naviažeme tie metody naprikad animate()
+
+###########
+celý zápis
+###########
+icons.on('mouseenter',function(){
+	$(this).animate(settings,speed);
+});

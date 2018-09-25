@@ -1,0 +1,72 @@
+1)Otvoríme konzolu a vytvoríme si premennu z nazvom ul do ktroej si zavolame jquery na element s classom .list
+######
+zapis
+#######
+var ul = $('.list');
+2)tento element s class .list ma v sebe neikoľko deti li elementov
+pvedzme že chcem vytiahnuť treti z nich zapis bude takto:
+#####################
+1) prva možnosť pomocou css selektora
+
+$('.list').find(':nth-child(3)');
+#####################################################################
+
+2)viacej programatorský najsť všetky li a vybrať len ten čo sa nachadza na 3tej pozicií čiže použijeme metodu eq(); a donej dame 2
+pretože v programovani sa počíta od 0
+
+ul.find('li')eq(2);
+najde nam to li z textom:ja som malý zoznamček
+#####################################################################
+3) metoda eq(); ma ešte aj svojú selektrovsku variantu
+
+zapis:
+ul.find('li':eq(2));
+čiže znova najdem presne ten isty element ako pri spôsobe 2)
+
+#####################################################################
+children(); vs find();
+1) rozdiel je ten že children skúma len priamých potomkov
+2) keby napríkad treti li ma vsebe nejaky a element tak cez metodu $('.list')find('a'); tak ho najde
+3) ale keby dame $('.list').children('a'); tak ho nenajde LEBO children(); sa pozera len jeden level do hlbky
+#####################################################################
+ked element existuje a existujúci element necháme appendnuť alebo prependnúť  k niečomu (ku .copy) tak ten element je vytrhnuty z toho kde bol a je dani pramo do čoho sme ho nechali appendnut čiže do .copy
+########
+zapis
+########
+$('.list').children(':eq(2)').appendTo('.copy');
+
+###################################################################
+selektor :not() veľmi dobre podporovaný v jquery
+################################################
+$('.list').children(':not(:eq(2))').appendTo('.copy');
+- jquery najde element s classom .list
+-na element z classom list použije metodu children();
+do ktorej dame css jquery selektor :not( )
+do selektoru :not(eq(2)) do selektoru not dame metodu eq z argumentom 2 čiže treti element
+ a tento prikaz znamena že všetky okrem tretieho li
+ -apppendneme do elementu z classom copy appendTo(.copy);
+
+ ###################################################################
+
+ #####################################
+ not môžeme použiť aj ako metodu takto
+#######################################
+$('.list').children().not(':eq(2)').appendTo('.copy');
+#####################################################################
+
+#############
+metoda is();
+##############
+zapis:
+//metoda is();
+ var ul =$('.list');
+ ul.find('li').on('click',function(){
+
+	copy.text($(this).is('li:eq(2)'));//tento zapis znamena
+// že do .copy vypiš true ak sa jedna o element li z indexom 2 čiže je treti v poradi
+ });
+ // v ramci premenej ul najdem všetky li elementy
+ // nato naviažem metodu on(); po kliknuti na niektorých z nich
+ // zavolám funkciu
+ čiže ked podmienka nie je splnena tak to vypíše false
+ čiže ked element v .list na ktorý som klikol nie je index 2 čiže treti v poradí vypiše do .copy false v opačno prípade true

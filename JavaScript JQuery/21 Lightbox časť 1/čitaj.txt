@@ -1,0 +1,141 @@
+#####################
+ideme robit LIGHTBOX
+#####################
+čo chcem spraviť
+1)chcem spraviť po kliknuti na nejaky obrazok vytvoriť overllay element nejaky div ktorý bude taký čierno priesvitný
+2) chcem do toho overllay umiestniť obrazok plnej veľkosti idealne na stred
+3) a chcem aby po klinuti na overllay tento overllay zimzol
+####################################################################
+ 1)čiže pužijeme našu premennu gallery a v rámci gallery si necham najst pomcou metody find('a'); všetky a elementy
+
+ 2) na to naviažem metodu on( 'click',function(){}); z udalostov 'click' a do toho vytvorim funkciu kde vytvorime novy element s id overllay a nechame ho appendnut na konic strnky čiže body
+ ########
+takto :
+############
+gallery.find('a').on('click', function(){
+
+	$('<div id="overllay"></div>').appendTo('body');
+});
+
+3) teraz potrebujem spraviť to aby a element nevykonval svoju zakladnu akciu čiže do funkcie dame argument event a vo funkci na neho pošleme metodu preventDefault(); event.preventDefault();
+
+4)  style.css si naštylujem naše #overllay takto:
+#overllay{
+	background: rgba(0,0,0, 0.7);
+	width: 100%;/*bude mať 100%tnu širku */
+	height: 100%;/*bude mať 100%tnu vyšku */
+	position: fixed;
+	top: 0;
+	left: 0;/*tym padom kedže sme dali position fixed a left a top 0bude na celu širku stranky a bude scrollovat splu so mnou*/
+	z-index: 20;/*aby sme mali istotu že overllay bude na vrch stranky*/
+}
+5) a teraz chceme za pomoci jquery spraviť to že ked klikneme na ten overllay aby zmizol ale to nepôjde tak že: $('#overllay').on('click', function(){
+
+	$(this).hide(); čiže tento kod nebude fungovat lebo tento
+
+	overllay div znikol dynamický pomocou jscriptu a nema na sebe ten listener
+});
+6) tu musíme použiť to vybublavanie a delegaciu bubling delegation na document object
+- čiže necham si odchytiť klinutie na samotný document object
+a určit že ak tento 'click' padne na overllay tak  ten element sryjeme ten  na ktorý bolo kliknute
+
+(document) a (window) sa nepiše do 'uvodoviek' pretože to už su existujuce js scriptove objekty ktoré  mi ked hodime do jquery tak iba k nim pridame dalšie metody
+#########
+zapis
+#########
+$(document).on('click','#overllay', function(){
+
+	$(this).hide();
+});
+################################################################
+7) sme ceľkom v pohde ale čo sa stane ked si necham otvoriť niekoľko overllayov na do html sa mi vytvori viacej dviov z idečkom #overllay
+ako tomu zabrániť? takto:
+- if() do ifu si vytiahneme pomocou jquery #overllay a na to pripojime .length < 1
+
+#########
+zapis
+########
+
+if($('#overllay').length < 1 ){ // čiže ak length je 0 spusti sa kod vo vnútri
+
+
+	$('<div id="overllay"></div>').appendTo('body');// spusti sa tento kod
+
+	// spusti tento kod vytvori div z id #overllay čiže touto podmienkou sme zaručili že sa vytvori iba jeden
+
+}
+-!!! ale vidíme že to môže byť problem lebo mi ked otvoríme jeden obrazok spusti sa #overllay a keď na neho klikneme sa vypne
+lae ked znova klikneme na obrazok #overllay sa nevytvorí
+ ####################################################################
+ 8) lepšie je vytvoriť si ten div  na začiatku pred funkciou a uložiť do premennej overllay takto
+
+#######
+ zapis
+#######
+
+var overllay = $('<div />', {id:'overllay', });
+
+
+// tu sme zariadil že jquery vytvori div otvaraci a uzatvaraci tag a ako druhy argument sme dali do zobačikových zatvriek aby mal ten div id z nazvom overllay a tu premennu overllay appendneme k  body takto
+
+overllay.appendTo('body').hide();// a hneď ak nalepime k bodyy ho aj skryjeme
+
+
+gallery.find('a').on('click', function(event){
+	overllay.show(); // teraz ho nehame zobraziť
+	event.preventDefault();
+});
+$(document).on('click','#overllay', function(){
+	$(this).hide();
+});
+// a všetko funguje ako má a ešte ktomu sme sa zbavili aj if podmienky
+#################################
+celý ten zapis sa da ešte skrátiť
+##################################
+
+var overllay = $('<div />', {id:'overllay', });
+// tu sme zariadil že jquery vytvori div otvaraci a uzatvaraci tag a ako druhy argument sme dali do zobačikových zatvriek aby mal ten div id z nazvom overllay
+
+ overllay.appendTo('body').hide()
+
+gallery.find('a').on('click', function(event){
+
+	overllay.show();// nechame ho zobraziť po kliknuti
+
+	event.preventDefault();
+});
+overllay.on('click', function(){
+	overllay.hide();
+});
+
+####################################################################
+
+############################################
+komplet cely naš jquery script.js súbor /kod
+############################################
+
+(function($){
+var gallery =$('.gallery'),
+	startingOpacity = gallery.find('img').css('opacity');
+
+gallery.find('img').on('mouseenter mouseleave', function(event){
+
+	var opacity = event.type =='mouseenter'? 1: 0.5; //tomtuo sa hovori ternarný operátor
+
+$(this).stop().fadeTo(200, opacity);
+
+});
+ var overllay = $('<div />', {id:'overllay', });
+
+ // tu sme zariadil že jquery vytvori div otvaraci a uzatvaraci tag a ako druhy argument sme dali do zobačikových zatvriek aby mal ten div id z nazvom overllay
+
+ overllay.appendTo('body').hide();
+gallery.find('a').on('click', function(event){
+
+	overllay.show();// nechame ho zobraziť po kliknuti
+	event.preventDefault(); // zruši defaultnu akciu a elementu
+});
+overllay.on('click', function(){
+	overllay.hide();
+});
+})(jQuery);

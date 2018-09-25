@@ -1,0 +1,159 @@
+//console.log($(this).text());/*consola nam vypiše po kliknuti na element prvú časť vtipu na ktory sme klikli*/
+
+	//$(this).text('VAJČISKÁ'); /*TENTO prikaz zariadi že na to čo kliknem v liste tak elementu sa zmeni nastaví text na vjačiska keby ale neham text metódu prázdnu bez argumentu jej aktuálnu hodnotu*/
+
+	################################################################
+	hore v script.js si vytovrím / pridáme daľšiu premenu  z nazvom copy a zavolame jquery na element z classom .copy na stránke
+	2)copy.text($(this).text());
+		// tento príkaz  spravi to že  zoberie text z elementu na ktory sme klikli a vytiahne z neho text a uloži do premennej resektive vloži do elementu .copy
+		zjednodušene element .copy jeho text sa naradi novým textom na ktory som teraz klikol.
+
+####################################################################
+		ako skopriovať uvodnu časť vtipu ale aj nasledujucú
+#####################################################################
+copy.text( $(this).text() + $(this).next().text() );
+
+	// tento príkaz  spravi to že  zoberie text z elementu na ktory sme klikli a vytiahne z neho text a uloži do premennej resektive vloži do elementu .copy ...teraz + na to čo kliknem jeho dlaši element z neho vybrať taktiež text a teraz máme clú časť vtipu
+#####################################################################
+pre  čitatelnosť kódu si môžme vyššie vo funkcií vytvoriť premenne
+####################################################################
+vytvoríme premenu dt kde si odchytíme $(this)
+
+var dt =$(this),
+
+potom vytvoríme dalšieu premenu kde si odchytíme dd a to tak že do premenej dd uložime prikaz dt.next(); čo znamena že na to čo sme klikli tak jeho dalši element čo je vlastne dd  takto to vyzera:
+
+dd = dt.next();
+
+cely zapis premenných
+
+var dt =$(this),
+	dd = dt.next();
+	4) dalej prepišeme v kode všetky vyskyty$(this) na dt
+		a takysto vyskýty dt.next() na dd
+
+		cely zapis bude vyzerať takto
+	#################################################################
+		var dt =$(this), // do premenej dt si odchytime na to čo klikame čiže dt
+		dd = dt.next();// v premenej dd si odchytime na to čo sme klikli čiže jeho nasledujuci element čiže dd
+
+		dd.slideToggle()
+		.siblings('dd').slideUp();
+		copy.text( dt.text() + dd.text() );// čiže do copy ulož text ten čo kliknem + nasledujuci element čiež vyber text
+
+poznámka: čiže teraz vieme do copy zobraziť text dt na ktory sme klikli a aj text z jeho nasledujúceho elementu ktory je dd element
+#####################################################################
+
+#####################################################################
+z dd elementu niekdy potrebujeme vytiahnuť aj nejky html obrazok a tak kod musíme prepisať takto túto časť kodu
+#####################################################################
+copy.html( dt.text() + dd.html() );//
+
+1) čiže do do premenej copy sme pomcou metody html vybrali dt z ktorého sme vybrali len text a z dd sme vybrali pmocou html cele html aby išli aj obrazky atď
+#########
+cely kód
+###########
+(function($){
+list =$('.jokes'),
+copy =$('.copy');
+
+list.find('dd').slideUp();
+
+list.find('dt').on('click', function(event){
+	var dt =$(this),
+		dd = dt.next();
+
+		dd.slideToggle()
+		.siblings('dd').slideUp();
+		copy.html( dt.text() + dd.html() );
+
+	event.preventDefault();
+});
+
+})(jQuery);
+ ####################################################################
+ AKO pridávať do elementú .copy stále nový a nový text
+ ####################################################################
+ môžeme to pomocou metody apppend(); // append znamena prilep dolep pridaj dalši čiže sa budu prilepovať čo najnižšie
+
+čiže vytvoríme si novu premenu newContent do ktorej si vytiahneme text z dt a html z dd pomcou metody text(); a html premenna bude
+
+vyzerať takto:
+var newContent = dt.text() + dd.html();
+2) a teraz v na premennu copy použijeme namiesto metody html(); použijeme metodu append() ;
+##########
+zapis
+##########
+copy.append( newContent + '<hr>' );
+#####################################################################
+
+############################################
+opakom metody append(); je metoda prepend(); čiže bude sa prilepovať na samý vrch vnašom pripade sekcií .copy
+#############################################
+ ######
+ zapis:
+ ######
+copy.prepend( newContent + '<hr>' );
+####################################################################
+
+
+##############################################################
+pridávanie elemento pomcou jquery pred alebo za .copy element
+metoda before(); a after();
+##############################################################
+1) vytvorenie elementu pred a za copy element pomcou before();a after()
+ copy.before($('<h1> JA MAM NAJVAČŠÍ HEADING</h1>'));// prida pred
+ copy.after($('<h1>JA MÁM TIEŽ NAJVAČŠÍ HEADING</h1>'));// prida za
+
+ -teraz zme na to išli tak že sme najskor vytvorili určili kam vytvoríme element h1 či pred alebo za copy element až potom sme element h1 vytvorili
+ ##################################################################
+
+###################################################################
+ existuje aj opačný spôsob že najsôr vytvoríme h1 element a potom ho dame za alebo pred .copy element
+ ###################################################################
+1)vytvoríme element pomcou jquery
+- $('<h1> ja mam najvačši ...heading</h1>').insertBefore('.copy');
+-použili sme klasicky selketor ale môžeme tam dať aj premennu
+
+$('<h1> ja mam najvačši ...heading</h1>').insertBefore(copy);
+
+//teraz nam ho vloži element h1 pred .copy element
+######################
+opak je insertAfter();
+#######################
+$('<h1> ja mam najvačši ...heading</h1>').insertAfter(copy);
+
+- vloži za .copy element
+
+##################################################################
+pripojiť novo vytvoreni element cez jquery na koniec nejakeho elementu metoda appendTo();
+###############################################################
+1) v tomto prípade vytvoríme novy element a tem pridame ku niečomu
+
+$('<h3>ja nemám až tak veľký</h3>').appendTo('body');
+// teraz tato h3 sa prida na koniec elementu body
+####################################################################
+############################
+metoda prependTo('#content');
+############################
+
+//prida na začiatok na priklad #content elementu z id content
+####################################################################
+
+####################################################################
+metoda remove(); a metoda add(); na pridavanie dalšich elementov do kolekcie
+####################################################################
+$('dt').remove();
+$('dd').remove();
+
+z permennými takto:
+$(dt).remove();
+$(dd).remove();
+
+čiže zavolam jquery na dt element dt element sa vymaže
+to iste aj druhy prikaz dd element sa vymaže tiež
+
+#################
+skratený zápis
+##################
+	dt.add('dd').remove();// zapis hovori najdi dt pridaj k nemu dd a odstran ich
