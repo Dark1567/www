@@ -1,0 +1,237 @@
+##############################
+ideme robit LIGHTBOX časť 1
+##############################
+čo chcem spraviť
+1)chcem spraviť po kliknuti na nejaky obrazok vytvoriť overllay element nejaky div ktorý bude taký čierno priesvitný
+2) chcem do toho overllay umiestniť obrazok plnej veľkosti idealne na stred
+3) a chcem aby po klinuti na overllay tento overllay zimzol
+####################################################################
+ 1)čiže pužijeme našu premennu gallery a v rámci gallery si necham najst pomcou metody find('a'); všetky a elementy
+
+ 2) na to naviažem metodu on( 'click',function(){}); z udalostov 'click' a do toho vytvorim funkciu kde vytvorime novy element s id overllay a nechame ho appendnut na konic strnky čiže body
+ ########
+takto :
+############
+gallery.find('a').on('click', function(){
+
+	$('<div id="overllay"></div>').appendTo('body');
+});
+
+3) teraz potrebujem spraviť to aby a element nevykonval svoju zakladnu akciu čiže do funkcie dame argument event a vo funkci na neho pošleme metodu preventDefault(); event.preventDefault();
+
+4)  style.css si naštylujem naše #overllay takto:
+#overllay{
+	background: rgba(0,0,0, 0.7);
+	width: 100%;/*bude mať 100%tnu širku */
+	height: 100%;/*bude mať 100%tnu vyšku */
+	position: fixed;
+	top: 0;
+	left: 0;/*tym padom kedže sme dali position fixed a left a top 0bude na celu širku stranky a bude scrollovat splu so mnou*/
+	z-index: 20;/*aby sme mali istotu že overllay bude na vrch stranky*/
+}
+5) a teraz chceme za pomoci jquery spraviť to že ked klikneme na ten overllay aby zmizol ale to nepôjde tak že: $('#overllay').on('click', function(){
+
+	$(this).hide(); čiže tento kod nebude fungovat lebo tento
+
+	overllay div znikol dynamický pomocou jscriptu a nema na sebe ten listener
+});
+6) tu musíme použiť to vybublavanie a delegaciu bubling delegation na document object
+- čiže necham si odchytiť klinutie na samotný document object
+a určit že ak tento 'click' padne na overllay tak  ten element sryjeme ten  na ktorý bolo kliknute
+
+(document) a (window) sa nepiše do 'uvodoviek' pretože to už su existujuce js scriptove objekty ktoré  mi ked hodime do jquery tak iba k nim pridame dalšie metody
+#########
+zapis
+#########
+$(document).on('click','#overllay', function(){
+
+	$(this).hide();
+});
+################################################################
+7) sme ceľkom v pohde ale čo sa stane ked si necham otvoriť niekoľko overllayov na do html sa mi vytvori viacej dviov z idečkom #overllay
+ako tomu zabrániť? takto:
+- if() do ifu si vytiahneme pomocou jquery #overllay a na to pripojime .length < 1
+
+#########
+zapis
+########
+
+if($('#overllay').length < 1 ){ // čiže ak length je 0 spusti sa kod vo vnútri
+
+
+	$('<div id="overllay"></div>').appendTo('body');// spusti sa tento kod
+
+	// spusti tento kod vytvori div z id #overllay čiže touto podmienkou sme zaručili že sa vytvori iba jeden
+
+}
+-!!! ale vidíme že to môže byť problem lebo mi ked otvoríme jeden obrazok spusti sa #overllay a keď na neho klikneme sa vypne
+lae ked znova klikneme na obrazok #overllay sa nevytvorí
+ ####################################################################
+ 8) lepšie je vytvoriť si ten div  na začiatku pred funkciou a uložiť do premennej overllay takto
+
+#######
+ zapis
+#######
+
+var overllay = $('<div />', {id:'overllay', });
+
+
+// tu sme zariadil že jquery vytvori div otvaraci a uzatvaraci tag a ako druhy argument sme dali do zobačikových zatvriek aby mal ten div id z nazvom overllay a tu premennu overllay appendneme k  body takto
+
+overllay.appendTo('body').hide();// a hneď ak nalepime k bodyy ho aj skryjeme
+
+
+gallery.find('a').on('click', function(event){
+	overllay.show(); // teraz ho nehame zobraziť
+	event.preventDefault();
+});
+$(document).on('click','#overllay', function(){
+	$(this).hide();
+});
+// a všetko funguje ako má a ešte ktomu sme sa zbavili aj if podmienky
+#################################
+celý ten zapis sa da ešte skrátiť
+##################################
+
+var overllay = $('<div />', {id:'overllay', });
+// tu sme zariadil že jquery vytvori div otvaraci a uzatvaraci tag a ako druhy argument sme dali do zobačikových zatvriek aby mal ten div id z nazvom overllay
+
+ overllay.appendTo('body').hide()
+
+gallery.find('a').on('click', function(event){
+
+	overllay.show();// nechame ho zobraziť po kliknuti
+
+	event.preventDefault();
+});
+overllay.on('click', function(){
+	overllay.hide();
+});
+
+####################################################################
+
+############################################
+komplet cely naš jquery script.js súbor /kod
+############################################
+
+(function($){
+var gallery =$('.gallery'),
+	startingOpacity = gallery.find('img').css('opacity');
+
+gallery.find('img').on('mouseenter mouseleave', function(event){
+
+	var opacity = event.type =='mouseenter'? 1: 0.5; //tomtuo sa hovori ternarný operátor
+
+$(this).stop().fadeTo(200, opacity);
+
+});
+ var overllay = $('<div />', {id:'overllay', });
+
+ // tu sme zariadil že jquery vytvori div otvaraci a uzatvaraci tag a ako druhy argument sme dali do zobačikových zatvriek aby mal ten div id z nazvom overllay
+
+ overllay.appendTo('body').hide();
+gallery.find('a').on('click', function(event){
+
+	overllay.show();// nechame ho zobraziť po kliknuti
+	event.preventDefault(); // zruši defaultnu akciu a elementu
+});
+overllay.on('click', function(){
+	overllay.hide();
+});
+})(jQuery);
+####################################################################
+
+####################
+lightbox časť 2
+####################
+čiže teraz po kliknuti na nejaky obrazok budem chceť vytiahnuť hodnotu href a nasledne budem chcieť vytvoriť daľší img element
+ktorý umiesním na náš už vytvorený overllay
+
+1) v script.js kliknutie na obrazok zakomentujem zatiaľ overllay.show(); a vytvorím si v ramci tej funkcie  premennu s nazvom hraf
+
+2) Do premennej s názvom href uložim tu adresu k obrazku
+href si vytiahnem pomocou metody .attr('href'); do metody attr zadam nazov attributu
+	var href = $(this).attr('href'),
+
+3) zaroveň si potrebujem vytvoriť novy img element čiže si vytvorime dalšiu premenu image a do nej si vytvoríme img element pomocou jquery a ako druhy atribut tam dame src dvojbodka a adresu už mame uloženu v premenej href tak tu premenu tam dame
+
+############
+	zapis
+############
+
+	var href = $(this).attr('href'),
+		image = $('<img>',{src:href, alt:jiu-jitsu});
+4) teraz už len musím pomocou html(); metody pripojiť na overllay tu novu image premennu ten nový obrazok
+
+5) a na to ešte napojiť metodu show();
+gallery.find('a').on('click', function(event){
+
+	var href = $(this).attr('href'),
+		image = $('<img>',{src:href, alt:jiu-jitsu});
+
+	overllay.html(image).show();
+	event.preventDefault();
+});
+
+6) v css naštolujeme #overllay img{} a v css #overllay pridame  ešte text-align:center;
+#######
+takto
+#######
+#overllay img{
+	margin-top: 10%;
+	border: 5px solid #fff;
+	border-radius: 5px;
+	max-width: 100%;
+	height: auto;
+}
+####################################################################
+
+##############################
+odchytavanie kláves v jquery
+###############################
+1) cez jquery si odchytime ten najvačši objekt čo je v jquery $(document)
+2) na to naviažeme metodu .on() do ktorej pošleme jeden z eventov napr:
+keyup = udalost nastane vtedy ked tlačitko bude zdvihnuté
+čiže keď ho pustím
+
+keydown = udalost nastane vtedy ked  tlačitko zatlačím
+keypress = udalost nastane keď tlačitko stale držím stlačene
+
+3) a keďže to musim zistť tak si to musim konzol lognut čiže do funkcie dame argument naprikad event a to si vo vnutri funkcií console lognem console.log(event.which);//which znamna ktoré ktorý
+########
+zapis
+########
+$(document).on('keyup', function(event){
+
+console.log(event.which);
+
+});
+####################################################################
+
+####################################################
+nastavenie aby sa lightbox dal vypnuť tlačitkom esc
+#####################################################
+  1) čiže ked si zoberieme document object pomocou jquery
+  naviažeme na neho metodu on do nej dame udalosť keyup a napišeme funkciu z argumentom event
+###########
+  zapis
+  #########
+  $(document).on('keyup', function(event){
+
+  2)do vnutra funkcie napišeme podmienku že ak event.wich rovna sa 27 tak sa overllay skryje
+############
+	zapis
+#############
+if(event.which === 27){
+		overllay.hide();
+	}
+####################################################################
+
+###################
+cely zapis funkcie
+####################
+$(document).on('keyup', function(event){
+	if(event.which === 27){
+		overllay.hide();
+	}
+});
