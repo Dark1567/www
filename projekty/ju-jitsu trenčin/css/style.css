@@ -309,7 +309,7 @@ display: block;
 
 
 .content{
-	padding: 1.5em;
+	padding:1.5em;
 }
 .text p,
 .text h2,
@@ -340,6 +340,31 @@ display: block;
 }
 .pull-image.fl-right{
 	margin: 24px 0px 24px 34px;
+}
+.gallery{
+	font-size: 0;
+}
+.gallery img{
+	vertical-align:top;
+	width:33.3333333333%;
+	opacity: 0.5;
+}
+#overlay{
+	background: rgba(0,0,0, 0.7);
+	width: 100%;/*bude mať 100%tnu širku */
+	height: 100%;/*bude mať 100%tnu vyšku */
+	position: fixed;
+	top: 0;
+	left: 0;/*tym padom kedže sme dali position fixed a left a top 0bude na celu širku stranky a bude scrollovat splu so mnou*/
+	z-index: 20;/*aby sme mali istotu že overllay bude na vrch stranky*/
+	text-align: center;/*aby to blo na stred*/
+}
+#overlay img{
+	margin-top: 10%;
+	border: 5px solid #fff;
+	border-radius: 5px;
+	max-width: 100%;
+	height: auto;
 }
 /*form*/
 form{

@@ -1,0 +1,514 @@
+html{
+	box-sizing: border-box;
+}
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+body{
+	background: #eeefed;
+	color: #323232;
+	font-size: 100%;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+.container:before,
+.group:before,
+.menu:before,
+.container:after,
+.group:after,
+.menu:after{
+	content: " ";
+	display: table;
+}
+.container:after,
+.group:after,
+.menu:after{
+	clear: both;
+}
+a{
+	text-decoration: none;
+}
+
+storng{
+	font-weight: 600;
+}
+img{/*tento zápis je vytiahnuty skoro na vrchu dokumentu lebo pri responsive design sa často používa*/
+	max-width: 100%;
+	height: auto;
+
+}
+.menu{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.menu li{
+	float: left;
+}
+.container{
+	max-width: 73.125em; /* 1170/16 */
+	margin: 0px auto;
+	padding: 0 1.25em; /*20px / 16 =1.25em*/
+}
+.gallery .container{
+	padding: 0;
+}
+.fab,
+.fas{
+	vertical-align: middle;
+}
+/*contact*/
+.contact-bar,
+.personal a{
+	color: #ffffff;
+
+}
+
+.contact-bar{
+	background: #39a3d4;
+	/*height: 84px;*/
+	font-size: 0.875em; /* 14/16 */
+}
+.personal{
+	margin: 2em 0; /* 29/14 */
+	float: left;
+	width: 60%;/*kdže sme potrebovali vypočitať margin-right pre first-child li tak musime dať rodičový nejaku širku aby sme mohli dať margin do percent odoká sme dali 60% čiže v dve-tools sme si pozreli ul a v computed jeho širku je 672px*/
+}
+.social{
+	margin: 1.2857142857142858em 0; /* 18/14 */
+	float: right;
+}
+.personal li:first-child{
+	/*margin-right:5em; /* 70/14 */ /*aby elementy neboli nalepene na seba */ /* 70/14 */
+	/*70px(margin v px) deleno 672px(širka rodiča čiže .personal) krat 100 =10.416666666666668%*/
+	margin-right: 10.416666666666668%; /*70/669px krat 100% =10.416666666666668%*/
+}
+
+.personal .fas{
+	font-size: 2em; /* 28/14 */
+	margin-right: 0.35714285714285715em; /*aby neboli narazene na pravu stranu */ /* 5/14 */
+}
+.social .fab{
+	font-size:1.2142857142857142em;  /* 17/14 */
+}
+.social-icon{
+	display: block;
+	width: 3.4285714285714284em; /* 48/14  prečo 14? pretože rodičom je social-bar a ten ma velkost fontu nastaveni 14px*/
+	height: 3.4285714285714284em; /* 48/14 */
+	line-height: 3.2857142857142856em; /*ked nastavíme rovnaky line height ako je jeho hodnota height tak sa vycebtruje element vertikalne na stred*/ /* 46/14 */
+	color: #989898;
+	background: #eeefed;
+	text-align: center;
+	border-radius: 0.14285714285714285em; /* 2/14 */
+	margin-left: 0.14285714285714285em; /* 2/14 */
+
+}
+.social-icon:hover,
+.social-icon:focus{
+	color: #ffffff;
+	background: #5bd0ec;
+
+}
+/*nav-bar*/
+.nav-bar{
+	background: #f2f2f2;
+}
+.logo{
+	float: left;
+	margin: 1.25em 0;
+}
+.logo a{
+	display: block;
+	color: #de5728;
+	letter-spacing: -0.035em;
+}
+
+.logo strong{
+	color: #323232;
+}
+.logo .fab{
+	position: relative;
+	top: -0.06em;
+}
+.navigation{
+	float: right;
+	/*width: 49.45945945945946%; /*549px/1110px takto široka je navigácia*/
+}
+
+.navigation .fas{
+	display: block;
+	padding-bottom: 10px;
+}
+.navigation a{
+	color: #a6a6a6;
+	display: block;
+	/*width: 100% ;/nebudú mať fixnú širku ale budú na 100% jeho rodiča tzn bude tak široky ako jeho 25% rodič čiže li  */
+	padding: 1.85em 0; /*paddingy sme použili namiesto tých % širok width padding z vrchu a zo spodu je v pohde ale z prava a zlava musim použiž nakoniec width*/
+	width: 8.5em;/*136/16 =8.5em širku použivame preto aby navigacia mala rovnaku velkosť ikoniek */
+	text-align: center;
+	text-transform: uppercase;
+}
+.selected a,
+.navigation a:hover,
+.navigation a:focus{
+	color: #de5728;
+}
+.navigation li{
+	/*width: 25%; /*ptrtože máme v menu styri li elementy takže jeden môže byť široký 25% 100 /4 =25*/
+	border-left:1px solid #cecece;
+}
+.navigation li:last-child{
+	border-right: 1px solid #cecece;
+}
+
+/*post-header & CONTENT*/
+.text-center{
+	text-align: center;
+}
+.post-header{
+	/*width: 166px;*/
+	background: url("../img/cover.jpg");
+	background-position: center -200px;
+	background-repeat: no-repeat;
+}
+.post-title{
+	background: #de5728;
+	color: #fff;
+	font-size: 2.8125em; /* 45/16 */
+	font-weight: 600;
+	padding: 0.4em 1.0222222222222221em; /* 18/45 */ /* 46/45 */
+	border-radius: 0.15555555555555556em; /* 7/45  pretože font bol 45px*/
+	margin: 0.8em 0; /* 36/45 */
+	text-transform: uppercase;
+	display: inline-block;
+}
+/*ideme z responsivniet post content našej stránky */
+.post-content{
+	padding:4em 0 8em;/*padding z vrchu 4em po stranach 0 a dole padding 8em*/
+}
+.post-content h2{
+	color: #323232;
+	font-size: 1.875em; /* 30/16 */
+	font-weight: 400;
+	line-height: 1.4em/; /* 42/30  30px pretože post content h2 mal font-size 30px*/
+	margin-top: 0;/*h2 v post content zme zrušili margin z vrchu*/
+
+}
+.controls{
+	max-width: 40.125em; /* 642/16 */
+	margin: 3.125em auto; /* 50/16 */
+	text-align: center;
+}
+.controls li{
+	float: none;/* zrušime floatovanie pre controls*/
+	display: inline-block;/*nastavíme display inline-block miesto float */
+}
+.controls a{
+	color: #39a3d4;
+	font-size: 1.375em; /* 22/16 */
+	font-weight: 300;
+	padding: 0em 1.1363636363636365em; /* 0/22 */ /* 25/22 */
+	line-height: 2.1818181818181817em;/*tym vlastne forsnem nejky padding z vrchu aj od spodu*/ /* 48/22 */
+	text-transform: uppercase;
+	display: block;
+
+}
+.controls a:hover,
+.controls a:focus,
+.controls .selected a{
+	color: #fff;
+	background: #39a3d4;
+	border-radius: 0.18181818181818182em; /* 4/22 */
+
+
+}
+/*post-content gallery*/
+.gallery{
+	font-size: 0em;/*zruši nam medzeri medzi obrazkami*/ /* 0/16 */
+}
+  .gallery img{
+	width: 33.33333333333333%;/*gallery sa bude uprvovať podla wievportu čiže máme tri obrazky vedla seba čiže 100% deleno 3 =33.33333333333333*/
+	opacity: 0.5;
+}
+#overlay{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 20;
+	text-align: center;
+}
+#overlay img{
+margin-top: 10%;
+border: 5px solid #fff;
+border-radius: 5px;
+	max-width: 100%;
+	height: auto;
+
+}
+/*pre-footer & footer*/
+.pre-footer{
+	color: #fff;
+	background: #323232;
+	text-align: center;
+}
+.pre-footer .container{
+	padding: 2em 0em 2.7em 0em; /* 40/16 */ /* 0/16 */ /* 60/16 */ /* 0/16  trocha som ich upravil od oka zmenšil*/
+}
+
+.pre-footer p{
+	font-size: 1em;
+	line-height: 26px;
+	text-transform: uppercase;
+}
+.pre-footer strong{
+	font-size: 1.375em; /* 22/16 */
+	font-weight: 600;
+	text-transform: none;
+	display: block;/*čo spôsobi že sa da na samostaní riadok*/
+}
+.pre-footer .personal{
+	width: 100%; /*aby sa adaptoval na širku samotného viewportu*/
+	margin: 1.5em 0 0 0;
+}
+.pre-footer li{
+	float: none;/*vypneme float*/
+	display: inline-block;/*nastavíme display:inline-block aby sa zobrazili vedla seba a kedže jeho rodič ma text-align:center sa to zarovná na stred*/
+}
+/*FOOTER*/
+footer{
+	font-size: 0.875em; /* 14/16 */
+}
+footer .logo{
+	color: #de5728;
+	font-size: 2.2857142857142856em; /* 32/14 */
+	margin: 0.66em;
+	margin-left: 0;/*margin left je nula z toho dôvodu aby sa  odsadil odstavec*/
+}
+
+footer p{
+	color: #a6a6a6;
+	float: left;
+
+
+}
+footer p,
+footer .menu{
+	margin: 2.2857142857142856em 0em 2.2857142857142856em 0em; /* 32/14 */ /* 0/14 */ /* 32/14 */ /* 0/14 */
+
+}
+footer p a{
+	color: #e75652;
+	font-weight: 600;
+}
+footer .menu{
+	font-weight: 600;
+	text-transform: uppercase;
+
+	float: right;
+}
+footer .menu a{
+	color: #989897;
+
+}
+footer .menu a:hover,
+footer .menu a:focus{
+	text-decoration: underline;
+
+}
+footer li:after{
+	content:"/";
+	color: #989898;
+	margin: 0em 0.5714285714285714em; /* 0/14 */ /* 8/14 */
+}
+footer li:last-child:after{
+	content: " ";
+}
+
+/*MEDIAQUERIES*/
+@media(max-width: 1150px){
+	/*Pri 1150px chcem upraviť navigaciu ktora spada pod nav-bar .container*/
+	.nav-bar .container{
+		padding-right: 0;/*nav-bar container keď spadneme 1150px a menej tak zrušime padding pravý 0*/
+	}
+	/*taktiež v navigaci pri širke 1150px a menej chcem vypnuť  poslednemu li border-right*/
+	.navigation li:last-child{
+		border-right: none
+	}
+}
+@media(max-width: 840px){  /*navigacia chceme zmenšiť marginy okolo loga elementu */
+	.navigation a{
+		width: 7.5em;/*širku elementu sme zmenšili z 8.5em na 7.5em*/
+		padding:1em 0 ;/*linky maju v zaklade nastavení padding 1.85em  a nastavíne to na 1em zvrchu a zo spodu z prava z lava vynulujeme*/
+
+	}
+
+	/*v tom momente ak prekočíme na menšiu verzi navigacie by chcelo aj cely content v article zmenšiť*/
+	article{
+		font-size: 85%; /*teraz sa všetky fonty zmenšili na 85%*/
+	}
+	/*taktiež zmenšime prefooter o 10%*/
+	.pre-footer{
+		font-size: 90%;
+	}
+	/*ešte treba paddingy pri samotnom post-contente zmenšiť*/
+	.post-content{
+		padding:3.2em 0em 5em ;/* paddingy boli predtym 4em a 8em teraz ich zmenšime na*/
+	}
+		footer .menu li{
+		float: none;/*vypneme float*/
+		display: inline-block;
+	}
+	footer .menu{
+		width: 100%;
+		margin-top: 0;
+		text-align: center;
+	}
+	.logo{
+		margin:0.8em ;/*1.24 to sme nastavili v zaklade a zmenšime ho na 0.8*/
+	}
+/*footer*/
+footer .logo{
+	margin-left: 16%;
+}
+}
+@media(max-width:766px ){ /*ideme robit gallery a keďže chcem dať dva  obrazky vedľa seba tak 383 x 2 =766*/
+
+.gallery img{
+	width: 50%;
+
+}
+/**/
+.post-content{
+	padding-bottom: 0;/*zrušime padding od spodu */
+}
+/*footer*/
+footer .logo{
+	margin-left: 13%;
+}
+
+}
+@media(max-width: 740px){
+	/*navigaci a logo */
+	.nav-bar .logo,
+	.navigation{
+		float: none;/*logu v navbare a navigáci zrušíme float*/
+		width: 100%;/*logo aj navigacia budu na sto percent rodiča čiže každy zvlašť na riadku*/
+	}
+	.nav-bar .logo{
+		font-size: 2.5em;/*chceme ho trošku zväčšiť defaultne ma 2em tak mu dame 2.5em*/
+		text-align: center;
+		margin-left: 0;
+
+	}
+	.nav-bar .container{/*chceme sa zbaviť ľavého paddingu v nav-bare*/
+		padding-left: 0;
+	}
+	.navigation li:first-child{
+		border-left: none;
+	}
+	.navigation{/*samotnej navigáci dame border top*/
+		border-top: 1px solid #cecece;
+		text-align: center;
+
+	}
+	/*v navigaci li elementom zmeniť širku */
+	.navigation li{
+		width: 25%;/**/
+	}
+	.navigation a{
+		width: 100%/**/
+	}
+}
+@media (max-width: 660px){
+		/*footer*/
+	footer .logo{
+		margin-left: 8%;
+}
+
+}
+@media(max-width: 605px){
+	.contact-bar{
+		/*font-size: 70%;*/
+	}
+	.personal{ /*personal bude mať širku automatickú*/
+		width: auto;
+	}
+	.personal li{ /*do personal spadajúce li elementy floatujú vypneme folatovanie */
+	float: none; /*vypneme floatovanie*/
+	}
+	.personal li:first-child{
+		margin-bottom: 0.5em;/*prvý personal li bude mať margin zo spodu 0.5en*/
+	}
+	.social{
+		font-size: 1.33em;/*social ikonkam sme zväčšili font z 1em na 1.33em*/
+	}
+
+
+
+}
+@media(max-width: 580px){
+
+	footer .logo{
+		margin-left: 0;
+	}
+}
+@media(max-width: 540px){ /*riešime responsivitu footeru */
+	footer p,
+	footer .menu{
+		width: 100%;/**/
+		text-align: center;
+	}
+
+	footer .logo{
+		margin-bottom: 0;
+	}
+	footer .author{
+		margin-top: 1.7em;
+	}
+
+}
+@media(max-width: 500px){
+		.personal,
+		.social{
+			width: 100%;/*nastavíme širku na 100%0 aby každý mal vlastní eiadok*/
+		}
+		.personal li{
+			display: inline-block;/*aby boli telefon a email vedľa seba*/
+		}
+		.social li{
+			width: 24%;
+			margin: 0  0.4%;/*budu mať z prava a z ľava 0-4% margin*/
+
+
+		}
+		.social .social-icon{
+			width: 100%; /*100% preto lebo a elementy budú tak široké ako ich rodič čiže social li*/
+			height: auto;
+			line-height: 2.3em;
+		}
+		.social{
+			font-size: 1em;/*pre social čo sme zmenili veľkosť fontu pri 605px dame naspať na font-size na 1em*/
+			margin-top: 0.8em;/*aj social držiaku sme zmenšili margin top*/
+
+		}
+		.personal{/*sanotnému držiaku čisla a emailu zmenšime margin top 1.5 a všetky ostatne marginy zrušime*/
+			margin: 1.5em 0 0 ;
+
+		}
+		/*hodime cely nadpis viac na stred*/
+		.post-title{ /*zmenime s inline-bolock na display block*/
+			font-size: 3.2em;/*nadpis zvačšime*/
+			line-height:1.1em ;/*zmenšime line height*/
+			display: block;/*aby sa natiahol na plnú širku*/
+			text-align: center;/*aby bol na stred*/
+
+		}
+}
+
+@media( max-width: 420px){
+	.gallery img{
+		width: 100%;
+	}
+}
